@@ -4,16 +4,18 @@ import authRoutes from "./auth.routes.js";
 import connectToMongoDB from "./db/connectToMongoDB.js";
 
 const app = express();
-
-dotenv.config();
 const PORT = process.env.PORT || 5173;
 
-app.get("/", (req, res) => {
-  // root route http://localhost:5173/
-  res.send("Hello World!!");
-});
+dotenv.config();
 
 app.use("/api/auth", authRoutes);
+
+app.use(express.json()); // To parse the incoming requests with JSON payloads (from req.body)
+
+// app.get("/", (req, res) => {
+//   // root route http://localhost:5173/
+//   res.send("Hello World!!");
+// });
 
 app.listen(PORT, () => {
   connectToMongoDB();
