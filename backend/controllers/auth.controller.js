@@ -23,6 +23,11 @@ export const signup = async (req, res) => {
     }
 
     // Hash password here..
+
+    // Assigns random male/female profile pic
+    const maleProfilePic = `https://avatar.iran.liara.run/public/boy?username=${username}`;
+    const femaleProfilePic = `https://avatar.iran.liara.run/public/girl?username=${username}`;
+    const unisexProfilePic = `https://avatar.iran.liara.run/public?username=${username}`;
   } catch (error) {}
 };
 
