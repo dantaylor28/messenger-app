@@ -28,7 +28,34 @@ export const signup = async (req, res) => {
     const maleProfilePic = `https://avatar.iran.liara.run/public/boy?username=${username}`;
     const femaleProfilePic = `https://avatar.iran.liara.run/public/girl?username=${username}`;
     const unisexProfilePic = `https://avatar.iran.liara.run/public?username=${username}`;
-  } catch (error) {}
+
+    const newUser = new User({
+      fullName,
+      email,
+      username,
+      password,
+      gender,
+      age,
+      profileImage:
+        gender === "male"
+          ? maleProfilePic
+          : gender === "female"
+          ? femaleProfilePic
+          : unisexProfilePic,
+    });
+
+    await new User.save();
+
+    res.status(201).json({
+      _id: newUser._id,
+      fullName: newUser.fullName,
+      username: newUser.username,
+      profileImage: newUser.profileImage,
+    });
+  } catch (error) {
+    console.log("Error in signup controller", error.mesage);
+    res.status(500).json({ error: "Internal server error" });
+  }
 };
 
 export const login = (req, res) => {
