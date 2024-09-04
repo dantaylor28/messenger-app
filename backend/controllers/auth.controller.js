@@ -55,14 +55,19 @@ export const signup = async (req, res) => {
           : unisexProfilePic,
     });
 
-    await newUser.save();
+    if (newUser) {
+      // Generate JWT token here
+      await newUser.save();
 
-    res.status(201).json({
-      _id: newUser._id,
-      fullName: newUser.fullName,
-      username: newUser.username,
-      profileImage: newUser.profileImage,
-    });
+      res.status(201).json({
+        _id: newUser._id,
+        fullName: newUser.fullName,
+        username: newUser.username,
+        profileImage: newUser.profileImage,
+      });
+    } else {
+      res.status(400).json({ error: "Invalid user data" });
+    }
   } catch (error) {
     console.log("Error in signup controller", error.message);
     res.status(500).json({ error: "Internal server error" });
