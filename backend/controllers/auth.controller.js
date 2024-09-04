@@ -17,10 +17,14 @@ export const signup = async (req, res) => {
     }
 
     const user = await User.findOne({ username });
+    const emailAddress = await User.findOne({ email });
 
     if (user) {
       return res.status(400).json({ error: "This username already exists" });
     }
+    if (emailAddress) {
+        return res.status(400).json({ error: "This email is registered with an existing account" });
+      }
 
     // Hash password here..
 
@@ -44,7 +48,7 @@ export const signup = async (req, res) => {
           : unisexProfilePic,
     });
 
-    await new User.save();
+    await newUser.save();
 
     res.status(201).json({
       _id: newUser._id,
@@ -53,7 +57,7 @@ export const signup = async (req, res) => {
       profileImage: newUser.profileImage,
     });
   } catch (error) {
-    console.log("Error in signup controller", error.mesage);
+    console.log("Error in signup controller", error.message);
     res.status(500).json({ error: "Internal server error" });
   }
 };
