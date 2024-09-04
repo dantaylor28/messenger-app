@@ -1,4 +1,5 @@
 import User from "../models/user.model.js";
+import bcrypt from "bcryptjs";
 
 export const signup = async (req, res) => {
   try {
@@ -23,10 +24,16 @@ export const signup = async (req, res) => {
       return res.status(400).json({ error: "This username already exists" });
     }
     if (emailAddress) {
-        return res.status(400).json({ error: "This email is registered with an existing account" });
-      }
+      return res
+        .status(400)
+        .json({ error: "This email is registered with an existing account" });
+    }
 
-    // Hash password here..
+    // Hash password here
+
+    // 10 is level of security. the higher the number the longer it takes to hash. 10 is general default option.
+    const salt = await bcrypt.genSalt(10);
+    const hashedPassword = await bcrypt.hash(password, salt);
 
     // Assigns random male/female profile pic
     const maleProfilePic = `https://avatar.iran.liara.run/public/boy?username=${username}`;
@@ -37,7 +44,7 @@ export const signup = async (req, res) => {
       fullName,
       email,
       username,
-      password,
+      password: hashedPassword,
       gender,
       age,
       profileImage:
