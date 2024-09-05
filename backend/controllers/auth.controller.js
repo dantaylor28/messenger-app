@@ -80,11 +80,13 @@ export const login = async (req, res) => {
   try {
     const { username, password } = req.body;
     const user = await User.findOne({ username });
+    // Compare provided password & one saved in db. || "" included to prevent program crashing upon passwords not matching.
     const isPasswordAuthenticated = await bcrypt.compare(
       password,
       user?.password || ""
     );
 
+    // If user not found or pw not matching, return error.
     if (!user || !isPasswordAuthenticated) {
       return res
         .status(400)
