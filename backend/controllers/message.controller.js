@@ -1,4 +1,5 @@
 import Chat from "../models/chat.model.js";
+import Message from "../models/message.model.js";
 
 export const sendMessage = async (req, res) => {
   try {
@@ -19,6 +20,12 @@ export const sendMessage = async (req, res) => {
         participants: [senderId, receiverId],
       });
     }
+
+    const newMessage = new Message({
+      senderId,
+      receiverId,
+      message,
+    })
   } catch (error) {
     console.log("Error in sendMessage controller", error.message);
     res.status(500).json({ error: "Internal server error" });
