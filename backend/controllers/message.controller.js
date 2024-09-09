@@ -13,6 +13,12 @@ export const sendMessage = async (req, res) => {
     let chat = await Chat.findOne({
       participants: { $all: [senderId, receiverId] },
     });
+
+    if (!chat) {
+      chat = await Chat.create({
+        participants: [senderId, receiverId],
+      });
+    }
   } catch (error) {
     console.log("Error in sendMessage controller", error.message);
     res.status(500).json({ error: "Internal server error" });
