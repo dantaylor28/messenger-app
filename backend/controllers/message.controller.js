@@ -31,6 +31,12 @@ export const sendMessage = async (req, res) => {
       chat.messages.push(newMessage._id);
     }
 
+    // await chat.save();
+    // await newMessage.save();
+
+    // This code does same as above but just runs parallel to eachother rather than one at a time.
+    await Promise.all([chat.save(), newMessage.save()]);
+
     res.status(201).json(newMessage);
   } catch (error) {
     console.log("Error in sendMessage controller", error.message);
