@@ -51,9 +51,14 @@ export const getMessages = async (req, res) => {
 
     const chat = await Chat.findOne({
       members: { $all: [senderId, userToChatId] },
+      // Populate is a mongodb method which will populate with the actual messages rather than just a reference to them ie just the id.
     }).populate("messages");
 
-    res.status(200).json(chat.messages);
+    // Return an empty array, if the chat doesn't exist/can't be found 
+    if (!chat) return res.status(200).json([]);
+
+    const messages = chat.messages;
+    res.status(200).json(messages);
   } catch (error) {
     console.log("Error in getMessages controller", error.message);
     res.status(500).json({ error: "Internal server error" });
