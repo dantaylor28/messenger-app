@@ -12,12 +12,12 @@ export const sendMessage = async (req, res) => {
     // Find the chat which contains the 2 users.
     // Using mongoDB syntax below to find chat which contains the sender and receiver IDs
     let chat = await Chat.findOne({
-      participants: { $all: [senderId, receiverId] },
+      members: { $all: [senderId, receiverId] },
     });
 
     if (!chat) {
       chat = await Chat.create({
-        participants: [senderId, receiverId],
+        members: [senderId, receiverId],
       });
     }
 
