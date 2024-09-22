@@ -11,13 +11,13 @@ const Login = () => {
             <label>
               <div>Username:</div>
             </label>
-            <input type="text" placeholder="Enter Username" />
+            <input type="text" placeholder="Enter Username" required />
           </div>
           <div className="mt-3">
             <label>
               <div>Password:</div>
             </label>
-            <input type="text" placeholder="Enter Password" />
+            <input type="text" placeholder="Enter Password" required />
           </div>
 
           <div className="mt-3 text-sm">

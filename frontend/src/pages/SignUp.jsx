@@ -11,33 +11,33 @@ const SignUp = () => {
             <label>
               <div>Username:</div>
             </label>
-            <input type="text" placeholder="Enter Username" />
+            <input type="text" placeholder="Enter Username" required />
           </div>
           <div className="mt-3">
             <label>
               <div>Email Address:</div>
             </label>
-            <input type="email" placeholder="Enter Email" />
+            <input type="email" placeholder="Enter Email" required />
           </div>
           <div className="mt-3">
             <label>
               <div>Password:</div>
             </label>
-            <input type="password" placeholder="Enter Password" />
+            <input type="password" placeholder="Enter Password" required />
           </div>
           <div className="mt-3">
             <label>
               <div>Confirm Password:</div>
             </label>
-            <input type="password" placeholder="Confirm Password" />
+            <input type="password" placeholder="Confirm Password" required />
           </div>
 
           <div className="flex mt-3">
             <div>
-                <label>
-                    <div>Enter Age:</div>
-                </label>
-                <input type="number" min="10" max="120" />
+              <label>
+                <div>Enter Age:</div>
+              </label>
+              <input type="number" min="10" max="120" required />
             </div>
           </div>
 
