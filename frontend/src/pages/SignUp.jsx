@@ -17,24 +17,31 @@ const SignUp = () => {
             <label>
               <div>Email Address:</div>
             </label>
-            <input type="text" placeholder="Enter Email" />
+            <input type="email" placeholder="Enter Email" />
           </div>
           <div className="mt-3">
             <label>
               <div>Password:</div>
             </label>
-            <input type="text" placeholder="Enter Password" />
+            <input type="password" placeholder="Enter Password" />
           </div>
           <div className="mt-3">
             <label>
               <div>Confirm Password:</div>
             </label>
-            <input type="text" placeholder="Confirm Password" />
+            <input type="password" placeholder="Confirm Password" />
           </div>
 
-          {/* Enter age component */}
-          
-          <div className="flex gap-4">
+          <div className="flex mt-3">
+            <div>
+                <label>
+                    <div>Enter Age:</div>
+                </label>
+                <input type="number" min="10" max="120" />
+            </div>
+          </div>
+
+          <div className="flex gap-4 mt-3">
             <div className="form-control">
               <label className="flex gap-2">
                 <span>Male</span>
