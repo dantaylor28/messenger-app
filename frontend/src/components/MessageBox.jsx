@@ -1,5 +1,6 @@
 import React from "react";
 import Messages from "./Messages";
+import MessageBar from "./MessageBar";
 
 const MessageBox = () => {
   return (
@@ -10,6 +11,7 @@ const MessageBox = () => {
         </div>
 
         <Messages />
+        <MessageBar />
       </>
     </div>
   );
