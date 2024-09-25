@@ -1,4 +1,5 @@
 import React from "react";
+import Messages from "./Messages";
 
 const MessageBox = () => {
   return (
@@ -7,6 +8,8 @@ const MessageBox = () => {
         <div className="bg-gray-200 px-2 py-4">
             <span>To:</span> <span>Sabina Boije</span>
         </div>
+
+        <Messages />
       </>
     </div>
   );
