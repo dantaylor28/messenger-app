@@ -16,6 +16,7 @@ const Chat = () => {
         <div className="flex flex-col flex-1">
           <div className="flex gap-3 justify-between">
             <p>Dan Taylor</p>
+            <span className="h-3 w-3 rounded-full bg-green-500 mt-1.5"></span>
           </div>
         </div>
       </div>
