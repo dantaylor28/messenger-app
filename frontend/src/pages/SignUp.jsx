@@ -16,12 +16,17 @@ const SignUp = () => {
   const handleCheckboxChange = (gender) => {
     setUserInputs({ ...userInputs, gender });
   };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(userInputs);
+  };
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="bg-gray-200 p-10">
         <h1>Sign up for an account</h1>
 
-        <form action="">
+        <form onSubmit={handleSubmit}>
           <div className="mt-5">
             <label>
               <div>Full Name:</div>
