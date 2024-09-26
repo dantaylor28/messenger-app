@@ -1,12 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
+  const [userInputs, setUserInputs] = useState({
+    fullName: "",
+    email: "",
+    username: "",
+    password: "",
+    confirmPassword: "",
+    gender: "",
+    age: ""
+  })
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="bg-gray-200 p-10">
         <h1>Sign up for an account</h1>
 
         <form action="">
+        <div className="mt-5">
+            <label>
+              <div>Full Name:</div>
+            </label>
+            <input type="text" placeholder="Enter Full Name" required />
+          </div>
           <div className="mt-5">
             <label>
               <div>Username:</div>
@@ -64,9 +80,9 @@ const SignUp = () => {
 
           <div className="mt-3 text-sm">
             Already have an account?{" "}
-            <a href="#" className="text-red-500 underline">
+            <Link to={"/login"} className="text-red-500 underline">
               Sign in here
-            </a>
+            </Link>
           </div>
 
           <div className="text-center mt-5">
