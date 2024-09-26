@@ -19,7 +19,7 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(userInputs);
+    // console.log(userInputs);
   };
   return (
     <div className="flex flex-col items-center justify-center">
