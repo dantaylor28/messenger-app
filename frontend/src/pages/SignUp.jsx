@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import GenderCheckbox from "../components/GenderCheckbox";
 
 const SignUp = () => {
   const [userInputs, setUserInputs] = useState({
@@ -11,6 +12,10 @@ const SignUp = () => {
     gender: "",
     age: "",
   });
+
+  const handleCheckboxChange = (gender) => {
+    setUserInputs({ ...userInputs, gender });
+  };
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="bg-gray-200 p-10">
@@ -49,31 +54,46 @@ const SignUp = () => {
             <label>
               <div>Email Address:</div>
             </label>
-            <input type="email" placeholder="Enter Email" required
-            value={userInputs.email}
-            onChange={(e) =>
-              setUserInputs({ ...userInputs, email: e.target.value })
-            } />
+            <input
+              type="email"
+              placeholder="Enter Email"
+              required
+              value={userInputs.email}
+              onChange={(e) =>
+                setUserInputs({ ...userInputs, email: e.target.value })
+              }
+            />
           </div>
           <div className="mt-3">
             <label>
               <div>Password:</div>
             </label>
-            <input type="password" placeholder="Enter Password" required
-            value={userInputs.password}
-            onChange={(e) =>
-              setUserInputs({ ...userInputs, password: e.target.value })
-            } />
+            <input
+              type="password"
+              placeholder="Enter Password"
+              required
+              value={userInputs.password}
+              onChange={(e) =>
+                setUserInputs({ ...userInputs, password: e.target.value })
+              }
+            />
           </div>
           <div className="mt-3">
             <label>
               <div>Confirm Password:</div>
             </label>
-            <input type="password" placeholder="Confirm Password" required
-            value={userInputs.confirmPassword}
-            onChange={(e) =>
-              setUserInputs({ ...userInputs, confirmPassword: e.target.value })
-            } />
+            <input
+              type="password"
+              placeholder="Confirm Password"
+              required
+              value={userInputs.confirmPassword}
+              onChange={(e) =>
+                setUserInputs({
+                  ...userInputs,
+                  confirmPassword: e.target.value,
+                })
+              }
+            />
           </div>
 
           <div className="flex mt-3">
@@ -81,34 +101,23 @@ const SignUp = () => {
               <label>
                 <div>Enter Age:</div>
               </label>
-              <input type="number" min="10" max="120" required 
-              value={userInputs.age}
-              onChange={(e) =>
-                setUserInputs({ ...userInputs, age: e.target.value })
-              }/>
+              <input
+                type="number"
+                min="10"
+                max="120"
+                required
+                value={userInputs.age}
+                onChange={(e) =>
+                  setUserInputs({ ...userInputs, age: e.target.value })
+                }
+              />
             </div>
           </div>
 
-          <div className="flex gap-4 mt-3">
-            <div className="form-control">
-              <label className="flex gap-1">
-                <span>Male</span>
-                <input type="checkbox" />
-              </label>
-            </div>
-            <div className="form-control">
-              <label className=" flex gap-1">
-                <span>Female</span>
-                <input type="checkbox" />
-              </label>
-            </div>
-            <div className="form-control">
-              <label className="flex gap-1">
-                <span>Prefer not to say</span>
-                <input type="checkbox" />
-              </label>
-            </div>
-          </div>
+          <GenderCheckbox
+            onCheckboxChange={handleCheckboxChange}
+            selectedGender={userInputs.gender}
+          />
 
           <div className="mt-3 text-sm">
             Already have an account?{" "}
