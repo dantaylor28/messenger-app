@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from "react";
 
 const useSignup = () => {
-  return (
-    <div>useSignup</div>
-  )
+  const [sendingData, setSendingData] = useState(false);
+};
+
+const signupUser = async ({fullName, email, username, password, confirmPassword, age, gender}) => {
+    
 }
 
-export default useSignup
+export default useSignup;

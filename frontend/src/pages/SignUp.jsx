@@ -9,17 +9,17 @@ const SignUp = () => {
     username: "",
     password: "",
     confirmPassword: "",
-    gender: "",
     age: "",
+    gender: "",
   });
 
   const handleCheckboxChange = (gender) => {
     setUserInputs({ ...userInputs, gender });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // console.log(userInputs);
+    await signupUser(userInputs);
   };
   return (
     <div className="flex flex-col items-center justify-center">
