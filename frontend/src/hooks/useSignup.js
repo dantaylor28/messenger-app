@@ -24,6 +24,33 @@ const signupUser = async ({
     gender,
   });
   if (!success) return;
+
+  setSendingData(true);
+
+  try {
+    const res = await fetch("http://localhost:5173/api/auth/signup", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        fullName,
+        email,
+        username,
+        password,
+        confirmPassword,
+        age,
+        gender,
+      }),
+    });
+
+    const data = await res.json();
+    console.log(data);
+  } catch (error) {
+    toast.error(error.message);
+  } finally {
+    setSendingData(false);
+  }
+
+  return { loading, signup };
 };
 
 export default useSignup;
@@ -57,4 +84,5 @@ function handleSignupErrors({
     toast.error("Passwords must be at least 6 characters");
     return false;
   }
+  return true;
 }
