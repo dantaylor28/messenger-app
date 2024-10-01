@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import GenderCheckbox from "../components/GenderCheckbox";
+import useSignup from "../hooks/useSignup";
 
 const SignUp = () => {
   const [userInputs, setUserInputs] = useState({
@@ -13,6 +14,7 @@ const SignUp = () => {
     gender: "",
   });
 
+  const { sendingData, signupUser } = useSignup();
   const handleCheckboxChange = (gender) => {
     setUserInputs({ ...userInputs, gender });
   };
@@ -34,7 +36,6 @@ const SignUp = () => {
             <input
               type="text"
               placeholder="Enter Full Name"
-              required
               value={userInputs.fullName}
               onChange={(e) =>
                 setUserInputs({ ...userInputs, fullName: e.target.value })
@@ -48,7 +49,6 @@ const SignUp = () => {
             <input
               type="text"
               placeholder="Enter Username"
-              required
               value={userInputs.username}
               onChange={(e) =>
                 setUserInputs({ ...userInputs, username: e.target.value })
@@ -62,7 +62,6 @@ const SignUp = () => {
             <input
               type="email"
               placeholder="Enter Email"
-              required
               value={userInputs.email}
               onChange={(e) =>
                 setUserInputs({ ...userInputs, email: e.target.value })
@@ -76,7 +75,6 @@ const SignUp = () => {
             <input
               type="password"
               placeholder="Enter Password"
-              required
               value={userInputs.password}
               onChange={(e) =>
                 setUserInputs({ ...userInputs, password: e.target.value })
@@ -90,7 +88,6 @@ const SignUp = () => {
             <input
               type="password"
               placeholder="Confirm Password"
-              required
               value={userInputs.confirmPassword}
               onChange={(e) =>
                 setUserInputs({
@@ -110,7 +107,6 @@ const SignUp = () => {
                 type="number"
                 min="10"
                 max="120"
-                required
                 value={userInputs.age}
                 onChange={(e) =>
                   setUserInputs({ ...userInputs, age: e.target.value })
