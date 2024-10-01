@@ -3,18 +3,8 @@ import toast from "react-hot-toast";
 
 const useSignup = () => {
   const [sendingData, setSendingData] = useState(false);
-};
 
-const signupUser = async ({
-  fullName,
-  email,
-  username,
-  password,
-  confirmPassword,
-  age,
-  gender,
-}) => {
-  const success = handleSignupErrors({
+  const signupUser = async ({
     fullName,
     email,
     username,
@@ -22,35 +12,44 @@ const signupUser = async ({
     confirmPassword,
     age,
     gender,
-  });
-  if (!success) return;
-
-  setSendingData(true);
-
-  try {
-    const res = await fetch("http://localhost:5173/api/auth/signup", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        fullName,
-        email,
-        username,
-        password,
-        confirmPassword,
-        age,
-        gender,
-      }),
+  }) => {
+    const success = handleSignupErrors({
+      fullName,
+      email,
+      username,
+      password,
+      confirmPassword,
+      age,
+      gender,
     });
+    if (!success) return;
 
-    const data = await res.json();
-    console.log(data);
-  } catch (error) {
-    toast.error(error.message);
-  } finally {
-    setSendingData(false);
-  }
+    setSendingData(true);
 
-  return { loading, signup };
+    try {
+      const res = await fetch("http://localhost:5173/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          fullName,
+          email,
+          username,
+          password,
+          confirmPassword,
+          age,
+          gender,
+        }),
+      });
+
+      const data = await res.json();
+      console.log(data);
+    } catch (error) {
+      toast.error(error.message);
+    } finally {
+      setSendingData(false);
+    }
+  };
+  return { sendingData, signupUser };
 };
 
 export default useSignup;
