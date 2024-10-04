@@ -128,7 +128,7 @@ const SignUp = () => {
           </div>
 
           <div className="text-center mt-5">
-            <button className="border border-black px-2">Login</button>
+            <button className="border border-black px-2">Create Account</button>
           </div>
         </form>
       </div>
