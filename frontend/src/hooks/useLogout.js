@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useAuthContext } from "../context/AuthContext";
 
 const useLogout = () => {
   const [sendingData, setSendingData] = useState(false);
