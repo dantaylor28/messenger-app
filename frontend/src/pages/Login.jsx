@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    await loginUser(username, password);
+  };
   return (
     <div className="flex flex-col items-center justify-center">
       <div className="bg-gray-200 p-10">
@@ -14,13 +19,25 @@ const Login = () => {
             <label>
               <div>Username:</div>
             </label>
-            <input type="text" placeholder="Enter Username" required value={username} onChange={(e) => setUsername(e.target.value)} />
+            <input
+              type="text"
+              placeholder="Enter Username"
+              required
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
           </div>
           <div className="mt-3">
             <label>
               <div>Password:</div>
             </label>
-            <input type="text" placeholder="Enter Password" required value={password} onChange={(e) => setPassword(e.target.value)} />
+            <input
+              type="text"
+              placeholder="Enter Password"
+              required
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
           </div>
 
           <div className="mt-3 text-sm">
