@@ -128,7 +128,9 @@ const SignUp = () => {
           </div>
 
           <div className="text-center mt-5">
-            <button className="border border-black px-2">Create Account</button>
+            <button className="border border-black px-2" disabled={sendingData}>
+              {sendingData ? <span>Loading..</span> : "Create Account"}
+            </button>
           </div>
         </form>
       </div>
