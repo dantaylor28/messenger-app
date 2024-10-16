@@ -1,9 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import useLogin from "../hooks/useLogin";
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+
+  const { sendingData, loginUser } = useLogin();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -48,7 +51,12 @@ const Login = () => {
           </div>
 
           <div className="text-center mt-5">
-            <button className="border border-black px-2">Login</button>
+            <button
+              className="border border-black px-2"
+              disabled={sendingData}
+            >
+              {sendingData ? <span>Loading..</span> : "Login"}
+            </button>
           </div>
         </form>
       </div>
