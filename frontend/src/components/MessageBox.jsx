@@ -1,10 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Messages from "./Messages";
 import MessageBar from "./MessageBar";
 import { useChatContext } from "../context/ChatContext";
 
 const MessageBox = () => {
-  const {selectedChat, setSelectedChat} = useChatContext()
+  const { selectedChat, setSelectedChat } = useChatContext();
+
+  // Removes selectedChat on sign out - cleanup function
+  useEffect(() => {
+    return () => setSelectedChat(null);
+  }, [setSelectedChat]);
+
   return (
     <div className="flex flex-col min-w-[550px]">
       {!selectedChat ? (
