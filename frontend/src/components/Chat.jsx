@@ -1,15 +1,21 @@
 import React from "react";
+import { useChatContext } from "../context/ChatContext";
 
-const Chat = ({chat}) => {
+const Chat = ({ chat }) => {
+  const { selectedChat, setSelectedChat } = useChatContext();
+
+  const isSelected = selectedChat?._id === chat._id;
   return (
     <>
-      <div className="flex gap-2 items-center cursor-pointer">
+      <div
+        className={`flex gap-2 items-center cursor-pointer hover:bg-gray-200 ${
+          isSelected ? "bg-gray-200" : ""
+        }`}
+        onClick={() => setSelectedChat(chat)}
+      >
         <div>
           <div className="w-12 rounded-full">
-            <img
-              src={chat.profileImage}
-              alt="user avatar"
-            />
+            <img src={chat.profileImage} alt="user avatar" />
           </div>
         </div>
 
@@ -21,7 +27,7 @@ const Chat = ({chat}) => {
         </div>
       </div>
 
-      <div className="h-1 bg-gray-200"/> 
+      <div className="h-1 bg-gray-200" />
     </>
   );
 };
