@@ -1,17 +1,18 @@
 import React from "react";
 import Messages from "./Messages";
 import MessageBar from "./MessageBar";
+import { useChatContext } from "../context/ChatContext";
 
 const MessageBox = () => {
-  const noChatSelected = false;
+  const {selectedChat, setSelectedChat} = useChatContext()
   return (
     <div className="flex flex-col min-w-[550px]">
-      {noChatSelected ? (
+      {!selectedChat ? (
         <SelectChat />
       ) : (
         <>
           <div className="bg-gray-200 px-2 py-4 mb-5">
-            <span>To:</span> <span>Sabina Boije</span>
+            <span>To:</span> <span>{selectedChat.fullName}</span>
           </div>
 
           <Messages />
