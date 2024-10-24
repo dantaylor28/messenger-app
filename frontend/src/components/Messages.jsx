@@ -11,6 +11,10 @@ const Messages = () => {
         <p>Send a message to start the chat!</p>
       )}
       {sendingData && "Loading messages.."}
+
+      {!loading && messages.length > 0 && messages.map((message) => (
+        <Message key={message._id} message={message} />
+      ))}
     </div>
   );
 };
