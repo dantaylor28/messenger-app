@@ -12,7 +12,7 @@ const Messages = () => {
       )}
       {sendingData && "Loading messages.."}
 
-      {!loading && messages.length > 0 && messages.map((message) => (
+      {!sendingData && messages.length > 0 && messages.map((message) => (
         <Message key={message._id} message={message} />
       ))}
     </div>

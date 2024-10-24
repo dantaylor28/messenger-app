@@ -1,18 +1,31 @@
 import React from "react";
+import { useChatContext } from "../context/ChatContext";
+import { useAuthContext } from "../context/AuthContext";
 
-const Message = () => {
+const Message = ({ message }) => {
+  const { selectedChat } = useChatContext();
+  const { authenticatedUser } = useAuthContext();
+  const sentFromMe = message.senderId === authenticatedUser._id;
+  const profileImage = sentFromMe
+    ? authenticatedUser.profileImage
+    : selectedChat?.profileImage;
+  const chatBubbleLayout = sentFromMe ? "ml-72" : "";
+  const chatBubbleBg = sentFromMe ? "bg-green-500" : ""
+
   return (
-    <div className="mb-3">
+    <div className={`mb-3 ${chatBubbleLayout}`}>
       <div className="flex items-center">
         <div>
           <div className="w-10 rounded-full">
             <img
-              src="https://cdn0.iconfinder.com/data/icons/communication-line-10/24/account_profile_user_contact_person_avatar_placeholder-512.png"
+              src={profileImage}
               alt="chat user avatar"
             />
           </div>
         </div>
-        <div className="border border-black p-2">Hello there! How's it going??</div>
+        <div className={`border border-black p-2 ${chatBubbleBg}`}>
+          {message.message}
+        </div>
       </div>
       <div className="text-xs ml-10">15:12</div>
     </div>
