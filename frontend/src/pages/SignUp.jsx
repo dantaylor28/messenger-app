@@ -25,17 +25,23 @@ const SignUp = () => {
   };
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="bg-gray-200 p-10">
-        <h1>Sign up for an account</h1>
+      <div className="min-w-[600px] bg-gray-200 py-16 px-24 border border-black/10 rounded-lg">
+        <h1 className="text-center text-2xl">
+          Welcome to <span className="text-cyan-600">ChatApp</span>
+        </h1>
+        <h2 className="text-md mt-5 text-center opacity-70">
+          Sign up for an account
+        </h2>
 
         <form onSubmit={handleSubmit}>
           <div className="mt-5">
-            <label>
+            {/* <label>
               <div>Full Name:</div>
-            </label>
+            </label> */}
             <input
+              className="w-full h-9 rounded-sm text-md pl-1"
               type="text"
-              placeholder="Enter Full Name"
+              placeholder="Full Name"
               value={userInputs.fullName}
               onChange={(e) =>
                 setUserInputs({ ...userInputs, fullName: e.target.value })
@@ -43,49 +49,53 @@ const SignUp = () => {
             />
           </div>
           <div className="mt-5">
-            <label>
+            {/* <label>
               <div>Username:</div>
-            </label>
+            </label> */}
             <input
+              className="w-full h-9 rounded-sm text-md pl-1"
               type="text"
-              placeholder="Enter Username"
+              placeholder="Username"
               value={userInputs.username}
               onChange={(e) =>
                 setUserInputs({ ...userInputs, username: e.target.value })
               }
             />
           </div>
-          <div className="mt-3">
-            <label>
+          <div className="mt-5">
+            {/* <label>
               <div>Email Address:</div>
-            </label>
+            </label> */}
             <input
+            className="w-full h-9 rounded-sm text-md pl-1"
               type="email"
-              placeholder="Enter Email"
+              placeholder="Email"
               value={userInputs.email}
               onChange={(e) =>
                 setUserInputs({ ...userInputs, email: e.target.value })
               }
             />
           </div>
-          <div className="mt-3">
-            <label>
+          <div className="mt-5">
+            {/* <label>
               <div>Password:</div>
-            </label>
+            </label> */}
             <input
+            className="w-full h-9 rounded-sm text-md pl-1"
               type="password"
-              placeholder="Enter Password"
+              placeholder="Password"
               value={userInputs.password}
               onChange={(e) =>
                 setUserInputs({ ...userInputs, password: e.target.value })
               }
             />
           </div>
-          <div className="mt-3">
-            <label>
+          <div className="mt-5">
+            {/* <label>
               <div>Confirm Password:</div>
-            </label>
+            </label> */}
             <input
+            className="w-full h-9 rounded-sm text-md pl-1"
               type="password"
               placeholder="Confirm Password"
               value={userInputs.confirmPassword}
