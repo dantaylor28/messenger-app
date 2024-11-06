@@ -5,7 +5,7 @@ const GenderCheckbox = ({ onCheckboxChange, selectedGender }) => {
     <div className="flex gap-4 mt-3">
       <div className="form-control">
         <label
-          className={`flex gap-1 ${
+          className={`flex gap-1 items-center justify-center ${
             selectedGender === "male" ? "selected" : ""
           }`}
         >
@@ -14,12 +14,13 @@ const GenderCheckbox = ({ onCheckboxChange, selectedGender }) => {
             type="checkbox"
             checked={selectedGender === "male"}
             onChange={() => onCheckboxChange("male")}
+            className="appearance-none h-4 w-4 border-2 border-white outline outline-gray-300 rounded bg-white checked:bg-cyan-600 hover:cursor-pointer"
           />
         </label>
       </div>
       <div className="form-control">
         <label
-          className={`flex gap-1 ${
+          className={`flex gap-1 items-center justify-center ${
             selectedGender === "female" ? "selected" : ""
           }`}
         >
@@ -28,12 +29,13 @@ const GenderCheckbox = ({ onCheckboxChange, selectedGender }) => {
             type="checkbox"
             checked={selectedGender === "female"}
             onChange={() => onCheckboxChange("female")}
+            className="appearance-none h-4 w-4 border-2 border-white outline outline-gray-300 rounded bg-white checked:bg-cyan-600 hover:cursor-pointer"
           />
         </label>
       </div>
       <div className="form-control">
         <label
-          className={`flex gap-1 ${
+          className={`flex gap-1 items-center justify-center ${
             selectedGender === "prefer not to say" ? "selected" : ""
           }`}
         >
@@ -42,6 +44,7 @@ const GenderCheckbox = ({ onCheckboxChange, selectedGender }) => {
             type="checkbox"
             checked={selectedGender === "prefer not to say"}
             onChange={() => onCheckboxChange("prefer not to say")}
+            className="appearance-none h-4 w-4 border-2 border-white outline outline-gray-300 rounded bg-white checked:bg-cyan-600 hover:cursor-pointer"
           />
         </label>
       </div>
