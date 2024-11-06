@@ -108,12 +108,14 @@ const SignUp = () => {
             />
           </div>
 
-          <div className="flex mt-3">
+          <div className="flex mt-5">
             <div>
-              <label>
+              {/* <label>
                 <div>Enter Age:</div>
-              </label>
+              </label> */}
               <input
+              className="w-full h-9 rounded-sm text-md pl-1"
+              placeholder="Age"
                 type="number"
                 min="10"
                 max="120"
