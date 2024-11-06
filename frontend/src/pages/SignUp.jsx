@@ -25,7 +25,7 @@ const SignUp = () => {
   };
   return (
     <div className="flex flex-col items-center justify-center">
-      <div className="min-w-[600px] bg-gray-200 py-16 px-24 border border-black/10 rounded-lg">
+      <div className="min-w-[600px] bg-gray-100 py-16 px-24 border border-black/10 rounded-lg shadow-md">
         <h1 className="text-center text-2xl">
           Welcome to <span className="text-cyan-600">ChatApp</span>
         </h1>
@@ -39,7 +39,7 @@ const SignUp = () => {
               <div>Full Name:</div>
             </label> */}
             <input
-              className="w-full h-9 rounded-sm text-md pl-1"
+              className="w-full h-9 rounded-sm text-md pl-1 shadow-sm"
               type="text"
               placeholder="Full Name"
               value={userInputs.fullName}
@@ -53,7 +53,7 @@ const SignUp = () => {
               <div>Username:</div>
             </label> */}
             <input
-              className="w-full h-9 rounded-sm text-md pl-1"
+              className="w-full h-9 rounded-sm text-md pl-1 shadow-sm"
               type="text"
               placeholder="Username"
               value={userInputs.username}
@@ -67,7 +67,7 @@ const SignUp = () => {
               <div>Email Address:</div>
             </label> */}
             <input
-            className="w-full h-9 rounded-sm text-md pl-1"
+            className="w-full h-9 rounded-sm text-md pl-1 shadow-sm"
               type="email"
               placeholder="Email"
               value={userInputs.email}
@@ -81,7 +81,7 @@ const SignUp = () => {
               <div>Password:</div>
             </label> */}
             <input
-            className="w-full h-9 rounded-sm text-md pl-1"
+            className="w-full h-9 rounded-sm text-md pl-1 shadow-sm"
               type="password"
               placeholder="Password"
               value={userInputs.password}
@@ -95,7 +95,7 @@ const SignUp = () => {
               <div>Confirm Password:</div>
             </label> */}
             <input
-            className="w-full h-9 rounded-sm text-md pl-1"
+            className="w-full h-9 rounded-sm text-md pl-1 shadow-sm"
               type="password"
               placeholder="Confirm Password"
               value={userInputs.confirmPassword}
@@ -114,7 +114,7 @@ const SignUp = () => {
                 <div>Enter Age:</div>
               </label> */}
               <input
-              className="w-full h-9 rounded-sm text-md pl-1"
+              className="w-full h-9 rounded-sm text-md pl-1 shadow-sm"
               placeholder="Age"
                 type="number"
                 min="10"
@@ -132,17 +132,17 @@ const SignUp = () => {
             selectedGender={userInputs.gender}
           />
 
+          <div className="text-center mt-5">
+            <button className="w-full h-10 rounded-sm bg-cyan-600 text-white border border-black/10 hover:bg-cyan-700 cursor-pointer" disabled={sendingData}>
+              {sendingData ? <span>Loading..</span> : "Create Account"}
+            </button>
+          </div>
+          
           <div className="mt-3 text-sm">
             Already have an account?{" "}
             <Link to={"/login"} className="text-red-500 underline">
               Sign in here
             </Link>
-          </div>
-
-          <div className="text-center mt-5">
-            <button className="border border-black px-2" disabled={sendingData}>
-              {sendingData ? <span>Loading..</span> : "Create Account"}
-            </button>
           </div>
         </form>
       </div>
