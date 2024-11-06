@@ -132,15 +132,15 @@ const SignUp = () => {
             selectedGender={userInputs.gender}
           />
 
-          <div className="text-center mt-5">
+          <div className="text-center mt-8">
             <button className="w-full h-10 rounded-sm bg-cyan-600 text-white border border-black/10 hover:bg-cyan-700 cursor-pointer" disabled={sendingData}>
               {sendingData ? <span>Loading..</span> : "Create Account"}
             </button>
           </div>
           
-          <div className="mt-3 text-sm">
+          <div className="mt-3 text-xs text-center">
             Already have an account?{" "}
-            <Link to={"/login"} className="text-red-500 underline">
+            <Link to={"/login"} className="text-orange-600 hover:underline cursor-pointer ">
               Sign in here
             </Link>
           </div>
