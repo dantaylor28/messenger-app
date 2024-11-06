@@ -35,95 +35,95 @@ const SignUp = () => {
 
         <form onSubmit={handleSubmit}>
           <div className="mt-5">
-            {/* <label>
-              <div>Full Name:</div>
-            </label> */}
-            <input
-              className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
-              type="text"
-              placeholder="Full Name"
-              value={userInputs.fullName}
-              onChange={(e) =>
-                setUserInputs({ ...userInputs, fullName: e.target.value })
-              }
-            />
+            <label htmlFor="full-name">
+              <input
+                className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
+                id="full-name"
+                type="text"
+                placeholder="Full Name"
+                value={userInputs.fullName}
+                onChange={(e) =>
+                  setUserInputs({ ...userInputs, fullName: e.target.value })
+                }
+              />
+            </label>
           </div>
           <div className="mt-5">
-            {/* <label>
-              <div>Username:</div>
-            </label> */}
-            <input
-              className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
-              type="text"
-              placeholder="Username"
-              value={userInputs.username}
-              onChange={(e) =>
-                setUserInputs({ ...userInputs, username: e.target.value })
-              }
-            />
+            <label htmlFor="username">
+              <input
+                className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
+                id="username"
+                type="text"
+                placeholder="Username"
+                value={userInputs.username}
+                onChange={(e) =>
+                  setUserInputs({ ...userInputs, username: e.target.value })
+                }
+              />
+            </label>
           </div>
           <div className="mt-5">
-            {/* <label>
-              <div>Email Address:</div>
-            </label> */}
-            <input
-            className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
-              type="email"
-              placeholder="Email"
-              value={userInputs.email}
-              onChange={(e) =>
-                setUserInputs({ ...userInputs, email: e.target.value })
-              }
-            />
+            <label htmlFor="email">
+              <input
+                className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
+                id="email"
+                type="email"
+                placeholder="Email"
+                value={userInputs.email}
+                onChange={(e) =>
+                  setUserInputs({ ...userInputs, email: e.target.value })
+                }
+              />
+            </label>
           </div>
           <div className="mt-5">
-            {/* <label>
-              <div>Password:</div>
-            </label> */}
-            <input
-            className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
-              type="password"
-              placeholder="Password"
-              value={userInputs.password}
-              onChange={(e) =>
-                setUserInputs({ ...userInputs, password: e.target.value })
-              }
-            />
+            <label htmlFor="password">
+              <input
+                className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
+                id="password"
+                type="password"
+                placeholder="Password"
+                value={userInputs.password}
+                onChange={(e) =>
+                  setUserInputs({ ...userInputs, password: e.target.value })
+                }
+              />
+            </label>
           </div>
           <div className="mt-5">
-            {/* <label>
-              <div>Confirm Password:</div>
-            </label> */}
-            <input
-            className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
-              type="password"
-              placeholder="Confirm Password"
-              value={userInputs.confirmPassword}
-              onChange={(e) =>
-                setUserInputs({
-                  ...userInputs,
-                  confirmPassword: e.target.value,
-                })
-              }
-            />
+            <label htmlFor="confirm-password">
+              <input
+                className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
+                id="confirm-password"
+                type="password"
+                placeholder="Confirm Password"
+                value={userInputs.confirmPassword}
+                onChange={(e) =>
+                  setUserInputs({
+                    ...userInputs,
+                    confirmPassword: e.target.value,
+                  })
+                }
+              />
+            </label>
           </div>
 
           <div className="flex mt-5">
             <div>
-              {/* <label>
-                <div>Enter Age:</div>
-              </label> */}
-              <input
-              className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
-              placeholder="Age"
-                type="number"
-                min="10"
-                max="120"
-                value={userInputs.age}
-                onChange={(e) =>
-                  setUserInputs({ ...userInputs, age: e.target.value })
-                }
-              />
+              <label htmlFor="age">
+                <input
+                  className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
+                  id="age"
+                  placeholder="Age"
+                  type="number"
+                  min="10"
+                  max="120"
+                  value={userInputs.age}
+                  onChange={(e) =>
+                    setUserInputs({ ...userInputs, age: e.target.value })
+                  }
+                />
+              </label>
             </div>
           </div>
 
@@ -133,14 +133,20 @@ const SignUp = () => {
           />
 
           <div className="text-center mt-8">
-            <button className="w-full h-10 rounded-sm bg-cyan-600 text-white border border-black/10 hover:bg-cyan-700 cursor-pointer" disabled={sendingData}>
+            <button
+              className="w-full h-10 rounded-sm bg-cyan-600 text-white border border-black/10 hover:bg-cyan-700 cursor-pointer"
+              disabled={sendingData}
+            >
               {sendingData ? <span>Loading..</span> : "Create Account"}
             </button>
           </div>
-          
+
           <div className="mt-3 text-xs text-center">
             Already have an account?{" "}
-            <Link to={"/login"} className="text-orange-600 hover:underline cursor-pointer ">
+            <Link
+              to={"/login"}
+              className="text-orange-600 hover:underline cursor-pointer "
+            >
               Sign in here
             </Link>
           </div>
