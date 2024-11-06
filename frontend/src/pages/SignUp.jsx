@@ -39,7 +39,7 @@ const SignUp = () => {
               <div>Full Name:</div>
             </label> */}
             <input
-              className="w-full h-9 rounded-sm text-md pl-1 shadow-sm"
+              className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
               type="text"
               placeholder="Full Name"
               value={userInputs.fullName}
@@ -53,7 +53,7 @@ const SignUp = () => {
               <div>Username:</div>
             </label> */}
             <input
-              className="w-full h-9 rounded-sm text-md pl-1 shadow-sm"
+              className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
               type="text"
               placeholder="Username"
               value={userInputs.username}
@@ -67,7 +67,7 @@ const SignUp = () => {
               <div>Email Address:</div>
             </label> */}
             <input
-            className="w-full h-9 rounded-sm text-md pl-1 shadow-sm"
+            className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
               type="email"
               placeholder="Email"
               value={userInputs.email}
@@ -81,7 +81,7 @@ const SignUp = () => {
               <div>Password:</div>
             </label> */}
             <input
-            className="w-full h-9 rounded-sm text-md pl-1 shadow-sm"
+            className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
               type="password"
               placeholder="Password"
               value={userInputs.password}
@@ -95,7 +95,7 @@ const SignUp = () => {
               <div>Confirm Password:</div>
             </label> */}
             <input
-            className="w-full h-9 rounded-sm text-md pl-1 shadow-sm"
+            className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
               type="password"
               placeholder="Confirm Password"
               value={userInputs.confirmPassword}
@@ -114,7 +114,7 @@ const SignUp = () => {
                 <div>Enter Age:</div>
               </label> */}
               <input
-              className="w-full h-9 rounded-sm text-md pl-1 shadow-sm"
+              className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
               placeholder="Age"
                 type="number"
                 min="10"
