@@ -5,7 +5,7 @@ const GenderCheckbox = ({ onCheckboxChange, selectedGender }) => {
     <div className="flex gap-4 mt-3">
       <div className="form-control">
         <label
-          className={`flex gap-1 items-center justify-center ${
+          className={`flex gap-1.5 items-center justify-center ${
             selectedGender === "male" ? "selected" : ""
           }`}
         >
@@ -20,7 +20,7 @@ const GenderCheckbox = ({ onCheckboxChange, selectedGender }) => {
       </div>
       <div className="form-control">
         <label
-          className={`flex gap-1 items-center justify-center ${
+          className={`flex gap-1.5 items-center justify-center ${
             selectedGender === "female" ? "selected" : ""
           }`}
         >
@@ -35,7 +35,7 @@ const GenderCheckbox = ({ onCheckboxChange, selectedGender }) => {
       </div>
       <div className="form-control">
         <label
-          className={`flex gap-1 items-center justify-center ${
+          className={`flex gap-1.5 items-center justify-center ${
             selectedGender === "prefer not to say" ? "selected" : ""
           }`}
         >
