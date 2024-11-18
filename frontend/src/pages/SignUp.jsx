@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import GenderCheckbox from "../components/GenderCheckbox";
 import useSignup from "../hooks/useSignup";
+import loginImg from "../assets/login-img.jpg";
 
 const SignUp = () => {
   const [userInputs, setUserInputs] = useState({
@@ -24,8 +25,8 @@ const SignUp = () => {
     await signupUser(userInputs);
   };
   return (
-    <div className="flex flex-col items-center justify-center">
-      <div className="min-w-[600px] bg-gray-100 py-16 px-24 border border-black/10 rounded-lg shadow-md">
+    <div className="flex flex-row gap-16 items-center justify-center">
+      <div className="min-w-[600px] bg-gray-100 py-12 px-24 border border-black/10 rounded-lg shadow-md">
         <h1 className="text-center text-2xl">
           Welcome to <span className="text-cyan-600">ChatApp</span>
         </h1>
@@ -151,6 +152,15 @@ const SignUp = () => {
             </Link>
           </div>
         </form>
+      </div>
+      <div className="">
+        <img
+        className="object-cover rounded-full"
+          src={loginImg}
+          height={650}
+          width={650}
+          alt="woman on bed using laptop"
+        />
       </div>
     </div>
   );
