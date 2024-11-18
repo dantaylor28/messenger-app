@@ -37,7 +37,7 @@ const SignUp = () => {
           <div className="mt-5">
             <label htmlFor="full-name">
               <input
-                className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
+                className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-text"
                 id="full-name"
                 type="text"
                 placeholder="Full Name"
@@ -51,7 +51,7 @@ const SignUp = () => {
           <div className="mt-5">
             <label htmlFor="username">
               <input
-                className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
+                className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-text"
                 id="username"
                 type="text"
                 placeholder="Username"
@@ -65,7 +65,7 @@ const SignUp = () => {
           <div className="mt-5">
             <label htmlFor="email">
               <input
-                className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
+                className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-text"
                 id="email"
                 type="email"
                 placeholder="Email"
@@ -79,7 +79,7 @@ const SignUp = () => {
           <div className="mt-5">
             <label htmlFor="password">
               <input
-                className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
+                className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-text"
                 id="password"
                 type="password"
                 placeholder="Password"
@@ -93,7 +93,7 @@ const SignUp = () => {
           <div className="mt-5">
             <label htmlFor="confirm-password">
               <input
-                className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
+                className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-text"
                 id="confirm-password"
                 type="password"
                 placeholder="Confirm Password"
@@ -112,7 +112,7 @@ const SignUp = () => {
             <div>
               <label htmlFor="age">
                 <input
-                  className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
+                  className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-text"
                   id="age"
                   placeholder="Age"
                   type="number"

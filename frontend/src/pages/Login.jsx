@@ -26,7 +26,7 @@ const Login = () => {
           <div className="mt-5">
             <label htmlFor="username">
               <input
-                className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
+                className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-text"
                 type="text"
                 placeholder="Enter Username"
                 value={username}
@@ -37,7 +37,7 @@ const Login = () => {
           <div className="mt-5">
             <label htmlFor="password">
               <input
-                className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-pointer"
+                className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-text"
                 type="password"
                 placeholder="Enter Password"
                 value={password}
