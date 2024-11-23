@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useLogin from "../hooks/useLogin";
+import loginImg from "../assets/login-img.jpg";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -13,7 +14,7 @@ const Login = () => {
     await loginUser(username, password);
   };
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-row gap-16 items-center justify-center">
       <div className="min-w-[600px] bg-gray-100 py-16 px-24 border border-black/10 rounded-lg shadow-md">
         <h1 className="text-center text-2xl">
           Welcome to <span className="text-cyan-600">ChatApp</span>
@@ -57,11 +58,24 @@ const Login = () => {
 
           <div className="mt-3 text-xs text-center">
             Don't have an account?{" "}
-            <Link to={"/signup"} className="text-orange-600 hover:underline cursor-pointer">
+            <Link
+              to={"/signup"}
+              className="text-orange-600 hover:underline cursor-pointer"
+            >
               Sign up here
             </Link>
           </div>
         </form>
+      </div>
+
+      <div className="">
+        <img
+          className="object-cover rounded-full"
+          src={loginImg}
+          height={650}
+          width={650}
+          alt="man using mobile phone"
+        />
       </div>
     </div>
   );
