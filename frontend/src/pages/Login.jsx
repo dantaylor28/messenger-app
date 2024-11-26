@@ -70,7 +70,7 @@ const Login = () => {
 
       <div className="">
         <img
-          className="object-cover rounded-full"
+          className="object-cover rounded-full border-4 border-cyan-800/30"
           src={loginImg}
           height={650}
           width={650}

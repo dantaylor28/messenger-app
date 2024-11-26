@@ -28,7 +28,7 @@ const SignUp = () => {
     <div className="flex flex-row gap-16 items-center justify-center">
       <div className="">
         <img
-          className="object-cover rounded-full"
+          className="object-cover rounded-full border-4 border-cyan-800/20"
           src={signupImg}
           height={650}
           width={650}
