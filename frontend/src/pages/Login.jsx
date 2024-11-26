@@ -15,7 +15,7 @@ const Login = () => {
   };
   return (
     <div className="flex flex-row gap-16 items-center justify-center">
-      <div className="min-w-[600px] bg-gray-100 py-16 px-24 border border-black/10 rounded-lg shadow-md">
+      <div className="min-w-[600px] min-h-[450px] bg-gray-100 py-16 px-24 border border-black/10 rounded-lg shadow-md">
         <h1 className="text-center text-2xl">
           Welcome to <span className="text-cyan-600">ChatApp</span>
         </h1>
