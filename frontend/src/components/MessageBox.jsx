@@ -13,7 +13,7 @@ const MessageBox = () => {
   }, [setSelectedChat]);
 
   return (
-    <div className="flex flex-col min-w-[550px]">
+    <div className="flex flex-col w-[800px] h-[700px]">
       {!selectedChat ? (
         <SelectChat />
       ) : (
