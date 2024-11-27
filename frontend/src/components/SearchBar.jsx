@@ -33,7 +33,7 @@ const SearchBar = () => {
         onChange={(e) => setSearch(e.target.value)}
         type="text"
         placeholder="Search for a user"
-        className="border border-black"
+        className="border border-black/20 w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-text"
       />
       <button type="submit">Search</button>
     </form>
