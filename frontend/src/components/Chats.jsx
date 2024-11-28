@@ -5,7 +5,7 @@ import useGetChats from "../hooks/useGetChats";
 const Chats = () => {
   const { sendingData, chats } = useGetChats();  
   return (
-    <div className="flex flex-col py-4 overflow-auto">
+    <div className="flex flex-col overflow-auto mt-8">
       {chats.map((chat) => (
         <Chat key={chat._id} chat={chat}/>
       ))}

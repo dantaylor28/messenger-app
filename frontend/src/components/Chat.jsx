@@ -8,26 +8,25 @@ const Chat = ({ chat }) => {
   return (
     <>
       <div
-        className={`flex gap-2 items-center cursor-pointer hover:bg-gray-200 ${
+        className={`flex gap-4 py-2.5 px-2 rounded-sm items-center cursor-pointer hover:bg-gray-200 ${
           isSelected ? "bg-gray-200" : ""
         }`}
         onClick={() => setSelectedChat(chat)}
       >
         <div>
-          <div className="w-12 rounded-full">
+          <div className="w-14 rounded-full border border-black/10">
             <img src={chat.profileImage} alt="user avatar" />
           </div>
         </div>
 
         <div className="flex flex-col flex-1">
           <div className="flex gap-3 justify-between">
-            <p>{chat.fullName}</p>
+            <p className="tracking-wide capitalize">{chat.fullName}</p>
             <span className="h-3 w-3 rounded-full bg-green-500 mt-1.5"></span>
           </div>
         </div>
       </div>
-
-      <div className="h-1 bg-gray-200" />
+      <hr />
     </>
   );
 };
