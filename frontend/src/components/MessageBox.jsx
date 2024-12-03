@@ -3,6 +3,7 @@ import Messages from "./Messages";
 import MessageBar from "./MessageBar";
 import { useChatContext } from "../context/ChatContext";
 import { useAuthContext } from "../context/AuthContext";
+import { PiHandWavingThin } from "react-icons/pi";
 
 const MessageBox = () => {
   const { selectedChat, setSelectedChat } = useChatContext();
@@ -33,12 +34,15 @@ const MessageBox = () => {
 export default MessageBox;
 
 const SelectChat = () => {
-  const {authenticatedUser} = useAuthContext()
+  const { authenticatedUser } = useAuthContext();
   return (
-    <div className="flex items-center justify-center w-full h-full">
-      <div className="">
-        <p>Hi {authenticatedUser.fullName}👋</p>
-        <p>Choose a chat to begin!</p>
+    <div className="flex flex-col items-center justify-center w-full h-full mb-40">
+      <div>
+        <PiHandWavingThin className="h-32 w-32 items-center justify-center text-cyan-800" />
+      </div>
+      <div className="text-center mt-3 text-xl font-extralight tracking-wide">
+        <p>Hey {authenticatedUser.fullName}!</p>
+        <p>Select a chat and start messaging!😃</p>
       </div>
     </div>
   );
