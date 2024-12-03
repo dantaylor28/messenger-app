@@ -7,8 +7,7 @@ const LogoutBtn = () => {
   return (
     <div className="mt-auto">
       {!sendingData ? (<div className="cursor-pointer" onClick={logoutUser}>
-        Logout
-        <CiLogout />
+        <CiLogout className="h-8 w-8 text-cyan-600 hover:text-cyan-700 hover:scale-110 transition"/>
       </div>) : (
         <span>
           Loading..
