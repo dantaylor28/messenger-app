@@ -1,5 +1,6 @@
 import React from "react";
 import useLogout from "../hooks/useLogout";
+import { CiLogout } from "react-icons/ci";
 
 const LogoutBtn = () => {
   const { sendingData, logoutUser } = useLogout();
@@ -7,6 +8,7 @@ const LogoutBtn = () => {
     <div className="mt-auto">
       {!sendingData ? (<div className="cursor-pointer" onClick={logoutUser}>
         Logout
+        <CiLogout />
       </div>) : (
         <span>
           Loading..
