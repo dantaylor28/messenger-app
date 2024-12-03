@@ -14,15 +14,16 @@ const Chat = ({ chat }) => {
         onClick={() => setSelectedChat(chat)}
       >
         <div>
-          <div className="w-14 rounded-full border border-black/10">
+          <div className="w-14 rounded-full border border-black/10 relative">
             <img src={chat.profileImage} alt="user avatar" />
+            <span className="h-3 w-3 rounded-full bg-green-500 absolute top-[-1px] right-[3.5px]"></span>
           </div>
         </div>
 
         <div className="flex flex-col flex-1">
           <div className="flex gap-3 justify-between">
             <p className="tracking-wide capitalize">{chat.fullName}</p>
-            <span className="h-3 w-3 rounded-full bg-green-500 mt-1.5"></span>
+            {/* <span className="h-3 w-3 rounded-full bg-green-500 mt-1.5"></span> */}
           </div>
         </div>
       </div>
