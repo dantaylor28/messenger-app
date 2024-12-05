@@ -21,7 +21,7 @@ const Chat = ({ chat }) => {
         </div>
 
         <div className="flex flex-col flex-1">
-          <div className="flex gap-3 justify-between">
+          <div>
             <p className="tracking-wide capitalize">{chat.fullName}</p>
             {/* <span className="h-3 w-3 rounded-full bg-green-500 mt-1.5"></span> */}
           </div>
