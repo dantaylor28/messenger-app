@@ -19,9 +19,15 @@ const MessageBox = () => {
         <SelectChat />
       ) : (
         <>
-          <div className="bg-gray-200 px-2 py-4 mb-5">
-            <span>To:</span> <span>{selectedChat.fullName}</span>
+          <div className="flex gap-4 items-center ml-10 mt-4">
+            <div className="w-14 rounded-full border border-black/10">
+              <img src={selectedChat.profileImage} alt="user avatar" />
+            </div>
+            <div>
+              <p className="tracking-wide capitalize font-light">{selectedChat.fullName}</p>
+            </div>
           </div>
+          <hr className="my-4 mx-8"/>
 
           <Messages />
           <MessageBar />
@@ -41,7 +47,7 @@ const SelectChat = () => {
         <PiHandWavingThin className="h-32 w-32 items-center justify-center text-cyan-800" />
       </div>
       <div className="text-center mt-3 text-xl font-extralight tracking-wide">
-        <p>Hey {authenticatedUser.fullName}!</p>
+        <p className="capitalize">Hey {authenticatedUser.fullName}!</p>
         <p>Select a chat and start messaging!😃</p>
       </div>
     </div>

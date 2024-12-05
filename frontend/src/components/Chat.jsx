@@ -22,7 +22,7 @@ const Chat = ({ chat }) => {
 
         <div className="flex flex-col flex-1">
           <div>
-            <p className="tracking-wide capitalize">{chat.fullName}</p>
+            <p className="tracking-wide capitalize font-light">{chat.fullName}</p>
             {/* <span className="h-3 w-3 rounded-full bg-green-500 mt-1.5"></span> */}
           </div>
         </div>
