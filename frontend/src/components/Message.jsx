@@ -10,23 +10,41 @@ const Message = ({ message }) => {
   const profileImage = sentFromMe
     ? authenticatedUser.profileImage
     : selectedChat?.profileImage;
-  const chatBubbleLayout = sentFromMe ? "ml-72" : "";
+  const chatBubbleLayout = sentFromMe ? "justify-end" : "items-start";
   const chatBubbleBg = sentFromMe ? "bg-green-500" : "";
   const formattedTime = formatTime(message.createdAt);
 
+  const chatBubble = <><div className="border border-black/15 p-2 rounded-xl max-w-[35%]">{message.message}</div></>
+
   return (
-    <div className={`mb-3 ${chatBubbleLayout}`}>
-      <div className="flex items-center">
-        <div>
-          <div className="w-10 rounded-full">
-            <img src={profileImage} alt="chat user avatar" />
-          </div>
-        </div>
-        <div className={`border border-black p-2 ${chatBubbleBg}`}>
-          {message.message}
-        </div>
+    // <div className={`mb-3 flex ${chatBubbleLayout}`}>
+    //   <div className="flex items-center space-x-4">
+    //     <div>
+    //       <div className={`w-10 rounded-full ${profileImageLayout}`}>
+    //         <img src={profileImage} alt="chat user avatar" />
+    //       </div>
+    //     </div>
+    //     <div className={`border border-black p-2 rounded-lg ${chatBubbleBg}`}>
+    //       {message.message}
+    //     </div>
+    //   </div>
+    //   <div className="text-xs">{formattedTime}</div>
+    // </div>
+
+    <div className={`mb-3 flex space-x-3 ${chatBubbleLayout}`}>
+      {sentFromMe ? (
+        chatBubble
+      ) : (
+        ""
+      )}
+      <div className="h-10 w-10 rounded-full border flex">
+        <img src={profileImage} alt="chat user avatar" />
       </div>
-      <div className="text-xs ml-10">{formattedTime}</div>
+      {sentFromMe ? (
+        ""
+      ) : (
+        chatBubble
+      )}
     </div>
   );
 };
