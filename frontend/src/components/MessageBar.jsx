@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import useSendMessage from "../hooks/useSendMessage";
+import { IoSend } from "react-icons/io5";
 
 const MessageBar = () => {
   const [message, setMessage] = useState("");
@@ -12,11 +13,11 @@ const MessageBar = () => {
   };
   return (
     <form onSubmit={handleSubmit}>
-      <div className="w-full relative">
+      <div className="relative">
         <input
           type="text"
           placeholder="Enter message"
-          className="w-full border border-black"
+          className="border border-black/20 w-full h-10 rounded-sm text-md pl-2 shadow-sm cursor-text"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
@@ -24,7 +25,7 @@ const MessageBar = () => {
           type="submit"
           className="absolute inset-y-0 end-0 items-center pe-3"
         >
-          {sendingData ? <span>Loading..</span> : "Send"}
+          {sendingData ? <span>Loading..</span> : <IoSend className="h-[22px] w-[22px] text-cyan-600"/>}
         </button>
       </div>
     </form>
