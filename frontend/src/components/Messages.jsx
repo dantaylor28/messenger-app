@@ -15,7 +15,11 @@ const Messages = () => {
   return (
     <div className="flex-1 overflow-auto px-4">
       {!sendingData && messages.length === 0 && (
-        <p>Send a message to start the chat!</p>
+        <div className="flex flex-col items-center w-full mt-40">
+          <p className="text-center mt-3 text-xl font-extralight tracking-wide">
+            Send a message to start the chat!
+          </p>
+        </div>
       )}
       {sendingData && "Loading messages.."}
 
