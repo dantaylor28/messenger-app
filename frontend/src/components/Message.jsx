@@ -11,7 +11,7 @@ const Message = ({ message }) => {
     ? authenticatedUser.profileImage
     : selectedChat?.profileImage;
   const chatBubbleLayout = sentFromMe ? "justify-end" : "items-start";
-  const chatBubbleBg = sentFromMe ? "bg-green-500" : "";
+  const chatBubbleBg = sentFromMe ? "bg-cyan-500 text-white" : "";
   const timeLayout = sentFromMe ? "justify-end mr-14" : "items-start ml-14";
   const formattedTime = formatTime(message.createdAt);
 
