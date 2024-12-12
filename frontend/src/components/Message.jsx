@@ -17,7 +17,7 @@ const Message = ({ message }) => {
 
   const chatBubble = (
     <>
-      <div className={`border border-black/15 p-2 rounded-xl max-w-[35%] ${chatBubbleBg}`}>
+      <div className={`border border-black/15 p-2 rounded-xl max-w-[35%] break-words ${chatBubbleBg}`}>
         {message.message}
       </div>
     </>
