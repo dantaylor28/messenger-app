@@ -17,7 +17,7 @@ const MessageBar = () => {
         <input
           type="text"
           placeholder="Enter message"
-          className="border-y border-r border-black/20 w-full h-12 rounded-sm text-md pl-2 shadow-sm cursor-text"
+          className="border-y border-r border-black/20 w-full h-12 rounded-sm text-md pl-2 shadow-sm cursor-text pr-12"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
