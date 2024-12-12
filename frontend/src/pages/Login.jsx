@@ -49,10 +49,10 @@ const Login = () => {
 
           <div className="text-center mt-8">
             <button
-              className="w-full h-10 rounded-sm bg-cyan-600 text-white border border-black/10 hover:bg-cyan-700 cursor-pointer"
+              className="w-full h-10 rounded-sm bg-cyan-600 text-white border border-black/10 hover:bg-cyan-700 cursor-pointer flex items-center justify-center"
               disabled={sendingData}
             >
-              {sendingData ? <span>Loading..</span> : "Login"}
+              {sendingData ? <div className="animate-spin h-5 w-5 rounded-full border-b-2 border-white"></div> : "Login"}
             </button>
           </div>
 
