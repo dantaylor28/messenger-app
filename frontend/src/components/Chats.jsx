@@ -3,13 +3,17 @@ import Chat from "./Chat";
 import useGetChats from "../hooks/useGetChats";
 
 const Chats = () => {
-  const { sendingData, chats } = useGetChats();  
+  const { sendingData, chats } = useGetChats();
   return (
     <div className="flex flex-col overflow-auto mt-8">
       {chats.map((chat) => (
-        <Chat key={chat._id} chat={chat}/>
+        <Chat key={chat._id} chat={chat} />
       ))}
-      {sendingData ? <span>Loading..</span> : null}
+      <div className="flex items-center justify-center p-2">
+        {sendingData ? (
+          <div className="animate-spin h-5 w-5 rounded-full border-b-2 border-cyan-800"></div>
+        ) : null}
+      </div>
     </div>
   );
 };
