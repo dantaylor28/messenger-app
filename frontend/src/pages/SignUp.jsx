@@ -145,10 +145,14 @@ const SignUp = () => {
 
           <div className="text-center mt-8">
             <button
-              className="w-full h-10 rounded-sm bg-cyan-600 text-white border border-black/10 hover:bg-cyan-700 cursor-pointer"
+              className="flex items-center justify-center w-full h-10 rounded-sm bg-cyan-600 text-white border border-black/10 hover:bg-cyan-700 cursor-pointer"
               disabled={sendingData}
             >
-              {sendingData ? <span>Loading..</span> : "Create Account"}
+              {sendingData ? (
+                <div className="animate-spin h-5 w-5 rounded-full border-b-2 border-white"></div>
+              ) : (
+                "Create Account"
+              )}
             </button>
           </div>
 
