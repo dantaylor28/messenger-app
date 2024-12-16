@@ -25,7 +25,11 @@ const MessageBar = () => {
           type="submit"
           className="absolute inset-y-0 end-0 items-center pe-3"
         >
-          {sendingData ? <span>Loading..</span> : <IoSend className="h-[22px] w-[22px] text-cyan-600 hover:text-cyan-700 hover:translate-x-0.5 transition hover:cursor-pointer"/>}
+          {sendingData ? (
+            <div className="animate-spin h-5 w-5 rounded-full border-b-2 border-cyan-800"></div>
+          ) : (
+            <IoSend className="h-[22px] w-[22px] text-cyan-600 hover:text-cyan-700 hover:translate-x-0.5 transition hover:cursor-pointer" />
+          )}
         </button>
       </div>
     </form>
