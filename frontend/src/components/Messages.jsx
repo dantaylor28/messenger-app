@@ -16,7 +16,7 @@ const Messages = () => {
 
   return (
     <div className="flex-1 overflow-auto px-4">
-      {/* {!sendingData && messages.length === 0 && (
+      {!sendingData && messages.length === 0 && (
         <div className="flex flex-col items-center w-full mt-20">
           <div>
             <PiChatDotsThin className="h-32 w-32 items-center justify-center text-cyan-800" />
@@ -25,8 +25,8 @@ const Messages = () => {
             Send a message to start the chat!
           </p>
         </div>
-      )} */}
-      {!sendingData && <ChatSkeleton />}
+      )}
+      {sendingData && [...Array(4)].map((_, index) => <ChatSkeleton key={index} />)}
 
       {!sendingData &&
         messages.length > 0 &&
