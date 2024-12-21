@@ -68,7 +68,7 @@ const Login = () => {
         </form>
       </div>
 
-      <div className="">
+      <div className="hidden lg:flex">
         <img
           className="object-cover rounded-full border-4 border-cyan-800/30"
           src={loginImg}
