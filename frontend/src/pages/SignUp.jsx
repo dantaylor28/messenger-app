@@ -25,8 +25,8 @@ const SignUp = () => {
     await signupUser(userInputs);
   };
   return (
-    <div className="flex flex-row gap-16 items-center justify-center">
-      <div className="">
+    <div className="flex flex-row gap-12 lg:gap-16 items-center justify-center lg:px-5">
+      <div className="hidden lg:flex">
         <img
           className="object-cover rounded-full border-4 border-cyan-800/20"
           src={signupImg}
@@ -36,7 +36,7 @@ const SignUp = () => {
         />
       </div>
 
-      <div className="min-w-[600px] bg-gray-100 py-12 px-24 border border-black/10 rounded-lg shadow-md">
+      <div className="sm:min-w-[500px] md:min-w-[650px] lg:min-w-[500px] xl:min-w-[650px] bg-gray-100 py-16 sm:px-24 border border-black/10 rounded-lg shadow-md px-12 m-5">
         <h1 className="text-center text-2xl">
           Welcome to <span className="text-cyan-600">ChatApp</span>
         </h1>
