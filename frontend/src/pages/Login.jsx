@@ -14,8 +14,8 @@ const Login = () => {
     await loginUser(username, password);
   };
   return (
-    <div className="flex flex-row gap-16 items-center justify-center">
-      <div className="min-w-[600px] min-h-[450px] bg-gray-100 py-16 px-24 border border-black/10 rounded-lg shadow-md">
+    <div className="flex flex-row gap-12 lg:gap-16 items-center justify-center lg:px-5">
+      <div className="sm:min-w-[500px] md:min-w-[650px] lg:min-w-[500px] xl:min-w-[650px] min-h-[450px] bg-gray-100 py-16 sm:px-24 border border-black/10 rounded-lg shadow-md m-5 px-12">
         <h1 className="text-center text-2xl">
           Welcome to <span className="text-cyan-600">ChatApp</span>
         </h1>
