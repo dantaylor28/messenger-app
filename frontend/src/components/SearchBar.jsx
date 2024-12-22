@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useChatContext } from "../context/ChatContext";
 import useGetChats from "../hooks/useGetChats";
 import toast from "react-hot-toast"
+import { FaMagnifyingGlass } from "react-icons/fa6";
 
 const SearchBar = () => {
   const [search, setSearch] = useState("");
@@ -27,7 +28,7 @@ const SearchBar = () => {
   };
 
   return (
-    <form className="flex items-center gap-2" onSubmit={handleSubmit}>
+    <form className="flex items-center gap-2 relative" onSubmit={handleSubmit}>
       <input
         value={search}
         onChange={(e) => setSearch(e.target.value)}
@@ -35,7 +36,12 @@ const SearchBar = () => {
         placeholder="Search for a user"
         className="border border-black/20 w-full h-9 rounded-sm text-md pl-2 shadow-sm cursor-text"
       />
-      <button type="submit" className="w-24 h-9 rounded-sm bg-cyan-600 text-white border border-black/10 hover:bg-cyan-700 cursor-pointer">Search</button>
+      <button
+          type="submit"
+          className="absolute inset-y-0 end-0 items-center pe-3"
+        >
+          <FaMagnifyingGlass className="text-cyan-600 hover:text-cyan-700 hover:scale-105 transition" />
+        </button>
     </form>
   );
 };
