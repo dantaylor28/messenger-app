@@ -9,7 +9,7 @@ const GenderCheckbox = ({ onCheckboxChange, selectedGender }) => {
             selectedGender === "male" ? "selected" : ""
           }`}
         >
-          <span>Male</span>
+          <span className="text-sm">Male</span>
           <input
             type="checkbox"
             checked={selectedGender === "male"}
@@ -24,7 +24,7 @@ const GenderCheckbox = ({ onCheckboxChange, selectedGender }) => {
             selectedGender === "female" ? "selected" : ""
           }`}
         >
-          <span>Female</span>
+          <span className="text-sm">Female</span>
           <input
             type="checkbox"
             checked={selectedGender === "female"}
@@ -39,7 +39,7 @@ const GenderCheckbox = ({ onCheckboxChange, selectedGender }) => {
             selectedGender === "prefer not to say" ? "selected" : ""
           }`}
         >
-          <span>Prefer not to say</span>
+          <span className="text-sm">Prefer not to say</span>
           <input
             type="checkbox"
             checked={selectedGender === "prefer not to say"}
