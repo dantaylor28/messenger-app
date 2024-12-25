@@ -5,7 +5,7 @@ import LogoutBtn from './LogoutBtn'
 
 const Sidebar = () => {
   return (
-    <div className='flex flex-col min-w-[400px] border border-black/10 rounded-sm p-5'>
+    <div className='hidden sm:flex flex-col min-w-[400px] border border-black/10 rounded-sm p-5'>
         <SearchBar />
         <Chats />
         <LogoutBtn />
