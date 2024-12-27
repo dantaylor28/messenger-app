@@ -15,7 +15,7 @@ const Messages = () => {
   }, [messages]);
 
   return (
-    <div className="flex-1 overflow-auto px-4">
+    <div className="flex-1 overflow-auto px-4 w-[100vw] md:w-full">
       {!sendingData && messages.length === 0 && (
         <div className="flex flex-col items-center w-full mt-20">
           <div>
