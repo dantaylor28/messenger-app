@@ -19,7 +19,7 @@ const MessageBox = () => {
         <SelectChat />
       ) : (
         <>
-          <div className="flex gap-4 items-center ml-10 mt-4">
+          <div className="flex gap-4 items-center ml-24 md:ml-10 mt-4">
             <div className="w-14 rounded-full border border-black/10">
               <img src={selectedChat.profileImage} alt="user avatar" />
             </div>
