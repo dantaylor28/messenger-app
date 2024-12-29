@@ -8,8 +8,8 @@ const Chat = ({ chat }) => {
   return (
     <>
       <div
-        className={`flex gap-4 py-2.5 px-2 rounded-sm items-center cursor-pointer hover:bg-gray-200 ${
-          isSelected ? "bg-gray-200" : ""
+        className={`flex gap-4 py-2.5 px-2 rounded-sm items-center cursor-pointer hover:bg-cyan-700 md:hover:bg-gray-200 ${
+          isSelected ? "bg-cyan-700 md:bg-gray-200" : ""
         }`}
         onClick={() => setSelectedChat(chat)}
       >
