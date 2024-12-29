@@ -13,7 +13,7 @@ const Chat = ({ chat }) => {
         }`}
         onClick={() => setSelectedChat(chat)}
       >
-        <div>
+        <div className="py-1.5">
           <div className="w-14 rounded-full border border-black/10 relative">
             <img src={chat.profileImage} alt="user avatar" />
             <span className="h-3 w-3 rounded-full bg-green-500 absolute top-[-1px] right-[3.5px]"></span>
@@ -26,7 +26,7 @@ const Chat = ({ chat }) => {
           </div>
         </div>
       </div>
-      <hr />
+      <hr className="bg-white opacity-20 md:bg-none md:opacity-100" />
     </>
   );
 };
