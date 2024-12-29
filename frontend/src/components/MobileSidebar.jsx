@@ -16,7 +16,7 @@ const MobileSidebar = () => {
             <RxHamburgerMenu />
         </button>
     )}
-      <div className={`md:hidden top-0 left-0 w-[50vw] py-10 px-8 fixed h-full bg-cyan-800 text-white z-10 ease-in-out duration-700 ${expanded ? "-translate-x-0" : "-translate-x-full"}`}>
+      <div className={`md:hidden top-0 left-0 w-[70vw] py-10 px-8 fixed h-full bg-cyan-800 text-white z-10 ease-in-out duration-700 ${expanded ? "-translate-x-0" : "-translate-x-full"}`}>
         <div className="flex flex-col items-center justify-center pt-10">
             <SearchBar />
             <Chats />
