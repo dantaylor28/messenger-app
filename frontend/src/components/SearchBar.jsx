@@ -28,19 +28,19 @@ const SearchBar = () => {
   };
 
   return (
-    <form className="flex items-center gap-2 relative" onSubmit={handleSubmit}>
+    <form className="flex items-center gap-2 relative w-full" onSubmit={handleSubmit}>
       <input
         value={search}
         onChange={(e) => setSearch(e.target.value)}
         type="text"
         placeholder="Search for a user"
-        className="border border-black/20 w-full h-9 rounded-sm text-md pl-2 shadow-sm cursor-text"
+        className="text-white md:text-black placeholder:text-white/50 md:placeholder:text-black/40 bg-cyan-800 md:bg-white border border-white/50 md:border-black/20 w-full h-9 rounded-sm text-md pl-2 shadow-sm cursor-text"
       />
       <button
           type="submit"
           className="absolute inset-y-0 end-0 items-center pe-3"
         >
-          <FaMagnifyingGlass className="text-cyan-600 hover:text-cyan-700 hover:scale-105 transition" />
+          <FaMagnifyingGlass className="text-white/60 hover:text-white/80 md:text-cyan-600 md:hover:text-cyan-700 hover:scale-105 transition" />
         </button>
     </form>
   );
