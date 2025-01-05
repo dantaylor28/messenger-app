@@ -33,7 +33,7 @@ const MobileSidebar = () => {
         }`}
       >
         <div className="flex flex-col justify-center w-full pt-10">
-          <SearchBar />
+          <SearchBar onSearchBarClick={handleSidebarClick}/>
           <Chats onChatClick={handleSidebarClick} />
           <LogoutBtn />
         </div>
