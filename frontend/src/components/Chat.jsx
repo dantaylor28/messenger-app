@@ -1,7 +1,7 @@
 import React from "react";
 import { useChatContext } from "../context/ChatContext";
 
-const Chat = ({ chat }) => {
+const Chat = ({ chat, onClick }) => {
   const { selectedChat, setSelectedChat } = useChatContext();
 
   const isSelected = selectedChat?._id === chat._id;
@@ -11,7 +11,7 @@ const Chat = ({ chat }) => {
         className={`flex gap-4 py-2.5 px-2 rounded-sm items-center cursor-pointer hover:bg-cyan-700 md:hover:bg-gray-200 ${
           isSelected ? "bg-cyan-700 md:bg-gray-200" : ""
         }`}
-        onClick={() => setSelectedChat(chat)}
+        onClick={() => { setSelectedChat(chat); onClick();}}
       >
         <div className="py-1.5">
           <div className="w-12 md:w-14 rounded-full border border-black/10 relative">
