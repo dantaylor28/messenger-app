@@ -6,8 +6,8 @@ const Chats = ({ onChatClick }) => {
   const { sendingData, chats } = useGetChats();
   return (
     <div className="flex flex-col overflow-auto mt-8 w-full px-3">
-      {chats.map((chat) => (
-        <Chat key={chat._id} chat={chat} onClick={onChatClick} />
+      {chats.map((chat, idx) => (
+        <Chat key={chat._id} chat={chat} onClick={onChatClick} lastIndex={idx === chats.length - 1} />
       ))}
       <div className="flex items-center justify-center p-2">
         {sendingData ? (

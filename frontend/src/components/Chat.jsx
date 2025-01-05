@@ -1,7 +1,7 @@
 import React from "react";
 import { useChatContext } from "../context/ChatContext";
 
-const Chat = ({ chat, onClick }) => {
+const Chat = ({ chat, onClick, lastIndex }) => {
   const { selectedChat, setSelectedChat } = useChatContext();
 
   const isSelected = selectedChat?._id === chat._id;
@@ -26,7 +26,7 @@ const Chat = ({ chat, onClick }) => {
           </div>
         </div>
       </div>
-      <hr className="bg-white opacity-20 md:bg-none md:opacity-100" />
+      {!lastIndex && <hr className="bg-white opacity-20 md:bg-none md:opacity-100" />}
     </>
   );
 };
