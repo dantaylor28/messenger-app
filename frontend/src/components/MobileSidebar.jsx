@@ -8,10 +8,12 @@ const MobileSidebar = () => {
   const [expanded, setExpanded] = useState(false);
   const sidebarRef = useRef(null);
 
+  // Close sidebar when a chat/search is selected/made
   const handleSidebarClick = () => {
     setExpanded(false);
   };
 
+  // Close sidebar when a user clicks outside it
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
