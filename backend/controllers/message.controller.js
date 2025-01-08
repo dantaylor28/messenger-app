@@ -1,5 +1,6 @@
 import Chat from "../models/chat.model.js";
 import Message from "../models/message.model.js";
+import { getReceiverSocketId } from "../socket/socket.js";
 
 export const sendMessage = async (req, res) => {
   try {
@@ -37,6 +38,12 @@ export const sendMessage = async (req, res) => {
     // This code does same as above but just runs parallel to eachother rather than one at a time.
     await Promise.all([chat.save(), newMessage.save()]);
 
+    const recieverSocketId = getReceiverSocketId(receiverId);
+    if (recieverSocketId) {
+      // io.to(<socketId>).emit() is used to send events to specific client
+      io.to(recieverSocketId).emit("newMessage", newMessage);
+    }
+
     res.status(201).json(newMessage);
   } catch (error) {
     console.log("Error in sendMessage controller", error.message);
@@ -54,7 +61,7 @@ export const getMessages = async (req, res) => {
       // Populate is a mongodb method which will populate with the actual messages rather than just a reference to them ie just the id.
     }).populate("messages");
 
-    // Return an empty array, if the chat doesn't exist/can't be found 
+    // Return an empty array, if the chat doesn't exist/can't be found
     if (!chat) return res.status(200).json([]);
 
     const messages = chat.messages;
