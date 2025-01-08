@@ -1,6 +1,6 @@
 import Chat from "../models/chat.model.js";
 import Message from "../models/message.model.js";
-import { getReceiverSocketId } from "../socket/socket.js";
+import { getReceiverSocketId, io } from "../socket/socket.js";
 
 export const sendMessage = async (req, res) => {
   try {
@@ -38,10 +38,10 @@ export const sendMessage = async (req, res) => {
     // This code does same as above but just runs parallel to eachother rather than one at a time.
     await Promise.all([chat.save(), newMessage.save()]);
 
-    const recieverSocketId = getReceiverSocketId(receiverId);
-    if (recieverSocketId) {
+    const receiverSocketId = getReceiverSocketId(receiverId);
+    if (receiverSocketId) {
       // io.to(<socketId>).emit() is used to send events to specific client
-      io.to(recieverSocketId).emit("newMessage", newMessage);
+      io.to(receiverSocketId).emit("newMessage", newMessage);
     }
 
     res.status(201).json(newMessage);
