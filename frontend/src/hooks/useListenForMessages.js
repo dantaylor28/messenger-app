@@ -9,6 +9,7 @@ const useListenForMessages = () => {
 
   useEffect(() => {
     socket?.on("newMessage", (newMessage) => {
+      newMessage.shouldPing = true;
       const sound = new Audio(notification);
       sound.play();
       setMessages([...messages, newMessage]);

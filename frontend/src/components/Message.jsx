@@ -14,10 +14,13 @@ const Message = ({ message }) => {
   const chatBubbleBg = sentFromMe ? "bg-cyan-500 text-white" : "";
   const timeLayout = sentFromMe ? "justify-end mr-14" : "items-start ml-14";
   const formattedTime = formatTime(message.createdAt);
+  const PingAnimation = message.shouldPing ? "ping" : "";
 
   const chatBubble = (
     <>
-      <div className={`border border-black/15 p-2 rounded-xl max-w-[35%] break-words ${chatBubbleBg}`}>
+      <div
+        className={`border border-black/15 p-2 rounded-xl max-w-[35%] break-words ${chatBubbleBg} ${PingAnimation}`}
+      >
         {message.message}
       </div>
     </>
