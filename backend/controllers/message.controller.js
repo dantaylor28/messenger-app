@@ -4,11 +4,17 @@ import { getReceiverSocketId, io } from "../socket/socket.js";
 
 export const sendMessage = async (req, res) => {
   try {
-    const { message } = req.body;
+    const { message, image } = req.body;
     // : changes name to receiverId
     const { id: receiverId } = req.params;
     // req.user attained from protectRoute function
     const senderId = req.user._id;
+
+    let imageUrl;
+    if (image) {
+      const uploadResponse = await cloudinary.uploader.upload(image);
+      imageUrl = uploadResponse.secure_url;
+    }
 
     // Find the chat which contains the 2 users.
     // Using mongoDB syntax below to find chat which contains the sender and receiver IDs
@@ -26,6 +32,7 @@ export const sendMessage = async (req, res) => {
       senderId,
       receiverId,
       message,
+      image: imageUrl,
     });
 
     if (newMessage) {
