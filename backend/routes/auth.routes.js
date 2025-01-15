@@ -1,6 +1,6 @@
 import express from "express";
 import {
-  AuthUser,
+  // AuthUser,
   login,
   logout,
   signup,
@@ -18,6 +18,6 @@ router.post("/logout", logout);
 
 router.put("/profile", protectRoute, updateProfile);
 
-router.get("/auth-user", protectRoute, AuthUser);
+// router.get("/auth-user", protectRoute, AuthUser);
 
 export default router;
