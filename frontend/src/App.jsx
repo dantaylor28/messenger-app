@@ -26,7 +26,7 @@ function App() {
         />
         <Route
           path="/profile"
-          element={authenticatedUser ? <Profile /> : <Login />}
+          element={authenticatedUser ? <Profile /> : <Navigate to="/login" />}
         />
       </Routes>
       <Toaster />
