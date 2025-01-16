@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import GenderCheckbox from "../components/GenderCheckbox";
 import useSignup from "../hooks/useSignup";
 import signupImg from "../assets/signup-img.jpg";
-import { TfiThemifyFavicon } from "react-icons/tfi";
+import { MessagesSquare } from 'lucide-react';
 
 const SignUp = () => {
   const [userInputs, setUserInputs] = useState({
@@ -181,7 +181,7 @@ const SignUp = () => {
         <div className="flex flex-col w-full text-center items-center justify-center">
           {/* Logo */}
           <div className="size-14 rounded-xl flex items-center justify-center bg-amber-400/30 mb-4">
-            <TfiThemifyFavicon className="size-7 text-amber-800" />
+            <MessagesSquare className="size-7 text-amber-800" />
           </div>
           <h1 className="text-2xl capitalize font-medium text-black tracking-wider mb-1">Create an account</h1>
           <p className="font-light text-black/60">Fill in the form to create your free profile</p>
