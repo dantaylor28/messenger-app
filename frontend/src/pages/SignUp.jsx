@@ -199,7 +199,7 @@ const SignUp = () => {
                 <span className="text-xs font-medium">Full Name</span>
               </label>
               <div className="flex items-center relative">
-                <input type="text" id="full-name" placeholder="John Doe" className="w-full bg-slate-100 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/60 peer" />
+                <input type="text" id="full-name" placeholder="John Doe" className="w-full bg-slate-100 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/60 peer focus:outline-none focus:border-black/40" />
                 <User className="absolute left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70"/>
               </div>
             </div>
