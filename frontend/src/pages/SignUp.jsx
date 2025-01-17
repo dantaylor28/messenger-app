@@ -1,6 +1,16 @@
-import { Lock, Mail, MessagesSquare, User, UserCheck, ShieldCheck, ChartColumn, ArrowUpDown } from "lucide-react";
+import {
+  Lock,
+  Mail,
+  MessagesSquare,
+  User,
+  UserCheck,
+  ShieldCheck,
+  ChartColumn,
+  ArrowUpDown,
+} from "lucide-react";
 import React, { useState } from "react";
 import useSignup from "../hooks/useSignup";
+import GenderCheckbox from "../components/GenderCheckbox";
 
 const SignUp = () => {
   const [userInputs, setUserInputs] = useState({
@@ -136,10 +146,10 @@ const SignUp = () => {
     //         </div>
     //       </div>
 
-          // <GenderCheckbox
-          //   onCheckboxChange={handleCheckboxChange}
-          //   selectedGender={userInputs.gender}
-          // />
+    // <GenderCheckbox
+    //   onCheckboxChange={handleCheckboxChange}
+    //   selectedGender={userInputs.gender}
+    // />
 
     //       <div className="text-center mt-8">
     //         <button
@@ -210,7 +220,7 @@ const SignUp = () => {
                 <User className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
               </div>
             </div>
-            
+
             {/* Username Input */}
             <div className="mb-3">
               <label htmlFor="username">
@@ -284,7 +294,10 @@ const SignUp = () => {
                   className="w-full bg-slate-100 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/60 peer focus:outline-none focus:border-black/40"
                   value={userInputs.confirmPassword}
                   onChange={(e) =>
-                    setUserInputs({ ...userInputs, confirmPassword: e.target.value })
+                    setUserInputs({
+                      ...userInputs,
+                      confirmPassword: e.target.value,
+                    })
                   }
                 />
                 <ShieldCheck className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
@@ -303,7 +316,7 @@ const SignUp = () => {
                   max="120"
                   id="age"
                   placeholder="25"
-                  className="w-[25%] bg-slate-100 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/60 peer focus:outline-none focus:border-black/40"
+                  className="w-[20%] bg-slate-100 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/60 peer focus:outline-none focus:border-black/40"
                   value={userInputs.age}
                   onChange={(e) =>
                     setUserInputs({ ...userInputs, age: e.target.value })
@@ -313,7 +326,10 @@ const SignUp = () => {
               </div>
             </div>
 
-            
+            <GenderCheckbox
+              onCheckboxChange={handleCheckboxChange}
+              selectedGender={userInputs.gender}
+            />
           </form>
         </div>
       </div>
