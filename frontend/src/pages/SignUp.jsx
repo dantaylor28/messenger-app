@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import GenderCheckbox from "../components/GenderCheckbox";
 import useSignup from "../hooks/useSignup";
 import signupImg from "../assets/signup-img.jpg";
-import { MessagesSquare } from 'lucide-react';
+import { MessagesSquare } from "lucide-react";
 
 const SignUp = () => {
   const [userInputs, setUserInputs] = useState({
@@ -176,15 +176,33 @@ const SignUp = () => {
         Cool pattern shit here
       </div>
 
-      {/* Right side - Sign up form */}
+      {/* Right side */}
       <div className="flex flex-col justify-center items-center">
-        <div className="flex flex-col w-full text-center items-center justify-center">
+        <div className="flex flex-col w-full text-center items-center justify-center mb-5">
           {/* Logo */}
           <div className="size-14 rounded-xl flex items-center justify-center bg-amber-400/30 mb-4 group hover:bg-amber-400/35">
             <MessagesSquare className="size-7 text-amber-800 group-hover:text-amber-900" />
           </div>
-          <h1 className="text-2xl capitalize font-medium text-black tracking-wider mb-1">Create an account</h1>
-          <p className="font-light text-black/60">Fill in the form to create your free profile</p>
+          <h1 className="text-2xl capitalize font-medium text-black tracking-wider mb-1">
+            Create an account
+          </h1>
+          <p className="font-light text-black/60">
+            Fill in the form to create your free profile
+          </p>
+        </div>
+
+        {/* Sign up form */}
+        <div>
+          <form onSubmit={handleSubmit} className="min-w-[400px]">
+            <div>
+              <label htmlFor="full-name">
+                <span className="text-xs font-medium">Full Name</span>
+              </label>
+              <div>
+                <input type="text" id="full-name" placeholder="John Doe" className="w-full bg-slate-100 border border-black/25 rounded-[4px] h-10 pl-2 placeholder:text-black/60" />
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     </div>
