@@ -1,9 +1,6 @@
+import { Lock, Mail, MessagesSquare, User, UserCheck, ShieldCheck } from "lucide-react";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import GenderCheckbox from "../components/GenderCheckbox";
 import useSignup from "../hooks/useSignup";
-import signupImg from "../assets/signup-img.jpg";
-import { MessagesSquare, User } from "lucide-react";
 
 const SignUp = () => {
   const [userInputs, setUserInputs] = useState({
@@ -53,10 +50,10 @@ const SignUp = () => {
     //             id="full-name"
     //             type="text"
     //             placeholder="Full Name"
-    //             value={userInputs.fullName}
-    //             onChange={(e) =>
-    //               setUserInputs({ ...userInputs, fullName: e.target.value })
-    //             }
+    // value={userInputs.fullName}
+    // onChange={(e) =>
+    //   setUserInputs({ ...userInputs, fullName: e.target.value })
+    // }
     //           />
     //         </label>
     //       </div>
@@ -194,15 +191,107 @@ const SignUp = () => {
         {/* Sign up form */}
         <div>
           <form onSubmit={handleSubmit} className="min-w-[400px]">
-            <div>
+            {/* Full name input */}
+            <div className="mb-3">
               <label htmlFor="full-name">
                 <span className="text-xs font-medium">Full Name</span>
               </label>
               <div className="flex items-center relative">
-                <input type="text" id="full-name" placeholder="John Doe" className="w-full bg-slate-100 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/60 peer focus:outline-none focus:border-black/40" />
-                <User className="absolute left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70"/>
+                <input
+                  type="text"
+                  id="full-name"
+                  placeholder="John Doe"
+                  className="w-full bg-slate-100 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/60 peer focus:outline-none focus:border-black/40"
+                  value={userInputs.fullName}
+                  onChange={(e) =>
+                    setUserInputs({ ...userInputs, fullName: e.target.value })
+                  }
+                />
+                <User className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
               </div>
             </div>
+            
+            {/* Username Input */}
+            <div className="mb-3">
+              <label htmlFor="username">
+                <span className="text-xs font-medium">Username</span>
+              </label>
+              <div className="flex items-center relative">
+                <input
+                  type="text"
+                  id="username"
+                  placeholder="JohnDoe123"
+                  className="w-full bg-slate-100 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/60 peer focus:outline-none focus:border-black/40"
+                  value={userInputs.username}
+                  onChange={(e) =>
+                    setUserInputs({ ...userInputs, username: e.target.value })
+                  }
+                />
+                <UserCheck className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
+              </div>
+            </div>
+
+            {/* Email input */}
+            <div className="mb-3">
+              <label htmlFor="email">
+                <span className="text-xs font-medium">Email Address</span>
+              </label>
+              <div className="flex items-center relative">
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="john.doe@email.com"
+                  className="w-full bg-slate-100 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/60 peer focus:outline-none focus:border-black/40"
+                  value={userInputs.email}
+                  onChange={(e) =>
+                    setUserInputs({ ...userInputs, email: e.target.value })
+                  }
+                />
+                <Mail className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
+              </div>
+            </div>
+
+            {/* Password input */}
+            <div className="mb-3">
+              <label htmlFor="password">
+                <span className="text-xs font-medium">Password</span>
+              </label>
+              <div className="flex items-center relative">
+                <input
+                  type="password"
+                  id="password"
+                  placeholder="••••••••••••"
+                  className="w-full bg-slate-100 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/60 peer focus:outline-none focus:border-black/40"
+                  value={userInputs.password}
+                  onChange={(e) =>
+                    setUserInputs({ ...userInputs, password: e.target.value })
+                  }
+                />
+                <Lock className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
+              </div>
+            </div>
+
+            {/* Confirm password input */}
+            <div className="mb-3">
+              <label htmlFor="confirm-password">
+                <span className="text-xs font-medium">Confirm Password</span>
+              </label>
+              <div className="flex items-center relative">
+                <input
+                  type="password"
+                  id="confirm-password"
+                  placeholder="••••••••••••"
+                  className="w-full bg-slate-100 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/60 peer focus:outline-none focus:border-black/40"
+                  value={userInputs.confirmPassword}
+                  onChange={(e) =>
+                    setUserInputs({ ...userInputs, confirmPassword: e.target.value })
+                  }
+                />
+                <ShieldCheck className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
+              </div>
+            </div>
+
+            
           </form>
         </div>
       </div>
