@@ -1,4 +1,4 @@
-import { Lock, Mail, MessagesSquare, User, UserCheck, ShieldCheck } from "lucide-react";
+import { Lock, Mail, MessagesSquare, User, UserCheck, ShieldCheck, ChartColumn, ArrowUpDown } from "lucide-react";
 import React, { useState } from "react";
 import useSignup from "../hooks/useSignup";
 
@@ -136,10 +136,10 @@ const SignUp = () => {
     //         </div>
     //       </div>
 
-    //       <GenderCheckbox
-    //         onCheckboxChange={handleCheckboxChange}
-    //         selectedGender={userInputs.gender}
-    //       />
+          // <GenderCheckbox
+          //   onCheckboxChange={handleCheckboxChange}
+          //   selectedGender={userInputs.gender}
+          // />
 
     //       <div className="text-center mt-8">
     //         <button
@@ -288,6 +288,28 @@ const SignUp = () => {
                   }
                 />
                 <ShieldCheck className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
+              </div>
+            </div>
+
+            {/* Age input */}
+            <div className="mb-3">
+              <label htmlFor="age">
+                <span className="text-xs font-medium">Age</span>
+              </label>
+              <div className="flex items-center relative">
+                <input
+                  type="number"
+                  min="10"
+                  max="120"
+                  id="age"
+                  placeholder="25"
+                  className="w-[25%] bg-slate-100 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/60 peer focus:outline-none focus:border-black/40"
+                  value={userInputs.age}
+                  onChange={(e) =>
+                    setUserInputs({ ...userInputs, age: e.target.value })
+                  }
+                />
+                <ArrowUpDown className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
               </div>
             </div>
 
