@@ -180,8 +180,8 @@ const SignUp = () => {
       <div className="flex flex-col justify-center items-center">
         <div className="flex flex-col w-full text-center items-center justify-center">
           {/* Logo */}
-          <div className="size-14 rounded-xl flex items-center justify-center bg-amber-400/30 mb-4">
-            <MessagesSquare className="size-7 text-amber-800" />
+          <div className="size-14 rounded-xl flex items-center justify-center bg-amber-400/30 mb-4 group hover:bg-amber-400/35">
+            <MessagesSquare className="size-7 text-amber-800 group-hover:text-amber-900" />
           </div>
           <h1 className="text-2xl capitalize font-medium text-black tracking-wider mb-1">Create an account</h1>
           <p className="font-light text-black/60">Fill in the form to create your free profile</p>
