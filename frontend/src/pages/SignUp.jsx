@@ -304,6 +304,12 @@ const SignUp = () => {
               </div>
             </div>
 
+            {/* Gender Input */}
+            <GenderCheckbox
+              onCheckboxChange={handleCheckboxChange}
+              selectedGender={userInputs.gender}
+            />
+
             {/* Age input */}
             <div className="mb-3">
               <label htmlFor="age">
@@ -325,11 +331,6 @@ const SignUp = () => {
                 <ArrowUpDown className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
               </div>
             </div>
-
-            <GenderCheckbox
-              onCheckboxChange={handleCheckboxChange}
-              selectedGender={userInputs.gender}
-            />
           </form>
         </div>
       </div>
