@@ -20,7 +20,7 @@ const GenderCheckbox = ({ onCheckboxChange, selectedGender }) => {
               type="checkbox"
               checked={selectedGender === "male"}
               onChange={() => onCheckboxChange("male")}
-              className="appearance-none h-3 w-3 border-2 border-white outline outline-gray-300 rounded-full bg-white checked:bg-cyan-600 hover:cursor-pointer"
+              className="appearance-none h-3 w-3 border-2 border-white outline outline-gray-300 rounded-full bg-white checked:bg-amber-500 hover:cursor-pointer"
             />
           </label>
         </div>
@@ -35,7 +35,7 @@ const GenderCheckbox = ({ onCheckboxChange, selectedGender }) => {
               type="checkbox"
               checked={selectedGender === "female"}
               onChange={() => onCheckboxChange("female")}
-              className="appearance-none h-3 w-3 border-2 border-white outline outline-gray-300 rounded-full bg-white checked:bg-cyan-600 hover:cursor-pointer"
+              className="appearance-none h-3 w-3 border-2 border-white outline outline-gray-300 rounded-full bg-white checked:bg-amber-500 hover:cursor-pointer"
             />
           </label>
         </div>
@@ -50,7 +50,7 @@ const GenderCheckbox = ({ onCheckboxChange, selectedGender }) => {
               type="checkbox"
               checked={selectedGender === "prefer not to say"}
               onChange={() => onCheckboxChange("prefer not to say")}
-              className="appearance-none h-3 w-3 border-2 border-white outline outline-gray-300 rounded-full bg-white checked:bg-cyan-600 hover:cursor-pointer"
+              className="appearance-none h-3 w-3 border-2 border-white outline outline-gray-300 rounded-full bg-white checked:bg-amber-500 hover:cursor-pointer"
             />
           </label>
         </div>
