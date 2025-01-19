@@ -6,12 +6,14 @@ import {
   UserCheck,
   ShieldCheck,
   ArrowUpDown,
-  EyeOff,
-  Eye,
 } from "lucide-react";
 import React, { useState } from "react";
 import useSignup from "../hooks/useSignup";
 import GenderCheckbox from "../components/GenderCheckbox";
+import {
+  DisplayPasswordBtn,
+  DisplayConfirmPasswordBtn,
+} from "../components/PasswordBtn";
 
 const SignUp = () => {
   const [userInputs, setUserInputs] = useState({
@@ -36,34 +38,6 @@ const SignUp = () => {
     e.preventDefault();
     await signupUser(userInputs);
   };
-
-  const displayPasswordBtn = (
-    <button
-      type="button"
-      className="absolute right-0 mr-2 flex items-center justify-center"
-      onClick={() => setDisplayPassword(!displayPassword)}
-    >
-      {displayPassword ? (
-        <EyeOff className="size-5 text-black/45 hover:text-black/70 transition" />
-      ) : (
-        <Eye className="size-5 text-black/45 hover:text-black/70 transition" />
-      )}
-    </button>
-  );
-
-  const displayConfirmPasswordBtn = (
-    <button
-      type="button"
-      className="absolute right-0 mr-2 flex items-center justify-center"
-      onClick={() => setDisplayConfirmPassword(!displayConfirmPassword)}
-    >
-      {displayConfirmPassword ? (
-        <EyeOff className="size-5 text-black/45 hover:text-black/70 transition" />
-      ) : (
-        <Eye className="size-5 text-black/45 hover:text-black/70 transition" />
-      )}
-    </button>
-  );
 
   return (
     <div className="min-h-screen grid lg:grid-cols-2">
@@ -167,7 +141,10 @@ const SignUp = () => {
                   }
                 />
                 <Lock className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
-                {displayPasswordBtn}
+                <DisplayPasswordBtn
+                  displayPassword={displayPassword}
+                  setDisplayPassword={setDisplayPassword}
+                />
               </div>
             </div>
 
@@ -191,7 +168,10 @@ const SignUp = () => {
                   }
                 />
                 <ShieldCheck className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
-                {displayConfirmPasswordBtn}
+                <DisplayConfirmPasswordBtn
+                  displayConfirmPassword={displayConfirmPassword}
+                  setDisplayConfirmPassword={setDisplayConfirmPassword}
+                />
               </div>
             </div>
 
