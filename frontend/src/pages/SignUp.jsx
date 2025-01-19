@@ -7,6 +7,8 @@ import {
   ShieldCheck,
   ChartColumn,
   ArrowUpDown,
+  EyeOff,
+  Eye,
 } from "lucide-react";
 import React, { useState } from "react";
 import useSignup from "../hooks/useSignup";
@@ -23,6 +25,8 @@ const SignUp = () => {
     gender: "",
   });
 
+  const [displayPassword, setDisplayPassword] = useState(false);
+
   const { sendingData, signupUser } = useSignup();
   const handleCheckboxChange = (gender) => {
     setUserInputs({ ...userInputs, gender });
@@ -32,151 +36,22 @@ const SignUp = () => {
     e.preventDefault();
     await signupUser(userInputs);
   };
+
+  const displayPasswordBtn = (
+    <button
+      type="button"
+      className="absolute right-0 mr-2 flex items-center justify-center"
+      onClick={() => setDisplayPassword(!displayPassword)}
+    >
+      {displayPassword ? (
+        <EyeOff className="size-5 text-black/45 hover:text-black/70 transition" />
+      ) : (
+        <Eye className="size-5 text-black/45 hover:text-black/70 transition" />
+      )}
+    </button>
+  );
+  
   return (
-    // <div className="flex flex-row gap-12 lg:gap-16 items-center justify-center lg:px-5">
-    //   <div className="hidden lg:flex">
-    //     <img
-    //       className="object-cover rounded-full border-4 border-cyan-800/20"
-    //       src={signupImg}
-    //       height={650}
-    //       width={650}
-    //       alt="woman on bed using laptop"
-    //     />
-    //   </div>
-
-    //   <div className="sm:min-w-[500px] md:min-w-[650px] lg:min-w-[500px] xl:min-w-[650px] bg-gray-100 py-16 sm:px-24 border border-black/10 rounded-lg shadow-md px-12 m-5">
-    //     <h1 className="text-center text-2xl">
-    //       Welcome to <span className="text-cyan-600">ChatApp</span>
-    //     </h1>
-    //     <h2 className="text-md mt-5 text-center opacity-70">
-    //       Sign up for an account
-    //     </h2>
-
-    //     <form onSubmit={handleSubmit}>
-    //       <div className="mt-5">
-    //         <label htmlFor="full-name">
-    //           <input
-    //             className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-text"
-    //             id="full-name"
-    //             type="text"
-    //             placeholder="Full Name"
-    // value={userInputs.fullName}
-    // onChange={(e) =>
-    //   setUserInputs({ ...userInputs, fullName: e.target.value })
-    // }
-    //           />
-    //         </label>
-    //       </div>
-    //       <div className="mt-5">
-    //         <label htmlFor="username">
-    //           <input
-    //             className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-text"
-    //             id="username"
-    //             type="text"
-    //             placeholder="Username"
-    //             value={userInputs.username}
-    //             onChange={(e) =>
-    //               setUserInputs({ ...userInputs, username: e.target.value })
-    //             }
-    //           />
-    //         </label>
-    //       </div>
-    //       <div className="mt-5">
-    //         <label htmlFor="email">
-    //           <input
-    //             className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-text"
-    //             id="email"
-    //             type="email"
-    //             placeholder="Email"
-    //             value={userInputs.email}
-    //             onChange={(e) =>
-    //               setUserInputs({ ...userInputs, email: e.target.value })
-    //             }
-    //           />
-    //         </label>
-    //       </div>
-    //       <div className="mt-5">
-    //         <label htmlFor="password">
-    //           <input
-    //             className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-text"
-    //             id="password"
-    //             type="password"
-    //             placeholder="Password"
-    //             value={userInputs.password}
-    //             onChange={(e) =>
-    //               setUserInputs({ ...userInputs, password: e.target.value })
-    //             }
-    //           />
-    //         </label>
-    //       </div>
-    //       <div className="mt-5">
-    //         <label htmlFor="confirm-password">
-    //           <input
-    //             className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-text"
-    //             id="confirm-password"
-    //             type="password"
-    //             placeholder="Confirm Password"
-    //             value={userInputs.confirmPassword}
-    //             onChange={(e) =>
-    //               setUserInputs({
-    //                 ...userInputs,
-    //                 confirmPassword: e.target.value,
-    //               })
-    //             }
-    //           />
-    //         </label>
-    //       </div>
-
-    //       <div className="flex mt-5">
-    //         <div>
-    //           <label htmlFor="age">
-    //             <input
-    //               className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-text"
-    //               id="age"
-    //               placeholder="Age"
-    //               type="number"
-    //               min="10"
-    //               max="120"
-    //               value={userInputs.age}
-    //               onChange={(e) =>
-    //                 setUserInputs({ ...userInputs, age: e.target.value })
-    //               }
-    //             />
-    //           </label>
-    //         </div>
-    //       </div>
-
-    // <GenderCheckbox
-    //   onCheckboxChange={handleCheckboxChange}
-    //   selectedGender={userInputs.gender}
-    // />
-
-    //       <div className="text-center mt-8">
-    //         <button
-    //           className="flex items-center justify-center w-full h-10 rounded-sm bg-cyan-600 text-white border border-black/10 hover:bg-cyan-700 cursor-pointer"
-    //           disabled={sendingData}
-    //         >
-    //           {sendingData ? (
-    //             <div className="animate-spin h-5 w-5 rounded-full border-b-2 border-white"></div>
-    //           ) : (
-    //             "Create Account"
-    //           )}
-    //         </button>
-    //       </div>
-
-    //       <div className="mt-3 text-xs text-center">
-    //         Already have an account?{" "}
-    //         <Link
-    //           to={"/login"}
-    //           className="text-orange-600 hover:underline cursor-pointer"
-    //         >
-    //           Sign in here
-    //         </Link>
-    //       </div>
-    //     </form>
-    //   </div>
-    // </div>
-
     <div className="min-h-screen grid lg:grid-cols-2">
       <div>
         {/* Left side - pattern animation */}
@@ -268,7 +143,7 @@ const SignUp = () => {
               </label>
               <div className="flex items-center relative">
                 <input
-                  type="password"
+                  type={displayPassword ? "text" : "password"}
                   id="password"
                   placeholder="••••••••••••"
                   className="w-full bg-slate-100 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/60 peer focus:outline-none focus:border-black/40"
@@ -278,6 +153,7 @@ const SignUp = () => {
                   }
                 />
                 <Lock className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
+                {displayPasswordBtn}
               </div>
             </div>
 
@@ -288,7 +164,7 @@ const SignUp = () => {
               </label>
               <div className="flex items-center relative">
                 <input
-                  type="password"
+                  type={displayPassword ? "text" : "password"}
                   id="confirm-password"
                   placeholder="••••••••••••"
                   className="w-full bg-slate-100 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/60 peer focus:outline-none focus:border-black/40"
@@ -339,3 +215,147 @@ const SignUp = () => {
 };
 
 export default SignUp;
+
+// <div className="flex flex-row gap-12 lg:gap-16 items-center justify-center lg:px-5">
+//   <div className="hidden lg:flex">
+//     <img
+//       className="object-cover rounded-full border-4 border-cyan-800/20"
+//       src={signupImg}
+//       height={650}
+//       width={650}
+//       alt="woman on bed using laptop"
+//     />
+//   </div>
+
+//   <div className="sm:min-w-[500px] md:min-w-[650px] lg:min-w-[500px] xl:min-w-[650px] bg-gray-100 py-16 sm:px-24 border border-black/10 rounded-lg shadow-md px-12 m-5">
+//     <h1 className="text-center text-2xl">
+//       Welcome to <span className="text-cyan-600">ChatApp</span>
+//     </h1>
+//     <h2 className="text-md mt-5 text-center opacity-70">
+//       Sign up for an account
+//     </h2>
+
+//     <form onSubmit={handleSubmit}>
+//       <div className="mt-5">
+//         <label htmlFor="full-name">
+//           <input
+//             className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-text"
+//             id="full-name"
+//             type="text"
+//             placeholder="Full Name"
+// value={userInputs.fullName}
+// onChange={(e) =>
+//   setUserInputs({ ...userInputs, fullName: e.target.value })
+// }
+//           />
+//         </label>
+//       </div>
+//       <div className="mt-5">
+//         <label htmlFor="username">
+//           <input
+//             className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-text"
+//             id="username"
+//             type="text"
+//             placeholder="Username"
+//             value={userInputs.username}
+//             onChange={(e) =>
+//               setUserInputs({ ...userInputs, username: e.target.value })
+//             }
+//           />
+//         </label>
+//       </div>
+//       <div className="mt-5">
+//         <label htmlFor="email">
+//           <input
+//             className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-text"
+//             id="email"
+//             type="email"
+//             placeholder="Email"
+//             value={userInputs.email}
+//             onChange={(e) =>
+//               setUserInputs({ ...userInputs, email: e.target.value })
+//             }
+//           />
+//         </label>
+//       </div>
+//       <div className="mt-5">
+//         <label htmlFor="password">
+//           <input
+//             className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-text"
+//             id="password"
+//             type="password"
+//             placeholder="Password"
+//             value={userInputs.password}
+//             onChange={(e) =>
+//               setUserInputs({ ...userInputs, password: e.target.value })
+//             }
+//           />
+//         </label>
+//       </div>
+//       <div className="mt-5">
+//         <label htmlFor="confirm-password">
+//           <input
+//             className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-text"
+//             id="confirm-password"
+//             type="password"
+//             placeholder="Confirm Password"
+//             value={userInputs.confirmPassword}
+//             onChange={(e) =>
+//               setUserInputs({
+//                 ...userInputs,
+//                 confirmPassword: e.target.value,
+//               })
+//             }
+//           />
+//         </label>
+//       </div>
+
+//       <div className="flex mt-5">
+//         <div>
+//           <label htmlFor="age">
+//             <input
+//               className="w-full h-9 rounded-sm text-md pl-1 shadow-sm cursor-text"
+//               id="age"
+//               placeholder="Age"
+//               type="number"
+//               min="10"
+//               max="120"
+//               value={userInputs.age}
+//               onChange={(e) =>
+//                 setUserInputs({ ...userInputs, age: e.target.value })
+//               }
+//             />
+//           </label>
+//         </div>
+//       </div>
+
+// <GenderCheckbox
+//   onCheckboxChange={handleCheckboxChange}
+//   selectedGender={userInputs.gender}
+// />
+
+//       <div className="text-center mt-8">
+//         <button
+//           className="flex items-center justify-center w-full h-10 rounded-sm bg-cyan-600 text-white border border-black/10 hover:bg-cyan-700 cursor-pointer"
+//           disabled={sendingData}
+//         >
+//           {sendingData ? (
+//             <div className="animate-spin h-5 w-5 rounded-full border-b-2 border-white"></div>
+//           ) : (
+//             "Create Account"
+//           )}
+//         </button>
+//       </div>
+
+//       <div className="mt-3 text-xs text-center">
+//         Already have an account?{" "}
+//         <Link
+//           to={"/login"}
+//           className="text-orange-600 hover:underline cursor-pointer"
+//         >
+//           Sign in here
+//         </Link>
+//       </div>
+//     </form>
+//   </div>
+// </div>
