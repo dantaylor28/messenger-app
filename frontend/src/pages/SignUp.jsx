@@ -14,6 +14,7 @@ import {
   DisplayPasswordBtn,
   DisplayConfirmPasswordBtn,
 } from "../components/PasswordBtn";
+import { Link } from "react-router-dom";
 
 const SignUp = () => {
   const [userInputs, setUserInputs] = useState({
@@ -205,13 +206,23 @@ const SignUp = () => {
 
             {/* Submit button */}
             <div className="text-center mt-8">
-              <button className="flex items-center justify-center w-full h-10 rounded-[4px] cursor-pointer font-medium tracking-wider bg-amber-500/60 hover:bg-amber-500/75 transition" disabled={sendingData}>
+              <button
+                className="flex items-center justify-center w-full h-10 rounded-[4px] cursor-pointer font-medium tracking-wider bg-amber-500/60 hover:bg-amber-500/75 transition"
+                disabled={sendingData}
+              >
                 {sendingData ? (
                   <div className="animate-spin h-5 w-5 rounded-full border-b-2 border-amber-900"></div>
                 ) : (
                   "Create Account"
                 )}
               </button>
+            </div>
+
+            <div className="flex items-center justify-center text-xs mt-3 gap-1">
+              <p className="font-light text-black/70">
+                Already have an account?
+              </p>
+              <Link to={"/login"} className="cursor-pointer text-amber-600/80 hover:text-amber-600 hover:underline transition">Sign in here</Link>
             </div>
           </form>
         </div>
