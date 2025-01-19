@@ -202,6 +202,17 @@ const SignUp = () => {
                 <ArrowUpDown className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
               </div>
             </div>
+
+            {/* Submit button */}
+            <div className="text-center mt-8">
+              <button className="flex items-center justify-center w-full h-10 rounded-[4px] cursor-pointer font-medium tracking-wider bg-amber-500/60 hover:bg-amber-500/75 transition" disabled={sendingData}>
+                {sendingData ? (
+                  <div className="animate-spin h-5 w-5 rounded-full border-b-2 border-amber-900"></div>
+                ) : (
+                  "Create Account"
+                )}
+              </button>
+            </div>
           </form>
         </div>
       </div>
