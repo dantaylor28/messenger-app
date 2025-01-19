@@ -5,7 +5,6 @@ import {
   User,
   UserCheck,
   ShieldCheck,
-  ChartColumn,
   ArrowUpDown,
   EyeOff,
   Eye,
@@ -26,6 +25,7 @@ const SignUp = () => {
   });
 
   const [displayPassword, setDisplayPassword] = useState(false);
+  const [displayConfirmPassword, setDisplayConfirmPassword] = useState(false);
 
   const { sendingData, signupUser } = useSignup();
   const handleCheckboxChange = (gender) => {
@@ -50,7 +50,21 @@ const SignUp = () => {
       )}
     </button>
   );
-  
+
+  const displayConfirmPasswordBtn = (
+    <button
+      type="button"
+      className="absolute right-0 mr-2 flex items-center justify-center"
+      onClick={() => setDisplayConfirmPassword(!displayConfirmPassword)}
+    >
+      {displayConfirmPassword ? (
+        <EyeOff className="size-5 text-black/45 hover:text-black/70 transition" />
+      ) : (
+        <Eye className="size-5 text-black/45 hover:text-black/70 transition" />
+      )}
+    </button>
+  );
+
   return (
     <div className="min-h-screen grid lg:grid-cols-2">
       <div>
@@ -164,7 +178,7 @@ const SignUp = () => {
               </label>
               <div className="flex items-center relative">
                 <input
-                  type={displayPassword ? "text" : "password"}
+                  type={displayConfirmPassword ? "text" : "password"}
                   id="confirm-password"
                   placeholder="••••••••••••"
                   className="w-full bg-slate-100 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/60 peer focus:outline-none focus:border-black/40"
@@ -177,6 +191,7 @@ const SignUp = () => {
                   }
                 />
                 <ShieldCheck className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
+                {displayConfirmPasswordBtn}
               </div>
             </div>
 
