@@ -15,6 +15,7 @@ import {
   DisplayConfirmPasswordBtn,
 } from "../components/PasswordBtn";
 import { Link } from "react-router-dom";
+import AuthPattern from "../components/AuthPattern";
 
 const SignUp = () => {
   const [userInputs, setUserInputs] = useState({
@@ -41,11 +42,10 @@ const SignUp = () => {
   };
 
   return (
-    <div className="min-h-screen grid lg:grid-cols-2">
-      <div>
+    <div className="min-h-screen min-w-full grid lg:grid-cols-2">
         {/* Left side - pattern animation */}
-        Cool pattern shit here
-      </div>
+        <AuthPattern />
+        
 
       {/* Right side */}
       <div className="flex flex-col justify-center items-center">
