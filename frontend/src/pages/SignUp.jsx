@@ -44,9 +44,10 @@ const SignUp = () => {
   return (
     <div className="min-h-screen min-w-full grid lg:grid-cols-2">
         {/* Left side - pattern animation */}
-        <AuthPattern />
+        <AuthPattern 
+        heading="Join Our Community"
+        text="Create your free account to connect, keep in touch and share life updates with your friends and family"/>
         
-
       {/* Right side */}
       <div className="flex flex-col justify-center items-center">
         <div className="flex flex-col w-full text-center items-center justify-center mb-5">

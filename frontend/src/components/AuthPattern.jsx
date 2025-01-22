@@ -1,6 +1,6 @@
 import React from "react";
 
-const AuthImagePattern = () => {
+const AuthImagePattern = ({heading, text}) => {
   return (
     <div className="hidden lg:flex items-center justify-center bg-gradient-to-r from-amber-600/60 to-amber-300/50 border-r border-amber-800/5">
       <div className="max-w-md text-center">
@@ -19,6 +19,8 @@ const AuthImagePattern = () => {
             />
           ))}
         </div>
+        <h2>{heading}</h2>
+        <p>{text}</p>
       </div>
     </div>
   );
