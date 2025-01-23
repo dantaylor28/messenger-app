@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useLogin from "../hooks/useLogin";
 import AuthPattern from "../components/AuthPattern";
-import { Lock, MessagesSquare, UserCheck } from "lucide-react";
+import { Lock, MessagesSquare, User } from "lucide-react";
 import { DisplayPasswordBtn } from "../components/PasswordBtn";
 
 const Login = () => {
@@ -26,14 +26,14 @@ const Login = () => {
             <MessagesSquare className="size-7 text-amber-800 group-hover:text-amber-900" />
           </div>
           <h1 className="text-2xl capitalize font-medium text-black tracking-wider mb-1">
-            Create an account
+            Login To Your Account
           </h1>
           <p className="font-light text-black/60">
-            Fill in the form to create your free profile
+            Fill in the form to sign in to your profile
           </p>
         </div>
 
-        {/* Sign up form */}
+        {/* Login form */}
         <div>
           <form onSubmit={handleSubmit} className="min-w-[400px]">
             {/* Username Input */}
@@ -50,7 +50,7 @@ const Login = () => {
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                 />
-                <UserCheck className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
+                <User className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
               </div>
             </div>
 
@@ -85,20 +85,20 @@ const Login = () => {
                 {sendingData ? (
                   <div className="animate-spin h-5 w-5 rounded-full border-b-2 border-amber-900"></div>
                 ) : (
-                  "Create Account"
+                  "Sign In"
                 )}
               </button>
             </div>
 
             <div className="flex items-center justify-center text-xs mt-3 gap-1">
               <p className="font-light text-black/70">
-                Already have an account?
+                Don't have an account?
               </p>
               <Link
-                to={"/login"}
+                to={"/signup"}
                 className="cursor-pointer text-amber-600/80 hover:text-amber-600 hover:underline transition"
               >
-                Sign in here
+                Sign up here
               </Link>
             </div>
           </form>
@@ -107,8 +107,8 @@ const Login = () => {
 
       {/* Right side - pattern animation */}
       <AuthPattern
-        heading="Join Our Community"
-        text="Create your free account to connect, keep in touch and share life updates with your friends and family"
+        heading="Welcome Back"
+        text="Sign in to stay connected, share memorable moments, and keep your friends and family updated effortlessly"
       />
     </div>
 

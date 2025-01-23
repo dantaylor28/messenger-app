@@ -19,7 +19,7 @@ const AuthImagePattern = ({heading, text}) => {
             />
           ))}
         </div>
-        <h2 className="font-semibold tracking-widest text-2xl text-black/70 mb-3">{heading}</h2>
+        <h2 className="font-semibold tracking-widest text-2xl text-black/65 mb-3">{heading}</h2>
         <p className="font-light text-black/70">{text}</p>
       </div>
     </div>
