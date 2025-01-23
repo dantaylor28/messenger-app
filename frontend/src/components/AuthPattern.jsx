@@ -1,8 +1,10 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
-const AuthImagePattern = ({heading, text}) => {
+const AuthImagePattern = ({ heading, text }) => {
+  const location = useLocation();
   return (
-    <div className="hidden lg:flex items-center justify-center bg-gradient-to-r from-amber-600/60 to-amber-300/50 border-r border-amber-800/5">
+    <div className={`hidden lg:flex items-center justify-center ${location.pathname === "/signup" ? "bg-gradient-to-r border-r" : "bg-gradient-to-l border-l"} from-amber-600/60 to-amber-300/50 border-amber-800/5`}>
       <div className="max-w-md text-center">
         <div className="grid grid-cols-3 gap-3 mb-8 items-center">
           {[...Array(9)].map((_, i) => (
@@ -19,7 +21,9 @@ const AuthImagePattern = ({heading, text}) => {
             />
           ))}
         </div>
-        <h2 className="font-semibold tracking-widest text-2xl text-black/65 mb-3">{heading}</h2>
+        <h2 className="font-semibold tracking-widest text-2xl text-black/65 mb-3">
+          {heading}
+        </h2>
         <p className="font-light text-black/70">{text}</p>
       </div>
     </div>
