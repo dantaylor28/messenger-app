@@ -8,7 +8,7 @@ const AuthImagePattern = ({heading, text}) => {
           {[...Array(9)].map((_, i) => (
             <div
               key={i}
-              className={`aspect-square bg-amber-600/30 ${
+              className={`aspect-square bg-amber-600/40 ${
                 i % 2 === 0
                   ? "h-32 w-32 scale-animation rounded-xl"
                   : "h-28 w-28 pulse-animation ml-2 rounded-md"
