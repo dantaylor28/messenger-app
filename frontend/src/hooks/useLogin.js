@@ -24,6 +24,7 @@ const useLogin = () => {
 
       localStorage.setItem("authenticatedUser", JSON.stringify(data));
       setAuthenticatedUser(data);
+      toast.success("Signed in successfully");
     } catch (error) {
       toast.error(error.message);
     } finally {
