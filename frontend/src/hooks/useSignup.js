@@ -89,5 +89,9 @@ function handleSignupErrors({
     toast.error("Passwords must be at least 6 characters");
     return false;
   }
+  if (!/\S+@\S+\.\S+/.test(email)) {
+    toast.error("Invalid email format");
+    return false;
+  }
   return true;
 }
