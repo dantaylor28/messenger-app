@@ -1,5 +1,6 @@
 import React from "react";
-import { MessagesSquare } from "lucide-react";
+import { MessagesSquare, Settings } from "lucide-react";
+
 
 const NavBar = () => {
   return (
@@ -7,6 +8,9 @@ const NavBar = () => {
       {/* Logo */}
       <div className="size-12 rounded-xl flex items-center justify-center bg-white/70 ml-8">
         <MessagesSquare className="size-6 text-amber-800" />
+      </div>
+      <div className="ml-auto mr-8">
+        <Settings />
       </div>
     </div>
   );
