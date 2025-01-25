@@ -49,6 +49,7 @@ const useSignup = () => {
       }
       localStorage.setItem("authenticatedUser", JSON.stringify(data));
       setAuthenticatedUser(data);
+      toast.success("Profile created successfully");
     } catch (error) {
       toast.error(error.message);
     } finally {
