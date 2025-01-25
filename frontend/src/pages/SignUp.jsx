@@ -76,7 +76,7 @@ const SignUp = () => {
                   type="text"
                   id="full-name"
                   placeholder="John Doe"
-                  className="w-full bg-slate-50 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/60 peer focus:outline-none focus:border-black/40"
+                  className="w-full bg-slate-50 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/40 peer focus:outline-none focus:border-black/40"
                   value={userInputs.fullName}
                   onChange={(e) =>
                     setUserInputs({ ...userInputs, fullName: e.target.value })
@@ -96,7 +96,7 @@ const SignUp = () => {
                   type="text"
                   id="username"
                   placeholder="JohnDoe123"
-                  className="w-full bg-slate-50 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/60 peer focus:outline-none focus:border-black/40"
+                  className="w-full bg-slate-50 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/40 peer focus:outline-none focus:border-black/40"
                   value={userInputs.username}
                   onChange={(e) =>
                     setUserInputs({ ...userInputs, username: e.target.value })
@@ -116,7 +116,7 @@ const SignUp = () => {
                   type="email"
                   id="email"
                   placeholder="john.doe@email.com"
-                  className="w-full bg-slate-50 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/60 peer focus:outline-none focus:border-black/40"
+                  className="w-full bg-slate-50 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/40 peer focus:outline-none focus:border-black/40"
                   value={userInputs.email}
                   onChange={(e) =>
                     setUserInputs({ ...userInputs, email: e.target.value })
@@ -136,7 +136,7 @@ const SignUp = () => {
                   type={displayPassword ? "text" : "password"}
                   id="password"
                   placeholder="••••••••••••"
-                  className="w-full bg-slate-50 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/60 peer focus:outline-none focus:border-black/40"
+                  className="w-full bg-slate-50 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/40 peer focus:outline-none focus:border-black/40"
                   value={userInputs.password}
                   onChange={(e) =>
                     setUserInputs({ ...userInputs, password: e.target.value })
@@ -160,7 +160,7 @@ const SignUp = () => {
                   type={displayConfirmPassword ? "text" : "password"}
                   id="confirm-password"
                   placeholder="••••••••••••"
-                  className="w-full bg-slate-50 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/60 peer focus:outline-none focus:border-black/40"
+                  className="w-full bg-slate-50 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/40 peer focus:outline-none focus:border-black/40"
                   value={userInputs.confirmPassword}
                   onChange={(e) =>
                     setUserInputs({
@@ -195,7 +195,7 @@ const SignUp = () => {
                   max="120"
                   id="age"
                   placeholder="25"
-                  className="w-[20%] bg-slate-50 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/60 peer focus:outline-none focus:border-black/40"
+                  className="w-[20%] bg-slate-50 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/40 peer focus:outline-none focus:border-black/40"
                   value={userInputs.age}
                   onChange={(e) =>
                     setUserInputs({ ...userInputs, age: e.target.value })
