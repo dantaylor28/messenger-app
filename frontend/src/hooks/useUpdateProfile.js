@@ -1,7 +1,11 @@
-import React from 'react'
+import React, { useState } from "react";
 
 const useUpdateProfile = () => {
-  
-}
+  const [sendingData, setSendingData] = useState();
 
-export default useUpdateProfile
+  const updateProfile = async (data) => {
+
+  }
+};
+
+export default useUpdateProfile;
