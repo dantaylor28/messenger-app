@@ -5,7 +5,7 @@ import { User } from "lucide-react";
 
 const Profile = () => {
   // const { sendingData, setSendingData, updateProfile } = useUpdateProfile();
-  // const { authenticatedUser } = useAuthContext();
+  const { authenticatedUser } = useAuthContext();
 
   // const handleImageUpload = async (e) => {};
   return (
@@ -25,7 +25,13 @@ const Profile = () => {
               <span className="text-xs font-medium">Full Name</span>
             </label>
           </div>
-          <div>name input here..</div>
+          <div>
+            <input
+              type="text"
+              value={authenticatedUser.fullName}
+              className="w-full bg-slate-40 border border-black/40 pl-3 rounded-[4px] h-10 focus:outline-none focus:border-black/80"
+            />
+          </div>
         </div>
       </div>
     </div>
