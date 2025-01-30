@@ -6,8 +6,10 @@ import { Mail, Pen, User, UserCheck } from "lucide-react";
 const Profile = () => {
   // const { sendingData, setSendingData, updateProfile } = useUpdateProfile();
   const { authenticatedUser } = useAuthContext();
-  const [isDisabled, setIsDisabled] = useState(true);
+  const [isFullNameDisabled, setFullNameIsDisabled] = useState(true);
   const [fullName, setFullName] = useState(authenticatedUser.fullName);
+  const [isUsernameDisabled, setUsernameIsDisabled] = useState(true);
+  const [username, setUsername] = useState(authenticatedUser.username);
 
   // const handleImageUpload = async (e) => {};
   return (
@@ -34,16 +36,16 @@ const Profile = () => {
                 type="text"
                 value={fullName}
                 onChange={(e) => setFullName(e.target.value)}
-                disabled={isDisabled}
+                disabled={isFullNameDisabled}
                 className={`w-full pl-3 rounded-[4px] h-10 focus:outline-none border border-black/40 ${
-                  isDisabled
-                    ? "bg-gray-100 text-gray-500 cursor-not-allowed"
+                  isFullNameDisabled
+                    ? "bg-gray-100 text-gray-600 cursor-not-allowed"
                     : "bg-slate-40 text-black focus:border-black/80"
                 }`}
               />
               <button
                 className="cursor-pointer opacity-70 hover:opacity-100 transition"
-                onClick={() => setIsDisabled(false)}
+                onClick={() => setFullNameIsDisabled(false)}
               >
                 <Pen className="size-4" />
               </button>
@@ -57,12 +59,24 @@ const Profile = () => {
                 <span className="text-xs font-medium">Username</span>
               </label>
             </div>
-            <div>
+            <div className="flex items-center gap-2">
               <input
                 type="text"
-                value={authenticatedUser.username}
-                className="w-full bg-slate-40 border border-black/40 pl-3 rounded-[4px] h-10 focus:outline-none focus:border-black/80"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                disabled={isUsernameDisabled}
+                className={`w-full pl-3 rounded-[4px] h-10 focus:outline-none border border-black/40 ${
+                  isUsernameDisabled
+                    ? "bg-gray-100 text-gray-600 cursor-not-allowed"
+                    : "bg-slate-40 text-black focus:border-black/80"
+                }`}
               />
+              <button
+                className="cursor-pointer opacity-70 hover:opacity-100 transition"
+                onClick={() => setUsernameIsDisabled(false)}
+              >
+                <Pen className="size-4" />
+              </button>
             </div>
           </div>
 
