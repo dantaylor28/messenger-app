@@ -33,6 +33,7 @@ const Profile = () => {
               <input
                 type="text"
                 value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
                 disabled={isDisabled}
                 className={`w-full pl-3 rounded-[4px] h-10 focus:outline-none border border-black/40 ${
                   isDisabled
