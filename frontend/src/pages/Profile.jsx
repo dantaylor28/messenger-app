@@ -1,7 +1,7 @@
 import React from "react";
 import useUpdateProfile from "../hooks/useUpdateProfile";
 import { useAuthContext } from "../context/AuthContext";
-import { User, UserCheck } from "lucide-react";
+import { Mail, User, UserCheck } from "lucide-react";
 
 const Profile = () => {
   // const { sendingData, setSendingData, updateProfile } = useUpdateProfile();
@@ -36,8 +36,8 @@ const Profile = () => {
             </div>
           </div>
           {/* Username input */}
-          <div>
-            <div className="flex items-center gap-0.5 mt-3">
+          <div className="mt-3">
+            <div className="flex items-center gap-0.5">
               <UserCheck className="size-4" />
               <label htmlFor="username">
                 <span className="text-xs font-medium">Username</span>
@@ -47,6 +47,23 @@ const Profile = () => {
               <input
                 type="text"
                 value={authenticatedUser.username}
+                className="w-full bg-slate-40 border border-black/40 pl-3 rounded-[4px] h-10 focus:outline-none focus:border-black/80"
+              />
+            </div>
+          </div>
+
+          {/* Email input */}
+          <div className="mt-3">
+            <div className="flex items-center gap-0.5">
+              <Mail className="size-4" />
+              <label htmlFor="email">
+                <span className="text-xs font-medium">Email</span>
+              </label>
+            </div>
+            <div>
+              <input
+                type="email"
+                value={authenticatedUser.email}
                 className="w-full bg-slate-40 border border-black/40 pl-3 rounded-[4px] h-10 focus:outline-none focus:border-black/80"
               />
             </div>
