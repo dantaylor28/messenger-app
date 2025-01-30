@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import useUpdateProfile from "../hooks/useUpdateProfile";
 import { useAuthContext } from "../context/AuthContext";
-import { Mail, User, UserCheck } from "lucide-react";
+import { Mail, Pen, User, UserCheck } from "lucide-react";
 
 const Profile = () => {
   // const { sendingData, setSendingData, updateProfile } = useUpdateProfile();
   const { authenticatedUser } = useAuthContext();
+  const [isDisabled, setIsDisabled] = useState(true);
+  const [fullName, setFullName] = useState(authenticatedUser.fullName);
 
   // const handleImageUpload = async (e) => {};
   return (
@@ -27,12 +29,16 @@ const Profile = () => {
                 <span className="text-xs font-medium">Full Name</span>
               </label>
             </div>
-            <div>
+            <div className="flex items-center gap-2">
               <input
                 type="text"
-                value={authenticatedUser.fullName}
+                value={fullName}
+                disabled
                 className="w-full bg-slate-40 border border-black/40 pl-3 rounded-[4px] h-10 focus:outline-none focus:border-black/80"
               />
+              <button className="cursor-pointer opacity-70 hover:opacity-100 transition">
+                <Pen className="size-4" />
+              </button>
             </div>
           </div>
           {/* Username input */}
