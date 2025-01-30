@@ -33,10 +33,17 @@ const Profile = () => {
               <input
                 type="text"
                 value={fullName}
-                disabled
-                className="w-full bg-slate-40 border border-black/40 pl-3 rounded-[4px] h-10 focus:outline-none focus:border-black/80"
+                disabled={isDisabled}
+                className={`w-full pl-3 rounded-[4px] h-10 focus:outline-none border border-black/40 ${
+                  isDisabled
+                    ? "bg-gray-100 text-gray-500 cursor-not-allowed"
+                    : "bg-slate-40 text-black focus:border-black/80"
+                }`}
               />
-              <button className="cursor-pointer opacity-70 hover:opacity-100 transition">
+              <button
+                className="cursor-pointer opacity-70 hover:opacity-100 transition"
+                onClick={() => setIsDisabled(false)}
+              >
                 <Pen className="size-4" />
               </button>
             </div>
