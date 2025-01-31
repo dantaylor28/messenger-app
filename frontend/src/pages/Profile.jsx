@@ -4,7 +4,7 @@ import { useAuthContext } from "../context/AuthContext";
 import { Camera, Mail, Pen, User, UserCheck } from "lucide-react";
 
 const Profile = () => {
-  const { sendingData, setSendingData, updateProfile } = useUpdateProfile();
+  const { sendingData, updateProfile } = useUpdateProfile();
   const { authenticatedUser } = useAuthContext();
   const [selectedImage, setSelectedImage] = useState(null);
 
@@ -60,7 +60,7 @@ const Profile = () => {
                 />
               </label>
             </div>
-            <p className="text-xs opacity-60 mt-1">Update your profile image</p>
+            <p className="text-xs opacity-60 mt-1">{sendingData ? "Uploading.." : "Update your profile image"}</p>
           </div>
 
           {/* Full name input */}

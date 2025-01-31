@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import toast from "react-hot-toast"
 
 const useUpdateProfile = () => {
   const [sendingData, setSendingData] = useState();
@@ -9,7 +10,7 @@ const useUpdateProfile = () => {
       const res = await fetch("/auth/profile", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ fullName, username, email, profileImage }),
+        body: JSON.stringify({ data }),
       });
 
       const data = await res.json();
@@ -19,11 +20,13 @@ const useUpdateProfile = () => {
 
       toast.success("Profile updated successfully");
     } catch (error) {
-        toast.error(error.message);
+      toast.error(error.message);
     } finally {
       setSendingData(false);
     }
   };
+
+  return { sendingData, updateProfile };
 };
 
 export default useUpdateProfile;
