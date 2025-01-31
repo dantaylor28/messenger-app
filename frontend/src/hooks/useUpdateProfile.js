@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import toast from "react-hot-toast"
+import toast from "react-hot-toast";
 
 const useUpdateProfile = () => {
   const [sendingData, setSendingData] = useState();
@@ -7,15 +7,15 @@ const useUpdateProfile = () => {
   const updateProfile = async (data) => {
     setSendingData(true);
     try {
-      const res = await fetch("/auth/profile", {
+      const res = await fetch("/api/auth/profile", {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ data }),
+        body: JSON.stringify(data),
       });
 
-      const data = await res.json();
-      if (data.error) {
-        throw new Error(data.error);
+      const responseData = await res.json();
+      if (responseData.error) {
+        throw new Error(responseData.error);
       }
 
       toast.success("Profile updated successfully");

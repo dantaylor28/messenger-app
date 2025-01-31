@@ -29,16 +29,16 @@ const Profile = () => {
       setHasUpdates(true);
       await updateProfile({ profileImage: base64Image });
     };
+  };
 
-    const handleSaveUpdates = async () => {
-      await updateProfile({
-        fullName,
-        username,
-        email,
-        profileImage: selectedImage,
-      });
-      setHasUpdates(false);
-    };
+  const handleSaveUpdates = async () => {
+    await updateProfile({
+      fullName,
+      username,
+      email,
+      profileImage: selectedImage,
+    });
+    setHasUpdates(false);
   };
   return (
     <div>
@@ -171,6 +171,21 @@ const Profile = () => {
                 <Pen className="size-4" />
               </button>
             </div>
+          </div>
+
+          {/* Submit changes btn */}
+          <div className="text-center mt-4">
+            <button
+              onClick={handleSaveUpdates}
+              disabled={!hasUpdates || sendingData}
+              className={`flex items-center ${
+                !hasUpdates || sendingData
+                  ? "bg-gray-400 cursor-not-allowed"
+                  : "bg-amber-400"
+              }`}
+            >
+              Update Profile
+            </button>
           </div>
         </div>
       </div>

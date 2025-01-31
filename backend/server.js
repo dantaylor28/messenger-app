@@ -1,5 +1,7 @@
-import express from "express";
 import dotenv from "dotenv";
+dotenv.config();
+
+import express from "express";
 import cookieParser from "cookie-parser";
 import authRoutes from "./routes/auth.routes.js";
 import messageRoutes from "./routes/message.routes.js";
@@ -7,7 +9,15 @@ import userRoutes from "./routes/user.routes.js";
 import connectToMongoDB from "./db/connectToMongoDB.js"
 import { app, server } from "./socket/socket.js";
 
-dotenv.config();
+
+// console.log("Cloudinary Config:", {
+//   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+//   api_key: process.env.CLOUDINARY_API_KEY,
+//   api_secret: process.env.CLOUDINARY_API_SECRET ? "HIDDEN" : "MISSING",
+// });
+
+// console.log("Process env:", process.env);
+
 
 const PORT = process.env.PORT || 5173;
 
