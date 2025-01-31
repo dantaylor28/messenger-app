@@ -6,10 +6,13 @@ import { Mail, Pen, User, UserCheck } from "lucide-react";
 const Profile = () => {
   // const { sendingData, setSendingData, updateProfile } = useUpdateProfile();
   const { authenticatedUser } = useAuthContext();
+
   const [isFullNameDisabled, setFullNameIsDisabled] = useState(true);
   const [fullName, setFullName] = useState(authenticatedUser.fullName);
   const [isUsernameDisabled, setUsernameIsDisabled] = useState(true);
   const [username, setUsername] = useState(authenticatedUser.username);
+  const [isEmailDisabled, setEmailIsDisabled] = useState(true);
+  const [email, setEmail] = useState(authenticatedUser.email);
 
   // const handleImageUpload = async (e) => {};
   return (
@@ -88,12 +91,24 @@ const Profile = () => {
                 <span className="text-xs font-medium">Email</span>
               </label>
             </div>
-            <div>
+            <div className="flex items-center gap-2">
               <input
                 type="email"
-                value={authenticatedUser.email}
-                className="w-full bg-slate-40 border border-black/40 pl-3 rounded-[4px] h-10 focus:outline-none focus:border-black/80"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                disabled={isEmailDisabled}
+                className={`w-full pl-3 rounded-[4px] h-10 focus:outline-none border border-black/40 ${
+                  isEmailDisabled
+                    ? "bg-gray-100 text-gray-600 cursor-not-allowed"
+                    : "bg-slate-40 text-black focus:border-black/80"
+                }`}
               />
+              <button
+                className="cursor-pointer opacity-70 hover:opacity-100 transition"
+                onClick={() => setEmailIsDisabled(false)}
+              >
+                <Pen className="size-4" />
+              </button>
             </div>
           </div>
         </div>
