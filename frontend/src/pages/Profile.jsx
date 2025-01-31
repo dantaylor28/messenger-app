@@ -15,7 +15,18 @@ const Profile = () => {
   const [isEmailDisabled, setEmailIsDisabled] = useState(true);
   const [email, setEmail] = useState(authenticatedUser.email);
 
-  const handleImageUpload = async (e) => {};
+  const handleImageUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onload = async () => {
+      const base64Image = reader.result;
+      setSelectedImage(base64Image);
+      await updateProfile({ profileImage: base64Image });
+    };
+  };
   return (
     <div>
       <div className="flex flex-col items-center justify-center">
@@ -35,9 +46,18 @@ const Profile = () => {
                 alt="Profile Image"
                 className="size-48 rounded-full object-cover border-4 border-gray-200"
               />
-              <label htmlFor="profile-image-input" className="absolute bottom-0 right-7 p-2 bg-amber-500/90 hover:bg-amber-500 transition text-white/80 rounded-full">
+              <label
+                htmlFor="profile-image-input"
+                className="absolute bottom-0 right-7 p-2 bg-amber-500/90 hover:bg-amber-500 transition text-white/80 rounded-full"
+              >
                 <Camera className="h-5 w-5" />
-                <input type="file" className="hidden" id="profile-image-input" accept="image/*" onChange={handleImageUpload} />
+                <input
+                  type="file"
+                  className="hidden"
+                  id="profile-image-input"
+                  accept="image/*"
+                  onChange={handleImageUpload}
+                />
               </label>
             </div>
             <p className="text-xs opacity-60 mt-1">Update your profile image</p>
