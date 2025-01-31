@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import useUpdateProfile from "../hooks/useUpdateProfile";
 import { useAuthContext } from "../context/AuthContext";
-import { Mail, Pen, User, UserCheck } from "lucide-react";
+import { Camera, Mail, Pen, User, UserCheck } from "lucide-react";
 
 const Profile = () => {
   // const { sendingData, setSendingData, updateProfile } = useUpdateProfile();
   const { authenticatedUser } = useAuthContext();
+  const [selectedImage, setSelectedImage] = useState(null);
 
   const [isFullNameDisabled, setFullNameIsDisabled] = useState(true);
   const [fullName, setFullName] = useState(authenticatedUser.fullName);
@@ -26,9 +27,23 @@ const Profile = () => {
       </div>
       <div className="flex items-center justify-center">
         <div className="w-[30%]">
+          {/* Update Profile Image Section */}
+          <div className="flex flex-col items-center mt-3">
+            <div className="relative">
+              <img
+                src={selectedImage || authenticatedUser.profileImage}
+                alt="Profile Image"
+                className="size-48 rounded-full object-cover border-4 border-gray-200"
+              />
+              <label htmlFor="profile-image-input" className="absolute bottom-0 right-7 p-2 bg-amber-500/90 hover:bg-amber-500 transition text-white/80 rounded-full">
+                <Camera className="h-5 w-5" />
+              </label>
+            </div>
+          </div>
+
           {/* Full name input */}
           <div>
-            <div className="flex items-center gap-0.5 mt-4">
+            <div className="flex items-center gap-0.5 mt-2">
               <User className="size-4" />
               <label htmlFor="full-name">
                 <span className="text-xs font-medium">Full Name</span>
