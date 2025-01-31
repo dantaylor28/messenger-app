@@ -27,7 +27,6 @@ const Profile = () => {
       const base64Image = reader.result;
       setSelectedImage(base64Image);
       setHasUpdates(true);
-      await updateProfile({ profileImage: base64Image });
     };
   };
 
