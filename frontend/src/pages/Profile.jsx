@@ -15,6 +15,8 @@ const Profile = () => {
   const [isEmailDisabled, setEmailIsDisabled] = useState(true);
   const [email, setEmail] = useState(authenticatedUser.email);
 
+  const [hasUpdates, setHasUpdates] = useState(false);
+
   const handleImageUpload = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -24,7 +26,18 @@ const Profile = () => {
     reader.onload = async () => {
       const base64Image = reader.result;
       setSelectedImage(base64Image);
+      setHasUpdates(true);
       await updateProfile({ profileImage: base64Image });
+    };
+
+    const handleSaveUpdates = async () => {
+      await updateProfile({
+        fullName,
+        username,
+        email,
+        profileImage: selectedImage,
+      });
+      setHasUpdates(false);
     };
   };
   return (
@@ -60,7 +73,9 @@ const Profile = () => {
                 />
               </label>
             </div>
-            <p className="text-xs opacity-60 mt-1">{sendingData ? "Uploading.." : "Update your profile image"}</p>
+            <p className="text-xs opacity-60 mt-1">
+              {sendingData ? "Uploading.." : "Update your profile image"}
+            </p>
           </div>
 
           {/* Full name input */}
@@ -75,7 +90,10 @@ const Profile = () => {
               <input
                 type="text"
                 value={fullName}
-                onChange={(e) => setFullName(e.target.value)}
+                onChange={(e) => {
+                  setFullName(e.target.value);
+                  setHasUpdates(true);
+                }}
                 disabled={isFullNameDisabled}
                 className={`w-full pl-3 rounded-[4px] h-10 focus:outline-none border border-black/40 ${
                   isFullNameDisabled
@@ -103,7 +121,10 @@ const Profile = () => {
               <input
                 type="text"
                 value={username}
-                onChange={(e) => setUsername(e.target.value)}
+                onChange={(e) => {
+                  setUsername(e.target.value);
+                  setHasUpdates(true);
+                }}
                 disabled={isUsernameDisabled}
                 className={`w-full pl-3 rounded-[4px] h-10 focus:outline-none border border-black/40 ${
                   isUsernameDisabled
@@ -132,7 +153,10 @@ const Profile = () => {
               <input
                 type="email"
                 value={email}
-                onChange={(e) => setEmail(e.target.value)}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                  setHasUpdates(true);
+                }}
                 disabled={isEmailDisabled}
                 className={`w-full pl-3 rounded-[4px] h-10 focus:outline-none border border-black/40 ${
                   isEmailDisabled
