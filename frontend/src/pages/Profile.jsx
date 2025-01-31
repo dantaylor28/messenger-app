@@ -15,14 +15,14 @@ const Profile = () => {
   const [isEmailDisabled, setEmailIsDisabled] = useState(true);
   const [email, setEmail] = useState(authenticatedUser.email);
 
-  // const handleImageUpload = async (e) => {};
+  const handleImageUpload = async (e) => {};
   return (
     <div>
       <div className="flex flex-col items-center justify-center">
         <h1 className="text-2xl font-medium tracking-widest mt-10">
           My Profile
         </h1>
-        <h2 className="mt-6 font-light">Personal Information</h2>
+        <h2 className="mt-4 font-light">Personal Information</h2>
         {/* update name, username, email, password section */}
       </div>
       <div className="flex items-center justify-center">
@@ -37,8 +37,10 @@ const Profile = () => {
               />
               <label htmlFor="profile-image-input" className="absolute bottom-0 right-7 p-2 bg-amber-500/90 hover:bg-amber-500 transition text-white/80 rounded-full">
                 <Camera className="h-5 w-5" />
+                <input type="file" className="hidden" id="profile-image-input" accept="image/*" onChange={handleImageUpload} />
               </label>
             </div>
+            <p className="text-xs opacity-60 mt-1">Update your profile image</p>
           </div>
 
           {/* Full name input */}
