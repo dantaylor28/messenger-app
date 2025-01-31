@@ -4,7 +4,7 @@ import { useAuthContext } from "../context/AuthContext";
 import { Camera, Mail, Pen, User, UserCheck } from "lucide-react";
 
 const Profile = () => {
-  // const { sendingData, setSendingData, updateProfile } = useUpdateProfile();
+  const { sendingData, setSendingData, updateProfile } = useUpdateProfile();
   const { authenticatedUser } = useAuthContext();
   const [selectedImage, setSelectedImage] = useState(null);
 
