@@ -5,7 +5,7 @@ import { Camera, Mail, Pen, User, UserCheck } from "lucide-react";
 
 const Profile = () => {
   const { sendingData, updateProfile } = useUpdateProfile();
-  const { authenticatedUser } = useAuthContext();
+  const { authenticatedUser, setAuthenticatedUser } = useAuthContext();
   const [selectedImage, setSelectedImage] = useState(null);
 
   const [isFullNameDisabled, setFullNameIsDisabled] = useState(true);
@@ -38,12 +38,11 @@ const Profile = () => {
       profileImage: selectedImage,
     });
 
-    setFullName(updatedData.fullName);
-    setUsername(updatedData.username);
-    setEmail(updatedData.email);
-    setSelectedImage(updatedData.profileImage);
-    
-    setHasUpdates(false);
+    if (updatedData) {
+      setAuthenticatedUser(updatedData);
+      localStorage.setItem("authenticatedUser", JSON.stringify(updatedData));
+      setHasUpdates(false);
+    }
   };
   return (
     <div>
