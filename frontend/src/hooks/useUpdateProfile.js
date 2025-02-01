@@ -19,6 +19,8 @@ const useUpdateProfile = () => {
       }
 
       toast.success("Profile updated successfully");
+
+      return responseData;
     } catch (error) {
       toast.error(error.message);
     } finally {

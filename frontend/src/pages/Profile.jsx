@@ -31,12 +31,18 @@ const Profile = () => {
   };
 
   const handleSaveUpdates = async () => {
-    await updateProfile({
+    const updatedData = await updateProfile({
       fullName,
       username,
       email,
       profileImage: selectedImage,
     });
+
+    setFullName(updatedData.fullName);
+    setUsername(updatedData.username);
+    setEmail(updatedData.email);
+    setSelectedImage(updatedData.profileImage);
+    
     setHasUpdates(false);
   };
   return (
