@@ -65,7 +65,7 @@ const Profile = () => {
               />
               <label
                 htmlFor="profile-image-input"
-                className="absolute bottom-0 right-7 p-2 bg-amber-500/90 hover:bg-amber-500 transition text-white/80 rounded-full"
+                className="absolute bottom-0 right-7 p-2 bg-amber-500/90 hover:bg-amber-500 transition text-white/80 rounded-full hover:cursor-pointer"
               >
                 <Camera className="h-5 w-5" />
                 <input
@@ -178,14 +178,14 @@ const Profile = () => {
           </div>
 
           {/* Submit changes btn */}
-          <div className="text-center mt-4">
+          <div className="flex justify-center text-center mt-6">
             <button
               onClick={handleSaveUpdates}
               disabled={!hasUpdates || sendingData}
-              className={`flex items-center ${
+              className={`items-center w-full h-10 rounded-[4px] font-medium tracking-wider ${
                 !hasUpdates || sendingData
-                  ? "bg-gray-400 cursor-not-allowed"
-                  : "bg-amber-400"
+                  ? "bg-gray-300 text-gray-500 cursor-not-allowed"
+                  : "bg-amber-500/60 hover:bg-amber-500/75 transition"
               }`}
             >
               Update Profile
