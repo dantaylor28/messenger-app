@@ -25,8 +25,8 @@ const Chat = ({ chat, onClick, lastIndex }) => {
         onClick={handleClick}
       >
         <div className="py-1.5">
-          <div className="w-12 md:w-14 rounded-full border border-black/10 relative">
-            <img src={chat.profileImage} alt="user avatar" />
+          <div className="w-12 md:w-14 h-12 md:h-14 rounded-full border border-black/10 relative">
+            <img src={chat.profileImage} alt="user avatar" className="w-full h-full object-cover rounded-full" />
             <span
               className={`h-3 w-3 rounded-full ${
                 isOnline ? "bg-green-500" : "hidden"
