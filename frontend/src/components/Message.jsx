@@ -31,7 +31,7 @@ const Message = ({ message }) => {
       <div className={`flex space-x-3 ${chatBubbleLayout}`}>
         {sentFromMe ? chatBubble : ""}
         <div className="h-10 w-10 rounded-full border flex">
-          <img src={profileImage} alt="chat user avatar" />
+          <img src={profileImage} alt="chat user avatar" className="w-full h-full object-cover rounded-full" />
         </div>
         {sentFromMe ? "" : chatBubble}
       </div>

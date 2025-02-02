@@ -20,8 +20,8 @@ const MessageBox = () => {
       ) : (
         <>
           <div className="flex gap-4 items-center ml-24 md:ml-10 mt-4">
-            <div className="w-14 rounded-full border border-black/10 hover:cursor-pointer">
-              <img src={selectedChat.profileImage} alt="user avatar" />
+            <div className="w-14 h-14 rounded-full border border-black/10 hover:cursor-pointer">
+              <img src={selectedChat.profileImage} alt="user avatar" className="w-full h-full object-cover rounded-full" />
             </div>
             <div>
               <p className="tracking-wide capitalize font-light">{selectedChat.fullName}</p>
