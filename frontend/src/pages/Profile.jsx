@@ -45,16 +45,16 @@ const Profile = () => {
     }
   };
   return (
-    <div>
+    <div className="">
       <div className="flex flex-col items-center justify-center">
         <h1 className="text-2xl font-medium tracking-widest mt-10">
           My Profile
         </h1>
-        <h2 className="mt-4 font-light">Personal Information</h2>
-        {/* update name, username, email, password section */}
       </div>
-      <div className="flex items-center justify-center">
-        <div className="w-[30%]">
+      <div className="flex items-center justify-center mt-6">
+        <div className="w-[35%] rounded-md px-12 py-10 bg-gray-200/30">
+          <h2 className="font-light text-center">Personal Information</h2>
+          {/* update name, username, email, password section */}
           {/* Update Profile Image Section */}
           <div className="flex flex-col items-center mt-3">
             <div className="relative">
