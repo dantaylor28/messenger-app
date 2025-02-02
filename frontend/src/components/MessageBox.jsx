@@ -42,7 +42,7 @@ export default MessageBox;
 const SelectChat = () => {
   const { authenticatedUser } = useAuthContext();
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full mb-40">
+    <div className="flex flex-col items-center justify-center w-[100vw] md:w-full h-full mb-40">
       <div>
         <PiHandWavingThin className="h-32 w-32 items-center justify-center text-cyan-800" />
       </div>
