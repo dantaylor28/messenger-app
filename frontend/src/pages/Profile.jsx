@@ -53,6 +53,8 @@ const Profile = () => {
       </div>
       <div className="flex items-center justify-center mt-6">
         <div className="w-[35%] rounded-md px-12 py-10 bg-gray-200/30">
+          <p>Member since:</p>
+          <span>{authenticatedUser.createdAt}</span>
           <h2 className="font-light text-center">Personal Information</h2>
           {/* update name, username, email, password section */}
           {/* Update Profile Image Section */}
