@@ -17,8 +17,6 @@ const Profile = () => {
 
   const [hasUpdates, setHasUpdates] = useState(false);
 
-  console.log("authenticated user:", authenticatedUser);
-
   const handleImageUpload = async (e) => {
     const file = e.target.files[0];
     if (!file) return;
@@ -54,13 +52,11 @@ const Profile = () => {
         </h1>
       </div>
       <div className="flex items-center justify-center mt-6">
-        <div className="w-[35%] rounded-md px-12 py-10 bg-gray-200/30">
-          <p>Member since:</p>
-          <span>{authenticatedUser.createdAt}</span>
+        <div className="w-[35%] rounded-md px-12 pb-10 pt-4 bg-gray-200/30">
           <h2 className="font-light text-center">Personal Information</h2>
-          {/* update name, username, email, password section */}
           {/* Update Profile Image Section */}
-          <div className="flex flex-col items-center mt-3">
+          <div className="flex flex-col items-center mt-5">
+            <p className="text-xs mb-1 opacity-60">Member Since: <span>{authenticatedUser.createdAt?.split("T")[0]}</span></p>
             <div className="relative">
               <img
                 src={selectedImage || authenticatedUser.profileImage}
@@ -86,6 +82,7 @@ const Profile = () => {
             </p>
           </div>
 
+          {/* Update name, username, email, password section */}
           {/* Full name input */}
           <div>
             <div className="flex items-center gap-0.5 mt-2">
