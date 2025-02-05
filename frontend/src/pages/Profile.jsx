@@ -55,8 +55,15 @@ const Profile = () => {
         <div className="w-[35%] rounded-md px-12 pb-10 pt-4 bg-gray-200/30">
           <h2 className="font-light text-center">Personal Information</h2>
           {/* Update Profile Image Section */}
+          <div className="flex">
+            <p className="text-sm mb-1 mt-5 ml-4 opacity-70">
+              Member Since:{" "}
+              <span>{authenticatedUser.createdAt?.split("T")[0]}</span>
+            </p>
+            <p className="text-sm mb-1 mt-5 opacity-70 m-auto mr-4">Account Status: <span>Active</span></p>
+          </div>
+          <div className="border-b border-black/20 py-2"></div>
           <div className="flex flex-col items-center mt-5">
-            <p className="text-xs mb-1 opacity-60">Member Since: <span>{authenticatedUser.createdAt?.split("T")[0]}</span></p>
             <div className="relative">
               <img
                 src={selectedImage || authenticatedUser.profileImage}
