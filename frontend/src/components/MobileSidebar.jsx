@@ -2,7 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 import SearchBar from "./SearchBar";
 import Chats from "./Chats";
-import LogoutBtn from "./LogoutBtn";
 
 const MobileSidebar = () => {
   const [expanded, setExpanded] = useState(false);
@@ -50,10 +49,9 @@ const MobileSidebar = () => {
           expanded ? "-translate-x-0" : "-translate-x-full"
         }`}
       >
-        <div className="flex flex-col justify-center w-full pt-10">
+        <div className="flex flex-col w-full pt-10">
           <SearchBar onSearchBarClick={handleSidebarClick} />
           <Chats onChatClick={handleSidebarClick} />
-          <LogoutBtn />
         </div>
       </div>
     </>
