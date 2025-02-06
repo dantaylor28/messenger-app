@@ -1,7 +1,6 @@
 import React from "react";
 import useLogout from "../hooks/useLogout";
-import { CiLogout } from "react-icons/ci";
-import { User } from "lucide-react";
+import { LogOut } from "lucide-react";
 
 const LogoutBtn = () => {
   const { sendingData, logoutUser } = useLogout();
@@ -11,7 +10,7 @@ const LogoutBtn = () => {
         onClick={logoutUser}
         className="flex items-center mr-4 cursor-pointer bg-amber-600/40 p-2 rounded-full hover:bg-amber-600/55 transition gap-1"
       >
-        <User className="size-5 text-white" />
+        <LogOut className="size-5 text-white" />
         {!sendingData ? (
           <p className="text-xs font-semibold text-white">Logout</p>
         ) : (
