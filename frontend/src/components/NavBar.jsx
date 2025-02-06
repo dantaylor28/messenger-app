@@ -2,22 +2,30 @@ import React from "react";
 import { MessagesSquare, Settings, User } from "lucide-react";
 import { useAuthContext } from "../context/AuthContext";
 import { Link } from "react-router-dom";
+import LogoutBtn from "./LogoutBtn";
 
 const NavBar = () => {
   const { authenticatedUser } = useAuthContext();
   return (
     <header className="flex items-center bg-amber-600/60 h-16">
       {/* Logo */}
-      <Link className="size-12 rounded-xl flex items-center justify-center bg-white/70 ml-8" to="/">
+      <Link
+        className="size-12 rounded-xl flex items-center justify-center bg-white/70 ml-8"
+        to="/"
+      >
         <MessagesSquare className="size-6 text-amber-800" />
       </Link>
       <div className="flex ml-auto">
         {authenticatedUser && (
           <>
-            <Link className="flex items-center mr-4 cursor-pointer bg-amber-600/40 p-2 rounded-full hover:bg-amber-600/55 transition gap-1" to="/profile">
+            <Link
+              className="flex items-center mr-4 cursor-pointer bg-amber-600/40 p-2 rounded-full hover:bg-amber-600/55 transition gap-1"
+              to="/profile"
+            >
               <User className="size-5 text-white" />
               <p className="text-xs font-semibold text-white">Profile</p>
             </Link>
+            <LogoutBtn />
           </>
         )}
         <Link className="flex items-center mr-8 cursor-pointer bg-amber-600/40 p-2 rounded-full hover:bg-amber-600/55 transition gap-1">
