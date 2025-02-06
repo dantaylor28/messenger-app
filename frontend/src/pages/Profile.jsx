@@ -45,15 +45,9 @@ const Profile = () => {
     }
   };
   return (
-    <div className="">
-      <div className="flex flex-col items-center justify-center">
-        <h1 className="text-2xl font-medium tracking-widest mt-10">
-          My Profile
-        </h1>
-      </div>
-      <div className="flex items-center justify-center mt-6">
+      <div className="flex items-center justify-center mt-16">
         <div className="w-[35%] rounded-md px-12 pb-10 pt-4 bg-gray-200/30">
-          <h2 className="font-light text-center">Personal Information</h2>
+          <h1 className="font-medium text-center tracking-wider">Profile Information</h1>
           {/* Update Profile Image Section */}
           <div className="flex">
             <p className="text-sm mb-1 mt-5 ml-4 opacity-70">
@@ -201,7 +195,6 @@ const Profile = () => {
           </div>
         </div>
       </div>
-    </div>
   );
 };
 
