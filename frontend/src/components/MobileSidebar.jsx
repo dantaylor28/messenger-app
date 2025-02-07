@@ -37,7 +37,7 @@ const MobileSidebar = () => {
         </button>
       ) : (
         <button
-          className="md:hidden flex fixed top-5 left-6 z-20 text-2xl"
+          className="md:hidden flex items-center ml-6 z-20 text-2xl text-white"
           onClick={() => setExpanded(!expanded)}
         >
           <RxHamburgerMenu />
