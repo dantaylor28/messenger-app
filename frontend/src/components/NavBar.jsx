@@ -3,11 +3,13 @@ import { MessagesSquare, Settings, User } from "lucide-react";
 import { useAuthContext } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 import LogoutBtn from "./LogoutBtn";
+import MobileSidebar from "./MobileSidebar";
 
 const NavBar = () => {
   const { authenticatedUser } = useAuthContext();
   return (
     <header className="flex items-center bg-amber-600/60 h-16">
+      <MobileSidebar />
       {/* Logo */}
       <Link
         className="size-12 rounded-xl flex items-center justify-center bg-white/70 ml-8"

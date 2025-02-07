@@ -7,7 +7,6 @@ const Home = () => {
   return (
     <div className='flex'>
         <Sidebar />
-        <MobileSidebar />
         <MessageBox />
     </div>
   )
