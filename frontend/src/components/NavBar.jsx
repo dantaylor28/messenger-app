@@ -12,7 +12,7 @@ const NavBar = () => {
       <MobileSidebar />
       {/* Logo */}
       <Link
-        className="size-12 rounded-xl flex items-center justify-center bg-white/70 ml-8"
+        className="hidden md:flex size-12 rounded-xl items-center justify-center bg-white/70 ml-8"
         to="/"
       >
         <MessagesSquare className="size-6 text-amber-800" />
