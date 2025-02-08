@@ -3,7 +3,7 @@ import Messages from "./Messages";
 import MessageBar from "./MessageBar";
 import { useChatContext } from "../context/ChatContext";
 import { useAuthContext } from "../context/AuthContext";
-import { PiHandWavingThin } from "react-icons/pi";
+import { MessagesSquare } from "lucide-react";
 
 const MessageBox = () => {
   const { selectedChat, setSelectedChat } = useChatContext();
@@ -21,13 +21,19 @@ const MessageBox = () => {
         <>
           <div className="flex gap-4 items-center ml-10 mt-4">
             <div className="w-14 h-14 rounded-full border border-black/10 hover:cursor-pointer">
-              <img src={selectedChat.profileImage} alt="user avatar" className="w-full h-full object-cover rounded-full" />
+              <img
+                src={selectedChat.profileImage}
+                alt="user avatar"
+                className="w-full h-full object-cover rounded-full"
+              />
             </div>
             <div>
-              <p className="tracking-wide capitalize font-light">{selectedChat.fullName}</p>
+              <p className="tracking-wide capitalize font-light">
+                {selectedChat.fullName}
+              </p>
             </div>
           </div>
-          <hr className="my-4 mx-8"/>
+          <hr className="my-4 mx-8" />
 
           <Messages />
           <MessageBar />
@@ -43,8 +49,8 @@ const SelectChat = () => {
   const { authenticatedUser } = useAuthContext();
   return (
     <div className="flex flex-col items-center justify-center w-[100vw] md:w-full h-full mb-40">
-      <div>
-        <PiHandWavingThin className="h-32 w-32 items-center justify-center text-cyan-800" />
+      <div className="size-20 rounded-xl flex items-center justify-center bg-amber-400/30 mb-4 group hover:bg-amber-400/35 animate-bounce">
+        <MessagesSquare className="size-10 text-amber-800 group-hover:text-amber-900" />
       </div>
       <div className="text-center mt-3 text-xl font-extralight tracking-wide">
         <p className="capitalize">Hey {authenticatedUser.fullName}!</p>
