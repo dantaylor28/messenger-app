@@ -4,7 +4,7 @@ import MessageBox from '../components/MessageBox'
 
 const Home = () => {
   return (
-    <div className='flex'>
+    <div className='flex h-screen'>
         <Sidebar />
         <MessageBox />
     </div>

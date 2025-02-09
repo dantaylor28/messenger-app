@@ -14,7 +14,7 @@ const MessageBox = () => {
   }, [setSelectedChat]);
 
   return (
-    <div className="flex flex-col md:w-[500px] lg:w-[700px] xl:w-[800px] h-screen md:h-[700px]">
+    <div className="flex flex-col md:w-[500px] lg:w-[700px] xl:w-[800px] h-screen">
       {!selectedChat ? (
         <SelectChat />
       ) : (
