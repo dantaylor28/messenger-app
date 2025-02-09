@@ -12,6 +12,7 @@ const MobileSidebar = () => {
   // Close sidebar when a chat/search is selected/made
   const handleSidebarClick = () => {
     setExpanded(false);
+    navigate("/");
   };
 
   // Close sidebar when a user clicks outside it
@@ -19,7 +20,6 @@ const MobileSidebar = () => {
     const handleClickOutside = (event) => {
       if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
         setExpanded(false);
-        navigate("/");
       }
     };
 
