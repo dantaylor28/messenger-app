@@ -52,9 +52,9 @@ const SelectChat = () => {
       <div className="size-20 rounded-xl flex items-center justify-center bg-amber-400/30 mb-4 group hover:bg-amber-400/35 animate-bounce">
         <MessagesSquare className="size-10 text-amber-800 group-hover:text-amber-900" />
       </div>
-      <div className="text-center mt-3 text-xl font-extralight tracking-wide">
-        <p className="capitalize">Hey {authenticatedUser.fullName}!</p>
-        <p>Select a chat and start messaging!😃</p>
+      <div className="text-center mt-3">
+        <p className="capitalize font-medium text-2xl tracking-wide">Welcome {authenticatedUser.fullName}!</p>
+        <p className="mt-2 text-md font-light">Select a chat and start messaging</p>
       </div>
     </div>
   );
