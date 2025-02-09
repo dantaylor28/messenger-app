@@ -2,10 +2,12 @@ import { useEffect, useRef, useState } from "react";
 import { RxHamburgerMenu, RxCross1 } from "react-icons/rx";
 import SearchBar from "./SearchBar";
 import Chats from "./Chats";
+import { useNavigate } from "react-router-dom";
 
 const MobileSidebar = () => {
   const [expanded, setExpanded] = useState(false);
   const sidebarRef = useRef(null);
+  const navigate = useNavigate();
 
   // Close sidebar when a chat/search is selected/made
   const handleSidebarClick = () => {
@@ -17,6 +19,7 @@ const MobileSidebar = () => {
     const handleClickOutside = (event) => {
       if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
         setExpanded(false);
+        navigate("/");
       }
     };
 
