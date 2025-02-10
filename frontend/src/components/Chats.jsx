@@ -2,6 +2,7 @@ import React from "react";
 import Chat from "./Chat";
 import useGetChats from "../hooks/useGetChats";
 import useListenForMessages from "../hooks/useListenForMessages";
+import SidebarSkeleton from "./SidebarSkeleton"
 
 const Chats = ({ onChatClick }) => {
   const { sendingData, chats } = useGetChats();
@@ -16,10 +17,8 @@ const Chats = ({ onChatClick }) => {
           lastIndex={idx === chats.length - 1}
         />
       ))}
-      <div className="flex items-center justify-center p-2">
-        {sendingData ? (
-          <div className="animate-spin h-5 w-5 rounded-full border-b-2 border-cyan-800"></div>
-        ) : null}
+      <div className="flex flex-col items-center justify-center p-2">
+        {sendingData && [...Array(6)].map((_, index) => <SidebarSkeleton key={index} />)}
       </div>
     </div>
   );
