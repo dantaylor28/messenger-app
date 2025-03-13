@@ -23,12 +23,17 @@ const MessageBox = () => {
       ) : (
         <>
           <div className="flex gap-4 items-center ml-10 mt-4">
-            <div className="w-14 h-14 rounded-full border border-black/10 hover:cursor-pointer">
+            <div className="w-14 h-14 rounded-full border border-black/10 hover:cursor-pointer relative">
               <img
                 src={selectedChat.profileImage}
                 alt="user avatar"
                 className="w-full h-full object-cover rounded-full"
               />
+              <span
+              className={`h-3 w-3 rounded-full ${
+                isOnline ? "bg-green-500" : "hidden"
+              } absolute top-[-1px] right-[3.5px]`}
+            ></span>
             </div>
             <div>
               <p className="tracking-wide capitalize font-light">
