@@ -4,9 +4,12 @@ import MessageBar from "./MessageBar";
 import { useChatContext } from "../context/ChatContext";
 import { useAuthContext } from "../context/AuthContext";
 import { MessagesSquare } from "lucide-react";
+import { useSocketContext } from "../context/SocketContext";
 
 const MessageBox = () => {
   const { selectedChat, setSelectedChat } = useChatContext();
+  const {onlineUsers} = useSocketContext()
+  const isOnline = selectedChat && onlineUsers.includes(selectedChat._id)
 
   // Removes selectedChat on sign out - cleanup function
   useEffect(() => {
@@ -31,6 +34,7 @@ const MessageBox = () => {
               <p className="tracking-wide capitalize font-light">
                 {selectedChat.fullName}
               </p>
+              <span className="font-light text-sm opacity-80">{isOnline ? "Online" : "Offline"}</span>
             </div>
           </div>
           <hr className="my-4 mx-8" />
