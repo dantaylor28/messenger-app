@@ -48,7 +48,7 @@ const MobileSidebar = () => {
       )}
       <div
         ref={sidebarRef}
-        className={`flex md:hidden top-0 left-0 w-[70vw] py-10 px-8 fixed h-full bg-cyan-800 text-white z-10 ease-in-out duration-700 ${
+        className={`flex md:hidden top-0 left-0 w-[70vw] py-10 px-8 fixed h-full bg-amber-600 text-white z-10 ease-in-out duration-700 ${
           expanded ? "-translate-x-0" : "-translate-x-full"
         }`}
       >

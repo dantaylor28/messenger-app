@@ -37,7 +37,7 @@ const SearchBar = ({ onSearchBarClick }) => {
         onChange={(e) => setSearch(e.target.value)}
         type="text"
         placeholder="Search for a user"
-        className="text-white md:text-black placeholder:text-white/50 md:placeholder:text-black/40 bg-cyan-800 md:bg-white border border-white/50 md:border-black/20 w-full h-9 rounded-sm text-md pl-2 shadow-sm cursor-text"
+        className="text-white md:text-black placeholder:text-white/50 md:placeholder:text-black/40 bg-amber-600 md:bg-white border border-white/50 md:border-black/20 w-full h-9 rounded-sm text-md pl-2 shadow-sm cursor-text"
       />
       <button
         type="submit"
