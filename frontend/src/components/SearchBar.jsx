@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useChatContext } from "../context/ChatContext";
 import useGetChats from "../hooks/useGetChats";
 import toast from "react-hot-toast";
-import { FaMagnifyingGlass } from "react-icons/fa6";
+import { Search } from 'lucide-react';
 
 const SearchBar = ({ onSearchBarClick }) => {
   const [search, setSearch] = useState("");
@@ -44,7 +44,7 @@ const SearchBar = ({ onSearchBarClick }) => {
         className="absolute inset-y-0 end-0 items-center pe-3"
         onClick={onSearchBarClick}
       >
-        <FaMagnifyingGlass className="text-white/60 hover:text-white/80 md:text-cyan-600 md:hover:text-cyan-700 hover:scale-105 transition" />
+        <Search className="h-[22px] w-[22px] text-white/60 hover:text-white/80 md:text-amber-700 md:hover:text-amber-800 hover:scale-105 transition" />
       </button>
     </form>
   );
