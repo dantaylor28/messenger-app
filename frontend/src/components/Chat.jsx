@@ -25,7 +25,7 @@ const Chat = ({ chat, onClick, lastIndex }) => {
         onClick={handleClick}
       >
         <div className="py-1.5">
-          <div className="w-10 md:w-12 h-10 md:h-12 rounded-full border border-black/10 relative">
+          <div className="w-10 md:w-10 h-10 md:h-10 rounded-full border border-black/10 relative">
             <img src={chat.profileImage} alt="user avatar" className="w-full h-full object-cover rounded-full" />
             <span
               className={`h-3 w-3 rounded-full ${
@@ -37,10 +37,10 @@ const Chat = ({ chat, onClick, lastIndex }) => {
 
         <div className="flex flex-col flex-1">
           <div>
-            <p className="tracking-wide capitalize font-medium opacity-75">
+            <p className="tracking-wide capitalize font-normal opacity-75">
               {chat.fullName}
             </p>
-            <span className="font-light text-sm opacity-80">{isOnline ? "Online" : "Offline"}</span>
+            <span className="font-light text-xs opacity-80">{isOnline ? "Online" : "Offline"}</span>
           </div>
         </div>
       </div>
