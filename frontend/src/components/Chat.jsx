@@ -19,8 +19,8 @@ const Chat = ({ chat, onClick, lastIndex }) => {
   return (
     <>
       <div
-        className={`flex gap-4 py-2 px-2 rounded-sm items-center cursor-pointer hover:bg-cyan-700/60 md:hover:bg-amber-500/20 ${
-          isSelected ? "bg-cyan-700/60 md:bg-amber-500/50" : ""
+        className={`flex gap-4 py-2 px-2 rounded-sm items-center cursor-pointer ${
+          isSelected ? "bg-cyan-700/60 md:bg-amber-500/50" : "hover:bg-cyan-700/60 md:hover:bg-amber-500/20"
         }`}
         onClick={handleClick}
       >
