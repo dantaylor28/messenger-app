@@ -8,7 +8,7 @@ const Chats = ({ onChatClick }) => {
   const { sendingData, chats } = useGetChats();
   useListenForMessages();
   return (
-    <div className="flex flex-col overflow-auto mt-8 w-full px-3">
+    <div className="flex flex-col overflow-auto mt-8 w-full">
       {chats.map((chat, idx) => (
         <Chat
           key={chat._id}

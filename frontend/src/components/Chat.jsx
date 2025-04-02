@@ -19,13 +19,13 @@ const Chat = ({ chat, onClick, lastIndex }) => {
   return (
     <>
       <div
-        className={`flex gap-4 py-2 px-2 rounded-sm items-center cursor-pointer hover:bg-cyan-700/60 md:hover:bg-amber-600/40 ${
-          isSelected ? "bg-cyan-700/60 md:bg-amber-600/60" : ""
+        className={`flex gap-4 py-2 px-2 rounded-sm items-center cursor-pointer hover:bg-cyan-700/60 md:hover:bg-amber-500/20 ${
+          isSelected ? "bg-cyan-700/60 md:bg-amber-500/50" : ""
         }`}
         onClick={handleClick}
       >
         <div className="py-1.5">
-          <div className="w-12 md:w-14 h-12 md:h-14 rounded-full border border-black/10 relative">
+          <div className="w-10 md:w-12 h-10 md:h-12 rounded-full border border-black/10 relative">
             <img src={chat.profileImage} alt="user avatar" className="w-full h-full object-cover rounded-full" />
             <span
               className={`h-3 w-3 rounded-full ${
