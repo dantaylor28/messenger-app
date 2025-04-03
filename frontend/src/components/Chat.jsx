@@ -37,10 +37,10 @@ const Chat = ({ chat, onClick, lastIndex }) => {
 
         <div className="flex flex-col flex-1">
           <div>
-            <p className="tracking-wide capitalize font-normal opacity-75">
+            <p className="tracking-wide capitalize font-normal opacity-90 md:opacity-75">
               {chat.fullName}
             </p>
-            <span className="font-light text-xs opacity-80">{isOnline ? "Online" : "Offline"}</span>
+            <span className="font-light text-xs opacity-85 md:opacity-80">{isOnline ? "Online" : "Offline"}</span>
           </div>
         </div>
       </div>
