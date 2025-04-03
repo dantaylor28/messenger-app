@@ -9,8 +9,8 @@ const Chats = ({ onChatClick }) => {
   const { sendingData, chats } = useGetChats();
   useListenForMessages();
   return (
-    <div className="flex flex-col overflow-auto mt-8 w-full pr-12">
-      <div className="flex items-center gap-2 mb-5 px-5 py-3 border-b">
+    <div className="flex flex-col overflow-auto mt-8 w-full md:pr-12">
+      <div className="flex items-center gap-2 mb-5 px-5 py-3 border-b border-white/50 md:border-black/30">
         <Users className="size-6 text-amber-700" />
         <span className="font-medium opacity-75">Contacts</span>
       </div>

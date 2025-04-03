@@ -45,7 +45,7 @@ const Chat = ({ chat, onClick, lastIndex }) => {
         </div>
       </div>
       {!lastIndex && (
-        <hr className="bg-white opacity-20 md:bg-none md:opacity-100" />
+        <hr className="bg-white opacity-20 md:bg-black md:opacity-60" />
       )}
     </>
   );
