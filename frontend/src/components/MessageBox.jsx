@@ -8,8 +8,8 @@ import { useSocketContext } from "../context/SocketContext";
 
 const MessageBox = () => {
   const { selectedChat, setSelectedChat } = useChatContext();
-  const {onlineUsers} = useSocketContext()
-  const isOnline = selectedChat && onlineUsers.includes(selectedChat._id)
+  const { onlineUsers } = useSocketContext();
+  const isOnline = selectedChat && onlineUsers.includes(selectedChat._id);
 
   // Removes selectedChat on sign out - cleanup function
   useEffect(() => {
@@ -30,17 +30,27 @@ const MessageBox = () => {
                 className="w-full h-full object-cover rounded-full"
               />
               <span
-              className={`h-3 w-3 rounded-full ${
-                isOnline ? "bg-green-500" : "hidden"
-              } absolute top-[-1px] right-[3.5px]`}
-            ></span>
+                className={`h-3 w-3 rounded-full ${
+                  isOnline ? "bg-green-500" : "hidden"
+                } absolute top-[-1px] right-[3.5px]`}
+              ></span>
             </div>
             <div>
               <p className="tracking-wide capitalize font-light">
                 {selectedChat.fullName}
               </p>
-              <span className="font-light text-sm opacity-80">{isOnline ? "Online" : "Offline"}</span>
+              <span className="font-light text-sm opacity-80">
+                {isOnline ? "Online" : "Offline"}
+              </span>
             </div>
+            <button
+              className="ml-auto mr-10"
+              onClick={() => {
+                setSelectedChat(null);
+              }}
+            >
+              X
+            </button>
           </div>
           <hr className="my-4 mx-8" />
 
@@ -62,8 +72,12 @@ const SelectChat = () => {
         <MessagesSquare className="size-10 text-amber-800 group-hover:text-amber-900" />
       </div>
       <div className="text-center mt-3">
-        <p className="capitalize font-medium text-2xl tracking-wide">Welcome {authenticatedUser.fullName}!</p>
-        <p className="mt-2 text-md font-light">Select a chat and start messaging</p>
+        <p className="capitalize font-medium text-2xl tracking-wide">
+          Welcome {authenticatedUser.fullName}!
+        </p>
+        <p className="mt-2 text-md font-light">
+          Select a chat and start messaging
+        </p>
       </div>
     </div>
   );
