@@ -3,7 +3,7 @@ import Messages from "./Messages";
 import MessageBar from "./MessageBar";
 import { useChatContext } from "../context/ChatContext";
 import { useAuthContext } from "../context/AuthContext";
-import { MessagesSquare } from "lucide-react";
+import { MessagesSquare, X } from "lucide-react";
 import { useSocketContext } from "../context/SocketContext";
 
 const MessageBox = () => {
@@ -44,12 +44,12 @@ const MessageBox = () => {
               </span>
             </div>
             <button
-              className="ml-auto mr-10"
+              className="ml-auto mr-10 opacity-65 hover:opacity-80"
               onClick={() => {
                 setSelectedChat(null);
               }}
             >
-              X
+              <X />
             </button>
           </div>
           <hr className="my-4 mx-8" />
