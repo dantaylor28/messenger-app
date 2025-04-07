@@ -17,7 +17,7 @@ const MessageBar = () => {
         <input
           type="text"
           placeholder="Enter message"
-          className="border-y border-r border-black/20 w-full h-12 rounded-sm text-md pl-2 shadow-sm cursor-text pr-12"
+          className="border-y border-r border-black/20 focus:outline-amber-500/50 w-full h-12 rounded-sm text-md pl-2 shadow-sm cursor-text pr-12"
           value={message}
           onChange={(e) => setMessage(e.target.value)}
         />
@@ -37,3 +37,5 @@ const MessageBar = () => {
 };
 
 export default MessageBar;
+
+// md:border-black/20 md:focus:outline-none md:focus:border-black/40
