@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import useSendMessage from "../hooks/useSendMessage";
-import { SendHorizonal, SendHorizontal } from 'lucide-react';
+import { SendHorizonal, SendHorizontal } from "lucide-react";
 
 const MessageBar = () => {
   const [message, setMessage] = useState("");
+  const [imagePreview, setImagePreview] = useState(null);
+  const fileInputRef = useRef(null);
   const { sendingData, sendMessage } = useSendMessage();
   const handleSubmit = async (e) => {
     e.preventDefault();
