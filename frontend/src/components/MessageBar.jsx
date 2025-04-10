@@ -8,7 +8,19 @@ const MessageBar = () => {
   const fileInputRef = useRef(null);
   const { sendingData, sendMessage } = useSendMessage();
 
-  const handleChangeImage = (e) => {};
+  const handleChangeImage = (e) => {
+    const file = e.target.files[0];
+    if (!file.type.startsWith("image/")) {
+      toast.error("Oops, this is not a valid image file");
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      setImagePreview(reader.result);
+    };
+    reader.readAsDataURL(file);
+  };
 
   const removeImage = () => {};
 
@@ -59,7 +71,11 @@ const MessageBar = () => {
             onClick={() => {
               fileInputRef.current?.click();
             }}
-            className={`absolute inset-y-0 end-14 ${imagePreview ? "text-green-500" : "text-gray-500 hover:text-gray-800"}`}
+            className={`absolute inset-y-0 end-14 ${
+              imagePreview
+                ? "text-green-500"
+                : "text-gray-500 hover:text-gray-800"
+            }`}
           >
             <Image size={20} />
           </button>
