@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import useSendMessage from "../hooks/useSendMessage";
-import { SendHorizonal } from "lucide-react";
+import { Image, SendHorizonal } from "lucide-react";
 
 const MessageBar = () => {
   const [message, setMessage] = useState("");
@@ -47,6 +47,22 @@ const MessageBar = () => {
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
+          <input
+            type="file"
+            accept="image/*"
+            ref={fileInputRef}
+            onChange={handleChangeImage}
+            className="hidden"
+          />
+          <button
+            type="button"
+            onClick={() => {
+              fileInputRef.current?.click();
+            }}
+            className="absolute inset-y-0 end-14"
+          >
+            <Image size={20} />
+          </button>
           <button
             type="submit"
             className="absolute inset-y-0 end-0 items-center pe-3"
