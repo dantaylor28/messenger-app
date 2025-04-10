@@ -1,12 +1,17 @@
 import React, { useRef, useState } from "react";
 import useSendMessage from "../hooks/useSendMessage";
-import { SendHorizonal, SendHorizontal } from "lucide-react";
+import { SendHorizonal } from "lucide-react";
 
 const MessageBar = () => {
   const [message, setMessage] = useState("");
   const [imagePreview, setImagePreview] = useState(null);
   const fileInputRef = useRef(null);
   const { sendingData, sendMessage } = useSendMessage();
+
+  const handleChangeImage = (e) => {}
+
+  const removeImage = () => {}
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!message) return;
@@ -39,5 +44,3 @@ const MessageBar = () => {
 };
 
 export default MessageBar;
-
-// md:border-black/20 md:focus:outline-none md:focus:border-black/40
