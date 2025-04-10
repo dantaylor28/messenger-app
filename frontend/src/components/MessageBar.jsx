@@ -59,7 +59,7 @@ const MessageBar = () => {
             onClick={() => {
               fileInputRef.current?.click();
             }}
-            className="absolute inset-y-0 end-14"
+            className={`absolute inset-y-0 end-14 ${imagePreview ? "text-green-500" : "text-gray-500 hover:text-gray-800"}`}
           >
             <Image size={20} />
           </button>
