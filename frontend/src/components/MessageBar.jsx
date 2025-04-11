@@ -78,8 +78,8 @@ const MessageBar = () => {
             }}
             className={`absolute inset-y-0 end-14 ${
               imagePreview
-                ? "text-green-500"
-                : "text-gray-500 hover:text-gray-800"
+                ? "text-orange-600"
+                : "text-orange-400 hover:text-orange-500"
             }`}
           >
             <Image size={20} />
@@ -95,7 +95,7 @@ const MessageBar = () => {
                 className={`h-[22px] w-[22px] ${
                   !message && !imagePreview
                     ? "text-gray-400 cursor-not-allowed"
-                    : "text-amber-600 hover:text-amber-700 hover:translate-x-0.5 transition hover:cursor-pointer"
+                    : "text-emerald-400 hover:text-emerald-500 hover:translate-x-0.5 transition hover:cursor-pointer"
                 }`}
               />
             )}
