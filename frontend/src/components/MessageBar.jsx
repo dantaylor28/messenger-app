@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import useSendMessage from "../hooks/useSendMessage";
-import { Image, SendHorizonal } from "lucide-react";
+import { Image, SendHorizonal, X } from "lucide-react";
 
 const MessageBar = () => {
   const [message, setMessage] = useState("");
@@ -29,8 +29,8 @@ const MessageBar = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!message) return;
-    await sendMessage(message);
+    if (!message && !imagePreview) return;
+    await sendMessage(message, imagePreview);
     setMessage("");
     setImagePreview(null);
     if (fileInputRef.current) fileInputRef.current.value = "";
@@ -38,19 +38,19 @@ const MessageBar = () => {
   return (
     <div>
       {imagePreview && (
-        <div className="flex">
+        <div className="flex items-center justify-start">
           <div className="relative">
             <img
               src={imagePreview}
               alt="image preview"
-              className="w-12 h-12 object-cover"
+              className="w-24 h-24 object-cover rounded-2xl mx-6 my-2"
             />
             <button
               onClick={removeImage}
               type="button"
-              className="absolute -top-1.5 -right-1-5 w-5 h-5"
+              className="absolute -top-1 -right-0.5 bg-amber-500/90 hover:bg-amber-500 transition text-white/80 rounded-full hover:cursor-pointer"
             >
-              X
+              <X className="size-5"/>
             </button>
           </div>
         </div>

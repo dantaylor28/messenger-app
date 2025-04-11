@@ -1,6 +1,7 @@
 import Chat from "../models/chat.model.js";
 import Message from "../models/message.model.js";
 import { getReceiverSocketId, io } from "../socket/socket.js";
+import cloudinary from 'cloudinary';
 
 export const sendMessage = async (req, res) => {
   try {
