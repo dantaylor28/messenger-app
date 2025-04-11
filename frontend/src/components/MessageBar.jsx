@@ -24,7 +24,7 @@ const MessageBar = () => {
 
   const removeImage = () => {
     setImagePreview(null);
-    if (fileInputRef.current) fileInputRef.current.value = ""
+    if (fileInputRef.current) fileInputRef.current.value = "";
   };
 
   const handleSubmit = async (e) => {
@@ -32,8 +32,8 @@ const MessageBar = () => {
     if (!message) return;
     await sendMessage(message);
     setMessage("");
-    setImagePreview(null)
-    if (fileInputRef.current) fileInputRef.current.value = ""
+    setImagePreview(null);
+    if (fileInputRef.current) fileInputRef.current.value = "";
   };
   return (
     <div>
@@ -91,7 +91,13 @@ const MessageBar = () => {
             {sendingData ? (
               <div className="animate-spin h-5 w-5 rounded-full border-b-2 border-cyan-800"></div>
             ) : (
-              <SendHorizonal className="h-[22px] w-[22px] text-amber-600 hover:text-amber-700 hover:translate-x-0.5 transition hover:cursor-pointer" />
+              <SendHorizonal
+                className={`h-[22px] w-[22px] ${
+                  !message && !imagePreview
+                    ? "text-gray-400 cursor-not-allowed"
+                    : "text-amber-600 hover:text-amber-700 hover:translate-x-0.5 transition hover:cursor-pointer"
+                }`}
+              />
             )}
           </button>
         </div>
