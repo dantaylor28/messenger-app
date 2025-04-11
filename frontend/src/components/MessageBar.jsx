@@ -32,6 +32,8 @@ const MessageBar = () => {
     if (!message) return;
     await sendMessage(message);
     setMessage("");
+    setImagePreview(null)
+    if (fileInputRef.current) fileInputRef.current.value = ""
   };
   return (
     <div>
