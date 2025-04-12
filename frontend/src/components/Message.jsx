@@ -21,7 +21,13 @@ const Message = ({ message }) => {
       <div
         className={`border border-black/15 p-2 rounded-xl max-w-[35%] break-words ${chatBubbleBg} ${PingAnimation}`}
       >
-        {message.message}
+        {message.image && (
+          <img 
+          src={message.image}
+          alt="Image attachment"
+          className="sm:max-w-[200px] mb-2"/>
+        )}
+        {message.message && <p>{message.message}</p>}
       </div>
     </>
   );
