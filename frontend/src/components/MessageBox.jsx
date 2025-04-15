@@ -23,7 +23,7 @@ const MessageBox = () => {
       ) : (
         <>
           <div className="flex gap-4 items-center ml-10 mt-4">
-            <div className="w-14 h-14 rounded-full border border-black/10 hover:cursor-pointer relative">
+            <div className="w-14 h-14 rounded-full border border-black/10 relative">
               <img
                 src={selectedChat.profileImage}
                 alt="user avatar"
