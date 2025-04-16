@@ -6,9 +6,12 @@ import notification from "../assets/sounds/notification.mp3";
 const useListenForMessages = () => {
   const { socket } = useSocketContext();
   const { messages, setMessages } = useChatContext();
+  const { selectedChat } = useChatContext();
 
   useEffect(() => {
     socket?.on("newMessage", (newMessage) => {
+      const sentFromSelectedUser = newMessage.senderId === selectedChat._id;
+      if (!sentFromSelectedUser) return;
       newMessage.shouldPing = true;
       const sound = new Audio(notification);
       sound.play();
