@@ -28,9 +28,9 @@ const Chat = ({ chat, onClick, lastIndex }) => {
           <div className="w-10 md:w-10 h-10 md:h-10 rounded-full border border-black/10 relative">
             <img src={chat.profileImage} alt="user avatar" className="w-full h-full object-cover rounded-full" />
             <span
-              className={`h-3 w-3 rounded-full ${
+              className={`h-2.5 w-2.5 rounded-full ${
                 isOnline ? "bg-green-500" : "hidden"
-              } absolute top-[-1px] right-[3.5px]`}
+              } absolute top-[-2px] right-[3px]`}
             ></span>
           </div>
         </div>
