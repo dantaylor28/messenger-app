@@ -26,11 +26,11 @@ const Chats = ({ onChatClick }) => {
             type="checkbox"
             checked={showActiveUsers}
             onChange={(e) => setShowActiveUsers(e.target.checked)}
-            className="cursor-pointer"
+            className="appearance-none h-4 w-4 border-2 border-white outline outline-gray-300 rounded-sm bg-white checked:bg-amber-500 cursor-pointer ml-1"
           />
           <span className="text-sm cursor-pointer opacity-80">Show active users</span>
         </label>
-        <span className="text-xs font-light opacity-90 pl-5">({onlineUsers.length - 1} online)</span>
+        <span className="text-xs font-light opacity-90 pl-7">({onlineUsers.length - 1} online)</span>
       </div>
       {filteredUsers.map((chat, idx) => (
         <Chat
