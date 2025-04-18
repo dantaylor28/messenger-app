@@ -20,16 +20,17 @@ const Chats = ({ onChatClick }) => {
         <Users className="size-6 text-white/90 md:text-amber-700" />
         <span className="font-medium md:opacity-75">Contacts</span>
       </div>
-      <div className="flex items-center mb-5">
-        <label className="flex items-center gap-2 cursor-pointer">
+      <div className="flex flex-col mb-5">
+        <label className="flex items-center gap-2">
           <input
             type="checkbox"
             checked={showActiveUsers}
             onChange={(e) => setShowActiveUsers(e.target.checked)}
             className="cursor-pointer"
           />
-          <span>Show active users</span>
+          <span className="text-sm cursor-pointer opacity-80">Show active users</span>
         </label>
+        <span className="text-xs font-light opacity-90 pl-5">({onlineUsers.length - 1} online)</span>
       </div>
       {filteredUsers.map((chat, idx) => (
         <Chat
