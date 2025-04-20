@@ -40,6 +40,9 @@ const Chats = ({ onChatClick }) => {
           lastIndex={idx === chats.length - 1}
         />
       ))}
+      {filteredUsers.length === 0 && (
+        <div className="text-center py-8 font-light text-xs opacity-85 md:opacity-80">No active users</div>
+      )}
       <div className="flex flex-col items-center justify-center p-2">
         {sendingData &&
           [...Array(6)].map((_, index) => <SidebarSkeleton key={index} />)}
