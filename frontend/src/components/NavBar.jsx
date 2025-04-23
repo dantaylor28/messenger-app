@@ -9,7 +9,7 @@ const NavBar = () => {
   const { authenticatedUser } = useAuthContext();
   return (
     <header className="flex items-center bg-amber-600/60 h-16">
-      <MobileSidebar />
+      {authenticatedUser && <MobileSidebar />}
       {/* Logo */}
       <Link
         className="hidden md:flex size-12 rounded-xl items-center justify-center bg-white/70 ml-8"
