@@ -17,7 +17,14 @@ export const ColorTheme = () => {
   }, [darkMode]);
   return (
     <div>
-      <button onClick={() => setDarkMode(!darkMode)} className="absolute bottom-5 right-5 h-16 w-16 p-3 bg-red-500">{darkMode ? "Dark" : "Light"}</button>
+      <button
+        onClick={() => setDarkMode(!darkMode)}
+        className="bg-red-500"
+      >
+        {darkMode ? "Dark" : "Light"}
+      </button>
     </div>
   );
 };
+
+export default ColorTheme;
