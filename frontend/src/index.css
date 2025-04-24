@@ -3,68 +3,68 @@
 @tailwind utilities;
 
 ::-webkit-scrollbar {
-	width: 8px;
+  width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-	background: #aaa;
+  background: #aaa;
 }
 
 ::-webkit-scrollbar-thumb {
-	background: #d6d3d1;
-	border-radius: 5px;
+  background: #d6d3d1;
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-	background: #e7e5e4;
+  background: #e7e5e4;
 }
 
 .ping {
-	animation: ping 1.1s ease-in-out 3;
-	transform: translate3d(0, 0, 0);
-	backface-visibility: hidden;
-	perspective: 1000px;
+  animation: ping 1.1s ease-in-out 3;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
 @keyframes ping {
-	0% {
-		transform: scale(1);
-		opacity: 1;
-	}
-	50% {
-		transform: scale(1.15);
-		opacity: 1.2;
-	}
-	100% {
-		transform: scale(1);
-		opacity: 1;
-	}
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1.2;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
 
 @keyframes scale {
-	0%, 100% {
-	  transform: scale(1);
-	}
-	50% {
-	  transform: scale(1.05);
-	}
+  0%,
+  100% {
+    transform: scale(1);
   }
-  
-  @keyframes pulse {
-	0%, 100% {
-	  opacity: 0.8;
-	}
-	50% {
-	  opacity: 1;
-	}
+  50% {
+    transform: scale(1.05);
   }
-  
-  .scale-animation {
-	animation: scale 2s ease-in-out infinite;
-  }
-  
-  .pulse-animation {
-	animation: pulse 1.5s ease-in-out infinite;
-  }
-  
+}
 
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.scale-animation {
+  animation: scale 2s ease-in-out infinite;
+}
+
+.pulse-animation {
+  animation: pulse 1.5s ease-in-out infinite;
+}
