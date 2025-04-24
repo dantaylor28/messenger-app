@@ -11,7 +11,7 @@ import NavBar from "./components/NavBar";
 function App() {
   const { authenticatedUser } = useAuthContext();
   return (
-    <div className="items-center justify-center bg-slate-50 dark:bg-neutral-900 transition-colors duration-300">
+    <div className="items-center justify-center bg-slate-50 dark:bg-zinc-900 transition-colors duration-300">
       <NavBar />
       <Routes>
         <Route

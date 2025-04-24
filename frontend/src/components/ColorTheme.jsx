@@ -20,7 +20,7 @@ export const ColorTheme = () => {
     <div>
       <button
         onClick={() => setDarkMode(!darkMode)}
-        className="flex items-center mr-4 cursor-pointer py-2 text-white bg-amber-600/40 p-2 rounded-full hover:bg-amber-600/55 transition"
+        className="flex items-center mr-4 cursor-pointer py-2 text-white bg-amber-600/40 dark:bg-white/15 p-2 rounded-full hover:bg-amber-600/55 dark:hover:bg-white/25 transition"
       >
         {darkMode ? <Sun /> : <Moon />}
       </button>
