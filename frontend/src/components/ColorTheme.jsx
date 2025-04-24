@@ -1,3 +1,4 @@
+import { Moon, Sun } from "lucide-react";
 import React, { useEffect, useState } from "react";
 
 export const ColorTheme = () => {
@@ -19,9 +20,9 @@ export const ColorTheme = () => {
     <div>
       <button
         onClick={() => setDarkMode(!darkMode)}
-        className="bg-red-500"
+        className="flex items-center mr-4 cursor-pointer py-2 text-white bg-amber-600/40 p-2 rounded-full hover:bg-amber-600/55 transition"
       >
-        {darkMode ? "Dark" : "Light"}
+        {darkMode ? <Sun /> : <Moon />}
       </button>
     </div>
   );

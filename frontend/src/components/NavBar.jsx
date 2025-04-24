@@ -31,10 +31,10 @@ const NavBar = () => {
             <LogoutBtn />
           </>
         )}
-        <Link className="flex items-center mr-4 cursor-pointer bg-amber-600/40 p-2 rounded-full hover:bg-amber-600/55 transition gap-1">
+        {/* <Link className="flex items-center mr-4 cursor-pointer bg-amber-600/40 p-2 rounded-full hover:bg-amber-600/55 transition gap-1">
           <Settings className="size-5 text-white" />
           <p className="text-xs font-semibold text-white">Settings</p>
-        </Link>
+        </Link> */}
         <ColorTheme />
       </div>
     </header>
