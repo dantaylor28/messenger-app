@@ -36,15 +36,15 @@ const MessageBox = () => {
               ></span>
             </div>
             <div>
-              <p className="tracking-wide capitalize font-light">
+              <p className="tracking-wide capitalize font-light dark:text-white">
                 {selectedChat.fullName}
               </p>
-              <span className="font-light text-sm opacity-80">
+              <span className="font-light text-sm opacity-80 dark:text-white">
                 {isOnline ? "Online" : "Offline"}
               </span>
             </div>
             <button
-              className="ml-auto mr-10 opacity-65 hover:opacity-80"
+              className="ml-auto mr-10 opacity-65 hover:opacity-80 dark:text-white"
               onClick={() => {
                 setSelectedChat(null);
               }}
@@ -52,7 +52,7 @@ const MessageBox = () => {
               <X />
             </button>
           </div>
-          <hr className="my-4 mx-8" />
+          <hr className="my-4 mx-8 dark:opacity-15" />
 
           <Messages />
           <MessageBar />
