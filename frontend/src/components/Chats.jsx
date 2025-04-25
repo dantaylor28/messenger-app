@@ -17,8 +17,8 @@ const Chats = ({ onChatClick }) => {
   return (
     <div className="flex flex-col overflow-auto mt-8 w-full md:pr-6 lg:pr-10 xl:pr-12">
       <div className="flex items-center gap-2 mb-3 px-5 py-3 border-b border-white/50 md:border-black/30">
-        <Users className="size-6 text-white/90 md:text-amber-700" />
-        <span className="font-medium md:opacity-75">Contacts</span>
+        <Users className="size-6 text-white/90 md:text-amber-700 dark:md:text-amber-500" />
+        <span className="font-medium md:opacity-75 dark:text-white dark:opacity-90">Contacts</span>
       </div>
       <div className="flex flex-col mb-5">
         <label className="flex items-center gap-2">
@@ -26,11 +26,11 @@ const Chats = ({ onChatClick }) => {
             type="checkbox"
             checked={showActiveUsers}
             onChange={(e) => setShowActiveUsers(e.target.checked)}
-            className="appearance-none h-4 w-4 border-2 border-white outline outline-gray-300 rounded-sm bg-white checked:bg-amber-500 cursor-pointer ml-1"
+            className="appearance-none h-4 w-4 border-2 border-white dark:border-zinc-900 outline outline-gray-300 dark:outline-gray-500 rounded-sm bg-white dark:bg-zinc-900 checked:bg-amber-500 dark:checked:bg-amber-600 cursor-pointer ml-1"
           />
-          <span className="text-sm cursor-pointer opacity-80">Show active users</span>
+          <span className="text-sm cursor-pointer opacity-80 dark:text-white">Show active users</span>
         </label>
-        <span className="text-xs font-light opacity-90 pl-7">({onlineUsers.length - 1} online)</span>
+        <span className="text-xs font-light opacity-90 pl-7 dark:text-white">({onlineUsers.length - 1} online)</span>
       </div>
       {filteredUsers.map((chat, idx) => (
         <Chat
@@ -41,7 +41,7 @@ const Chats = ({ onChatClick }) => {
         />
       ))}
       {filteredUsers.length === 0 && (
-        <div className="text-center py-8 font-light text-xs opacity-85 md:opacity-80">No active users</div>
+        <div className="text-center py-8 font-light text-xs opacity-85 md:opacity-80 dark:md:text-white">No active users</div>
       )}
       <div className="flex flex-col items-center justify-center p-2">
         {sendingData &&
