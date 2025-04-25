@@ -11,7 +11,7 @@ const Message = ({ message }) => {
     ? authenticatedUser.profileImage
     : selectedChat?.profileImage;
   const chatBubbleLayout = sentFromMe ? "justify-end" : "items-start";
-  const chatBubbleBg = sentFromMe ? `${message.image ? "bg-gray-100 text-amber-900" : "bg-amber-600/80 text-white"}` : "";
+  const chatBubbleBg = sentFromMe ? `${message.image ? "bg-gray-100 dark:bg-white/10 text-black" : "bg-amber-600/80 dark:bg-amber-700 text-white"}` : "";
   const timeLayout = sentFromMe ? "justify-end mr-14" : "items-start ml-14";
   const formattedTime = formatTime(message.createdAt);
   const PingAnimation = message.shouldPing ? "ping" : "";
@@ -19,7 +19,7 @@ const Message = ({ message }) => {
   const chatBubble = (
     <>
       <div
-        className={`border p-2 ${message.image ? "rounded-md border-gray-300/50" : "rounded-xl border-amber-700/15"} max-w-[35%] break-words ${chatBubbleBg} ${PingAnimation}`}
+        className={`border p-2 dark:text-white ${message.image ? "rounded-md border-gray-300/50 dark:border-white/25" : "rounded-xl border-amber-700/15 dark:border-white/25"} max-w-[35%] break-words ${chatBubbleBg} ${PingAnimation}`}
       >
         {message.image && (
           <img 
@@ -41,7 +41,7 @@ const Message = ({ message }) => {
         </div>
         {sentFromMe ? "" : chatBubble}
       </div>
-      <div className={`flex text-xs mt-1 ${timeLayout}`}>{formattedTime}</div>
+      <div className={`flex text-xs mt-1 dark:text-white ${timeLayout}`}>{formattedTime}</div>
     </div>
   );
 };
