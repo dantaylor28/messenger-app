@@ -68,10 +68,10 @@ const SelectChat = () => {
   const { authenticatedUser } = useAuthContext();
   return (
     <div className="flex flex-col items-center justify-center w-[100vw] md:w-full h-full mb-40">
-      <div className="size-20 rounded-xl flex items-center justify-center bg-amber-400/30 mb-4 group hover:bg-amber-400/35 animate-bounce">
-        <MessagesSquare className="size-10 text-amber-800 group-hover:text-amber-900" />
+      <div className="size-20 rounded-xl flex items-center justify-center bg-amber-400/30 mb-4 group hover:bg-amber-400/35 dark:bg-white/10 animate-bounce">
+        <MessagesSquare className="size-10 text-amber-800 group-hover:text-amber-900 dark:text-amber-600/50 dark:group-hover:text-amber-600/60" />
       </div>
-      <div className="text-center mt-3">
+      <div className="text-center mt-3 dark:text-white">
         <p className="capitalize font-medium text-2xl tracking-wide">
           Welcome {authenticatedUser.fullName}!
         </p>
