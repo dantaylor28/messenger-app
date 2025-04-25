@@ -60,7 +60,7 @@ const MessageBar = () => {
           <input
             type="text"
             placeholder="Enter message"
-            className="border-y border-r border-black/20 focus:outline-black/25 w-full h-12 rounded-sm text-md pl-2 shadow-sm cursor-text pr-12"
+            className="border-y border-r border-black/20 focus:outline-black/25 dark:bg-white/10 dark:border-white/20 w-full h-12 rounded-sm text-md dark:text-white pl-2 shadow-sm cursor-text pr-12"
             value={message}
             onChange={(e) => setMessage(e.target.value)}
           />
@@ -89,7 +89,7 @@ const MessageBar = () => {
             className="absolute inset-y-0 end-0 items-center pe-3"
           >
             {sendingData ? (
-              <div className="animate-spin h-5 w-5 rounded-full border-b-2 border-cyan-800"></div>
+              <div className="animate-spin h-5 w-5 rounded-full border-b-2 border-amber-900"></div>
             ) : (
               <SendHorizonal
                 className={`h-[22px] w-[22px] ${
