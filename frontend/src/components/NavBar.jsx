@@ -9,20 +9,20 @@ import ColorTheme from "./ColorTheme";
 const NavBar = () => {
   const { authenticatedUser } = useAuthContext();
   return (
-    <header className="flex items-center bg-amber-600/60 dark:bg-black dark:border-b dark:border-white/40 h-16">
+    <header className="flex items-center bg-amber-600/60 dark:bg-white/5 dark:border-b dark:border-white/20 h-16">
       {authenticatedUser && <MobileSidebar />}
       {/* Logo */}
       <Link
-        className="hidden md:flex size-12 rounded-xl items-center justify-center bg-white/70 dark:bg-gray-300 ml-8"
+        className="hidden md:flex size-12 rounded-xl items-center justify-center bg-white/70 dark:bg-white/70 ml-8"
         to="/"
       >
-        <MessagesSquare className="size-6 text-amber-800 dark:text-amber-800" />
+        <MessagesSquare className="size-6 text-amber-800 dark:text-amber-700" />
       </Link>
       <div className="flex ml-auto">
         {authenticatedUser && (
           <>
             <Link
-              className="flex items-center mr-4 cursor-pointer bg-amber-600/40 dark:bg-white/15 p-2 rounded-full hover:bg-amber-600/55 dark:hover:bg-white/25 transition gap-1"
+              className="flex items-center mr-4 cursor-pointer bg-amber-600/40 dark:bg-white/10 p-2 rounded-full hover:bg-amber-600/55 dark:hover:bg-white/20 transition gap-1"
               to="/profile"
             >
               <User className="size-5 text-white" />

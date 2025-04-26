@@ -37,7 +37,7 @@ const SearchBar = ({ onSearchBarClick }) => {
         onChange={(e) => setSearch(e.target.value)}
         type="text"
         placeholder="Search contacts"
-        className="text-white md:text-black dark:md:text-white placeholder:text-white/70 md:placeholder:text-black/40 dark:md:placeholder:text-white/50 bg-[#e29753] md:bg-white dark:bg-white/10 border border-white/70 dark:border-white/20 md:border-black/20 md:focus:outline-none md:focus:border-black/40 w-full h-9 rounded-sm text-md pl-2 shadow-sm cursor-text"
+        className="text-white md:text-black dark:md:text-white placeholder:text-white/70 md:placeholder:text-black/40 dark:md:placeholder:text-white/50 bg-[#e29753] md:bg-white dark:bg-white/10 border border-white/70 dark:border-white/20 md:border-black/20 md:focus:outline-none md:focus:border-black/40 dark:md:focus:border-white/40 w-full h-9 rounded-sm text-md pl-2 shadow-sm cursor-text"
       />
       <button
         type="submit"

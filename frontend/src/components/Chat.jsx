@@ -20,7 +20,7 @@ const Chat = ({ chat, onClick, lastIndex }) => {
     <>
       <div
         className={`flex gap-4 py-2 px-2 rounded-sm items-center cursor-pointer ${
-          isSelected ? "bg-[#cb874a]/90 md:bg-amber-500/50" : "hover:bg-[#cb874a]/40 md:hover:bg-amber-500/20"
+          isSelected ? "bg-[#cb874a]/90 md:bg-amber-500/50 dark:md:bg-white/10" : "hover:bg-[#cb874a]/40 md:hover:bg-amber-500/20 dark:md:hover:bg-white/5"
         }`}
         onClick={handleClick}
       >
@@ -37,15 +37,15 @@ const Chat = ({ chat, onClick, lastIndex }) => {
 
         <div className="flex flex-col flex-1">
           <div>
-            <p className="tracking-wide capitalize font-normal opacity-90 md:opacity-75">
+            <p className="tracking-wide capitalize font-normal opacity-90 md:opacity-75 dark:text-white dark:md:opacity-85">
               {chat.fullName}
             </p>
-            <span className="font-light text-xs opacity-85 md:opacity-80">{isOnline ? "Online" : "Offline"}</span>
+            <span className="font-light text-xs opacity-85 md:opacity-80 dark:text-white dark:md:opacity-70">{isOnline ? "Online" : "Offline"}</span>
           </div>
         </div>
       </div>
       {!lastIndex && (
-        <hr className="bg-white opacity-20 md:bg-black md:opacity-60" />
+        <hr className="bg-white opacity-20 md:bg-black md:opacity-100 dark:opacity-15" />
       )}
     </>
   );
