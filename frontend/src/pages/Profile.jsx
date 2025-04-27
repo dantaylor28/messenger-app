@@ -117,7 +117,7 @@ const Profile = () => {
           </div>
           {/* Username input */}
           <div className="mt-3">
-            <div className="flex items-center gap-0.5">
+            <div className="flex items-center gap-0.5 dark:text-white">
               <UserCheck className="size-4" />
               <label htmlFor="username">
                 <span className="text-xs font-medium">Username</span>
@@ -132,17 +132,17 @@ const Profile = () => {
                   setHasUpdates(true);
                 }}
                 disabled={isUsernameDisabled}
-                className={`w-full pl-3 rounded-[4px] h-10 focus:outline-none border border-black/40 ${
+                className={`w-full pl-3 rounded-[4px] h-10 focus:outline-none border border-black/40 dark:border-white/10 ${
                   isUsernameDisabled
-                    ? "bg-gray-100 text-gray-600 cursor-not-allowed"
-                    : "bg-slate-40 text-black focus:border-black/80"
+                    ? "bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-white/40 cursor-not-allowed"
+                    : "bg-slate-40 dark:bg-white/15 text-black dark:text-white/80 focus:border-black/80 dark:focus:border-white/30"
                 }`}
               />
               <button
-                className="cursor-pointer opacity-70 hover:opacity-100 transition"
+                className="cursor-pointer transition text-amber-600 dark:text-amber-500 hover:text-amber-700 dark:hover:text-amber-600"
                 onClick={() => setUsernameIsDisabled(false)}
               >
-                <Pen className="size-4" />
+                <SquarePen className="size-5" />
               </button>
             </div>
           </div>
