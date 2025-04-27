@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useUpdateProfile from "../hooks/useUpdateProfile";
 import { useAuthContext } from "../context/AuthContext";
-import { Camera, Mail, Pen, User, UserCheck } from "lucide-react";
+import { Camera, Mail, SquarePen, Pen, User, UserCheck } from "lucide-react";
 
 const Profile = () => {
   const { sendingData, updateProfile } = useUpdateProfile();
@@ -46,23 +46,23 @@ const Profile = () => {
   };
   return (
       <div className="flex items-center justify-center mt-16">
-        <div className="w-full sm:w-[70%] md:w-[55%] lg:w-[45%] xl:w-[35%] rounded-md px-4 sm:px-6 md:px-8 lg:px-12 pb-10 pt-4 bg-gray-200/30">
-          <h1 className="font-medium text-center tracking-wider">Profile Information</h1>
+        <div className="w-full sm:w-[70%] md:w-[55%] lg:w-[45%] xl:w-[35%] rounded-md px-4 sm:px-6 md:px-8 lg:px-12 pb-10 pt-4 bg-gray-200/30 dark:bg-white/10">
+          <h1 className="font-medium text-center tracking-wider dark:text-white">Profile Information</h1>
           {/* Update Profile Image Section */}
           <div className="flex">
-            <p className="text-sm mb-1 mt-5 ml-4 opacity-70">
+            <p className="text-sm mb-1 mt-5 ml-4 opacity-75 dark:text-white">
               Member Since:{" "}
               <span>{authenticatedUser.createdAt?.split("T")[0]}</span>
             </p>
-            <p className="text-sm mb-1 mt-5 opacity-70 m-auto mr-4">Account Status: <span>Active</span></p>
+            <p className="text-sm mb-1 mt-5 opacity-75 m-auto mr-4 dark:text-white">Account Status: <span className="text-green-600 dark:text-green-500">Active</span></p>
           </div>
-          <div className="border-b border-black/20 py-2"></div>
+          <div className="border-b border-black/20 py-2 dark:border-white/15"></div>
           <div className="flex flex-col items-center mt-5">
             <div className="relative">
               <img
                 src={selectedImage || authenticatedUser.profileImage}
                 alt="Profile Image"
-                className="size-48 rounded-full object-cover border-4 border-gray-200"
+                className="size-48 rounded-full object-cover border-4 border-gray-200 dark:border-white/40"
               />
               <label
                 htmlFor="profile-image-input"
@@ -78,7 +78,7 @@ const Profile = () => {
                 />
               </label>
             </div>
-            <p className="text-xs opacity-60 mt-1">
+            <p className="text-xs opacity-60 mt-1 dark:text-white">
               {sendingData ? "Uploading.." : "Update your profile image"}
             </p>
           </div>
@@ -86,7 +86,7 @@ const Profile = () => {
           {/* Update name, username, email, password section */}
           {/* Full name input */}
           <div>
-            <div className="flex items-center gap-0.5 mt-2">
+            <div className="flex items-center gap-0.5 mt-2 dark:text-white">
               <User className="size-4" />
               <label htmlFor="full-name">
                 <span className="text-xs font-medium">Full Name</span>
@@ -101,17 +101,17 @@ const Profile = () => {
                   setHasUpdates(true);
                 }}
                 disabled={isFullNameDisabled}
-                className={`w-full pl-3 rounded-[4px] h-10 focus:outline-none border border-black/40 ${
+                className={`w-full pl-3 rounded-[4px] h-10 focus:outline-none border border-black/40 dark:border-white/10 ${
                   isFullNameDisabled
-                    ? "bg-gray-100 text-gray-600 cursor-not-allowed"
-                    : "bg-slate-40 text-black focus:border-black/80"
+                    ? "bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-white/40 cursor-not-allowed"
+                    : "bg-slate-40 dark:bg-white/15 text-black dark:text-white/80 focus:border-black/80 dark:focus:border-white/30"
                 }`}
               />
               <button
-                className="cursor-pointer opacity-70 hover:opacity-100 transition"
+                className="cursor-pointer transition text-amber-600 dark:text-amber-500 hover:text-amber-700 dark:hover:text-amber-600"
                 onClick={() => setFullNameIsDisabled(false)}
               >
-                <Pen className="size-4" />
+                <SquarePen className="size-5" />
               </button>
             </div>
           </div>
