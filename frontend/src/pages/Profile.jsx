@@ -149,7 +149,7 @@ const Profile = () => {
 
           {/* Email input */}
           <div className="mt-3">
-            <div className="flex items-center gap-0.5">
+            <div className="flex items-center gap-0.5 dark:text-white">
               <Mail className="size-4" />
               <label htmlFor="email">
                 <span className="text-xs font-medium">Email</span>
@@ -164,17 +164,17 @@ const Profile = () => {
                   setHasUpdates(true);
                 }}
                 disabled={isEmailDisabled}
-                className={`w-full pl-3 rounded-[4px] h-10 focus:outline-none border border-black/40 ${
+                className={`w-full pl-3 rounded-[4px] h-10 focus:outline-none border border-black/40 dark:border-white/10 ${
                   isEmailDisabled
-                    ? "bg-gray-100 text-gray-600 cursor-not-allowed"
-                    : "bg-slate-40 text-black focus:border-black/80"
+                    ? "bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-white/40 cursor-not-allowed"
+                    : "bg-slate-40 dark:bg-white/15 text-black dark:text-white/80 focus:border-black/80 dark:focus:border-white/30"
                 }`}
               />
               <button
-                className="cursor-pointer opacity-70 hover:opacity-100 transition"
+                className="cursor-pointer transition text-amber-600 dark:text-amber-500 hover:text-amber-700 dark:hover:text-amber-600"
                 onClick={() => setEmailIsDisabled(false)}
               >
-                <Pen className="size-4" />
+                <SquarePen className="size-5" />
               </button>
             </div>
           </div>
