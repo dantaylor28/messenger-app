@@ -186,8 +186,8 @@ const Profile = () => {
               disabled={!hasUpdates || sendingData}
               className={`items-center w-full h-10 rounded-[4px] font-medium tracking-wider ${
                 !hasUpdates || sendingData
-                  ? "bg-gray-300 text-gray-500 cursor-not-allowed"
-                  : "bg-amber-500/60 hover:bg-amber-500/75 transition"
+                  ? "bg-gray-300 dark:bg-white/15 text-gray-500 dark:text-gray-400 cursor-not-allowed"
+                  : "bg-amber-500/60 dark:bg-amber-500 hover:bg-amber-500/75 dark:hover:bg-amber-600 transition"
               }`}
             >
               Update Profile
