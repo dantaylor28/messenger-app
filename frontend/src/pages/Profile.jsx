@@ -45,7 +45,7 @@ const Profile = () => {
     }
   };
   return (
-      <div className="flex items-center justify-center mt-16">
+      <div className="flex items-center justify-center h-screen">
         <div className="w-full sm:w-[70%] md:w-[55%] lg:w-[45%] xl:w-[35%] rounded-md px-4 sm:px-6 md:px-8 lg:px-12 pb-10 pt-4 bg-gray-200/30 dark:bg-white/10">
           <h1 className="font-medium text-center tracking-wider dark:text-white">Profile Information</h1>
           {/* Update Profile Image Section */}
