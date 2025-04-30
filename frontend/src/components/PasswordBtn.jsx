@@ -9,9 +9,9 @@ export const DisplayPasswordBtn = ({ displayPassword, setDisplayPassword }) => {
       onClick={() => setDisplayPassword(!displayPassword)}
     >
       {displayPassword ? (
-        <EyeOff className="size-5 text-black/45 hover:text-black/70 transition" />
+        <EyeOff className="size-5 text-black/45 dark:text-white/50 hover:text-black/70 dark:hover:text-white/70 transition" />
       ) : (
-        <Eye className="size-5 text-black/45 hover:text-black/70 transition" />
+        <Eye className="size-5 text-black/45 dark:text-white/50 hover:text-black/70 dark:hover:text-white/70 transition" />
       )}
     </button>
   );
