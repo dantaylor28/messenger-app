@@ -22,13 +22,13 @@ const Login = () => {
       <div className="flex flex-col justify-center items-center">
         <div className="flex flex-col w-full text-center items-center justify-center mb-5">
           {/* Logo */}
-          <div className="size-14 rounded-xl flex items-center justify-center bg-amber-400/30 mb-4 group hover:bg-amber-400/35">
-            <MessagesSquare className="size-7 text-amber-800 group-hover:text-amber-900" />
+          <div className="size-14 rounded-xl flex items-center justify-center bg-amber-400/30 mb-4 group hover:bg-amber-400/35 dark:bg-white/10">
+            <MessagesSquare className="size-7 text-amber-800 group-hover:text-amber-900 dark:text-amber-600/50 dark:group-hover:text-amber-600/60" />
           </div>
-          <h1 className="text-2xl capitalize font-medium text-black tracking-wider mb-1">
+          <h1 className="text-2xl capitalize font-medium text-black tracking-wider mb-1 dark:text-white">
             Login To Your Account
           </h1>
-          <p className="font-light text-black/60">
+          <p className="font-light text-black/60 dark:text-white/70">
             Fill in the form to sign in to your profile
           </p>
         </div>
@@ -46,11 +46,11 @@ const Login = () => {
                   type="text"
                   id="username"
                   placeholder="JohnDoe123"
-                  className="w-full bg-slate-50 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/40 peer focus:outline-none focus:border-black/40"
+                  className="w-full bg-slate-50 dark:bg-white/10 dark:text-white border border-black/25 dark:border-white/20 rounded-[4px] h-10 pl-10 placeholder:text-black/40 dark:placeholder:text-white/50 peer focus:outline-none focus:border-black/40 dark:focus:border-white/40"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
                 />
-                <User className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
+                <User className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 dark:text-white/50 peer-focus:text-black/70 dark:peer-focus:text-white/70" />
               </div>
             </div>
 
@@ -64,11 +64,11 @@ const Login = () => {
                   type={displayPassword ? "text" : "password"}
                   id="password"
                   placeholder="••••••••••••"
-                  className="w-full bg-slate-50 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/40 peer focus:outline-none focus:border-black/40"
+                  className="w-full bg-slate-50 dark:bg-white/10 dark:text-white border border-black/25 dark:border-white/20 rounded-[4px] h-10 pl-10 placeholder:text-black/40 dark:placeholder:text-white/50 peer focus:outline-none focus:border-black/40 dark:focus:border-white/40"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
-                <Lock className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
+                <Lock className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 dark:text-white/50 peer-focus:text-black/70 dark:peer-focus:text-white/70" />
                 <DisplayPasswordBtn
                   displayPassword={displayPassword}
                   setDisplayPassword={setDisplayPassword}

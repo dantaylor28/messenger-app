@@ -9,7 +9,7 @@ import ColorTheme from "./ColorTheme";
 const NavBar = () => {
   const { authenticatedUser } = useAuthContext();
   return (
-    <header className="flex items-center bg-amber-600/60 dark:bg-white/5 dark:border-b dark:border-white/20 h-16">
+    <header className="flex items-center bg-amber-600/60 dark:bg-white/5 h-16">
       {authenticatedUser && <MobileSidebar />}
       {/* Logo */}
       <Link
