@@ -52,13 +52,13 @@ const SignUp = () => {
       <div className="flex flex-col justify-center items-center">
         <div className="flex flex-col w-full text-center items-center justify-center mb-5">
           {/* Logo */}
-          <div className="size-14 rounded-xl flex items-center justify-center bg-amber-400/30 mb-4 group hover:bg-amber-400/35">
-            <MessagesSquare className="size-7 text-amber-800 group-hover:text-amber-900" />
+          <div className="size-14 rounded-xl flex items-center justify-center bg-amber-400/30 dark:bg-white/10 mb-4 group hover:bg-amber-400/35">
+            <MessagesSquare className="size-7 text-amber-800 group-hover:text-amber-900 dark:text-amber-600/50 dark:group-hover:text-amber-600/60" />
           </div>
-          <h1 className="text-2xl capitalize font-medium text-black tracking-wider mb-1">
+          <h1 className="text-2xl capitalize font-medium text-black tracking-wider mb-1 dark:text-white">
             Create an account
           </h1>
-          <p className="font-light text-black/60">
+          <p className="font-light text-black/60 dark:text-white/70">
             Fill in the form to create your free profile
           </p>
         </div>
@@ -69,80 +69,80 @@ const SignUp = () => {
             {/* Full name input */}
             <div className="mb-3">
               <label htmlFor="full-name">
-                <span className="text-xs font-medium">Full Name</span>
+                <span className="text-xs font-medium dark:text-white">Full Name</span>
               </label>
               <div className="flex items-center relative">
                 <input
                   type="text"
                   id="full-name"
                   placeholder="John Doe"
-                  className="w-full bg-slate-50 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/40 peer focus:outline-none focus:border-black/40"
+                  className="w-full bg-slate-50 dark:bg-white/10 dark:text-white border border-black/25 dark:border-white/20 rounded-[4px] h-10 pl-10 placeholder:text-black/40 dark:placeholder:text-white/50 peer focus:outline-none focus:border-black/40 dark:focus:border-white/40"
                   value={userInputs.fullName}
                   onChange={(e) =>
                     setUserInputs({ ...userInputs, fullName: e.target.value })
                   }
                 />
-                <User className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
+                <User className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 dark:text-white/50 peer-focus:text-black/70 dark:peer-focus:text-white/70" />
               </div>
             </div>
 
             {/* Username Input */}
             <div className="mb-3">
               <label htmlFor="username">
-                <span className="text-xs font-medium">Username</span>
+                <span className="text-xs font-medium dark:text-white">Username</span>
               </label>
               <div className="flex items-center relative">
                 <input
                   type="text"
                   id="username"
                   placeholder="JohnDoe123"
-                  className="w-full bg-slate-50 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/40 peer focus:outline-none focus:border-black/40"
+                  className="w-full bg-slate-50 dark:bg-white/10 dark:text-white border border-black/25 dark:border-white/20 rounded-[4px] h-10 pl-10 placeholder:text-black/40 dark:placeholder:text-white/50 peer focus:outline-none focus:border-black/40 dark:focus:border-white/40"
                   value={userInputs.username}
                   onChange={(e) =>
                     setUserInputs({ ...userInputs, username: e.target.value })
                   }
                 />
-                <UserCheck className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
+                <UserCheck className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 dark:text-white/50 peer-focus:text-black/70 dark:peer-focus:text-white/70" />
               </div>
             </div>
 
             {/* Email input */}
             <div className="mb-3">
               <label htmlFor="email">
-                <span className="text-xs font-medium">Email Address</span>
+                <span className="text-xs font-medium dark:text-white">Email Address</span>
               </label>
               <div className="flex items-center relative">
                 <input
                   type="email"
                   id="email"
                   placeholder="john.doe@email.com"
-                  className="w-full bg-slate-50 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/40 peer focus:outline-none focus:border-black/40"
+                  className="w-full bg-slate-50 dark:bg-white/10 dark:text-white border border-black/25 dark:border-white/20 rounded-[4px] h-10 pl-10 placeholder:text-black/40 dark:placeholder:text-white/50 peer focus:outline-none focus:border-black/40 dark:focus:border-white/40"
                   value={userInputs.email}
                   onChange={(e) =>
                     setUserInputs({ ...userInputs, email: e.target.value })
                   }
                 />
-                <Mail className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
+                <Mail className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 dark:text-white/50 peer-focus:text-black/70 dark:peer-focus:text-white/70" />
               </div>
             </div>
 
             {/* Password input */}
             <div className="mb-3">
               <label htmlFor="password">
-                <span className="text-xs font-medium">Password</span>
+                <span className="text-xs font-medium dark:text-white">Password</span>
               </label>
               <div className="flex items-center relative">
                 <input
                   type={displayPassword ? "text" : "password"}
                   id="password"
                   placeholder="••••••••••••"
-                  className="w-full bg-slate-50 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/40 peer focus:outline-none focus:border-black/40"
+                  className="w-full bg-slate-50 dark:bg-white/10 dark:text-white border border-black/25 dark:border-white/20 rounded-[4px] h-10 pl-10 placeholder:text-black/40 dark:placeholder:text-white/50 peer focus:outline-none focus:border-black/40 dark:focus:border-white/40"
                   value={userInputs.password}
                   onChange={(e) =>
                     setUserInputs({ ...userInputs, password: e.target.value })
                   }
                 />
-                <Lock className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
+                <Lock className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 dark:text-white/50 peer-focus:text-black/70 dark:peer-focus:text-white/70" />
                 <DisplayPasswordBtn
                   displayPassword={displayPassword}
                   setDisplayPassword={setDisplayPassword}
@@ -153,14 +153,14 @@ const SignUp = () => {
             {/* Confirm password input */}
             <div className="mb-3">
               <label htmlFor="confirm-password">
-                <span className="text-xs font-medium">Confirm Password</span>
+                <span className="text-xs font-medium dark:text-white">Confirm Password</span>
               </label>
               <div className="flex items-center relative">
                 <input
                   type={displayConfirmPassword ? "text" : "password"}
                   id="confirm-password"
                   placeholder="••••••••••••"
-                  className="w-full bg-slate-50 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/40 peer focus:outline-none focus:border-black/40"
+                  className="w-full bg-slate-50 dark:bg-white/10 dark:text-white border border-black/25 dark:border-white/20 rounded-[4px] h-10 pl-10 placeholder:text-black/40 dark:placeholder:text-white/50 peer focus:outline-none focus:border-black/40 dark:focus:border-white/40"
                   value={userInputs.confirmPassword}
                   onChange={(e) =>
                     setUserInputs({
@@ -169,7 +169,7 @@ const SignUp = () => {
                     })
                   }
                 />
-                <ShieldCheck className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
+                <ShieldCheck className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 dark:text-white/50 peer-focus:text-black/70 dark:peer-focus:text-white/70" />
                 <DisplayConfirmPasswordBtn
                   displayConfirmPassword={displayConfirmPassword}
                   setDisplayConfirmPassword={setDisplayConfirmPassword}
