@@ -186,7 +186,7 @@ const SignUp = () => {
             {/* Age input */}
             <div className="mb-3">
               <label htmlFor="age">
-                <span className="text-xs font-medium">Age</span>
+                <span className="text-xs font-medium dark:text-white">Age</span>
               </label>
               <div className="flex items-center relative">
                 <input
@@ -195,13 +195,13 @@ const SignUp = () => {
                   max="120"
                   id="age"
                   placeholder="25"
-                  className="w-[20%] bg-slate-50 border border-black/25 rounded-[4px] h-10 pl-10 placeholder:text-black/40 peer focus:outline-none focus:border-black/40"
+                  className="w-[20%] bg-slate-50 dark:bg-white/10 dark:text-white border border-black/25 dark:border-white/20 rounded-[4px] h-10 pl-10 placeholder:text-black/40 dark:placeholder:text-white/50 peer focus:outline-none focus:border-black/40 dark:focus:border-white/40"
                   value={userInputs.age}
                   onChange={(e) =>
                     setUserInputs({ ...userInputs, age: e.target.value })
                   }
                 />
-                <ArrowUpDown className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus:text-black/70" />
+                <ArrowUpDown className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 dark:text-white/50 peer-focus:text-black/70 dark:peer-focus:text-white/70" />
               </div>
             </div>
 
