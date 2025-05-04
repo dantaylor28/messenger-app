@@ -5,9 +5,9 @@ const GenderCheckbox = ({ onCheckboxChange, selectedGender }) => {
   return (
     <div className="mb-3">
       <label htmlFor="gender">
-        <span className="text-xs font-medium">Gender</span>
+        <span className="text-xs font-medium dark:text-white">Gender</span>
       </label>
-      <div className="relative flex items-center gap-6 border border-black/25 w-full rounded-[4px] h-10 pl-10">
+      <div className="relative flex items-center gap-6 dark:bg-white/10 dark:text-white border border-black/25 dark:border-white/20 w-full rounded-[4px] h-10 pl-10">
         <div className="form-control peer">
           <label
             className={`flex gap-1.5 items-center justify-center ${
@@ -20,7 +20,7 @@ const GenderCheckbox = ({ onCheckboxChange, selectedGender }) => {
               type="checkbox"
               checked={selectedGender === "male"}
               onChange={() => onCheckboxChange("male")}
-              className="appearance-none h-3 w-3 border-2 border-white outline outline-gray-300 rounded-full bg-white checked:bg-amber-500 hover:cursor-pointer"
+              className="appearance-none h-3 w-3 border-2 border-white dark:border-zinc-900 outline outline-gray-300 dark:outline-gray-500 rounded-full bg-white dark:bg-zinc-900 checked:bg-amber-500 dark:checked:bg-amber-600 hover:cursor-pointer"
             />
           </label>
         </div>
@@ -35,7 +35,7 @@ const GenderCheckbox = ({ onCheckboxChange, selectedGender }) => {
               type="checkbox"
               checked={selectedGender === "female"}
               onChange={() => onCheckboxChange("female")}
-              className="appearance-none h-3 w-3 border-2 border-white outline outline-gray-300 rounded-full bg-white checked:bg-amber-500 hover:cursor-pointer"
+              className="appearance-none h-3 w-3 border-2 border-white dark:border-zinc-900 outline outline-gray-300 dark:outline-gray-500 rounded-full bg-white dark:bg-zinc-900 checked:bg-amber-500 dark:checked:bg-amber-600 hover:cursor-pointer"
             />
           </label>
         </div>
@@ -50,11 +50,11 @@ const GenderCheckbox = ({ onCheckboxChange, selectedGender }) => {
               type="checkbox"
               checked={selectedGender === "prefer not to say"}
               onChange={() => onCheckboxChange("prefer not to say")}
-              className="appearance-none h-3 w-3 border-2 border-white outline outline-gray-300 rounded-full bg-white checked:bg-amber-500 hover:cursor-pointer"
+              className="appearance-none h-3 w-3 border-2 border-white dark:border-zinc-900 outline outline-gray-300 dark:outline-gray-500 rounded-full bg-white dark:bg-zinc-900 checked:bg-amber-500 dark:checked:bg-amber-600 hover:cursor-pointer"
             />
           </label>
         </div>
-        <PersonStanding className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 peer-focus-within:text-black/70" />
+        <PersonStanding className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 dark:text-white/50 peer-focus-within:text-black/70 dark:peer-focus-within:text-white/70" />
       </div>
     </div>
   );
