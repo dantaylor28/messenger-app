@@ -53,7 +53,7 @@ const SignUp = () => {
         <div className="flex flex-col w-full text-center items-center justify-center mb-5">
           {/* Logo */}
           <div className="size-14 rounded-xl flex items-center justify-center bg-amber-400/30 dark:bg-white/10 mb-4 group hover:bg-amber-400/35">
-            <MessagesSquare className="size-7 text-amber-800 group-hover:text-amber-900 dark:text-amber-600/50 dark:group-hover:text-amber-600/60" />
+            <MessagesSquare className="size-7 text-amber-800 group-hover:text-amber-900 dark:text-amber-500 dark:group-hover:text-amber-600" />
           </div>
           <h1 className="text-2xl capitalize font-medium text-black tracking-wider mb-1 dark:text-white">
             Create an account
