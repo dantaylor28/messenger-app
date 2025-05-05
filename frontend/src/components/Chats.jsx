@@ -16,8 +16,8 @@ const Chats = ({ onChatClick }) => {
   useListenForMessages();
   return (
     <div className="flex flex-col overflow-auto mt-8 w-full md:pr-6 lg:pr-10 xl:pr-12">
-      <div className="flex items-center gap-2 mb-3 px-5 py-3 border-b border-white/50 md:border-black/30">
-        <Users className="size-6 text-white/90 md:text-amber-700 dark:md:text-amber-500" />
+      <div className="flex items-center gap-2 mb-3 px-5 py-3 border-b border-white/50 dark:border-white/20 md:border-black/30">
+        <Users className="size-6 text-white/90 md:text-amber-700 dark:text-amber-500" />
         <span className="font-medium md:opacity-75 dark:text-white dark:opacity-90">Contacts</span>
       </div>
       <div className="flex flex-col mb-5">
@@ -26,7 +26,7 @@ const Chats = ({ onChatClick }) => {
             type="checkbox"
             checked={showActiveUsers}
             onChange={(e) => setShowActiveUsers(e.target.checked)}
-            className="appearance-none h-4 w-4 border-2 border-white dark:border-zinc-900 outline outline-gray-300 dark:outline-gray-500 rounded-sm bg-white dark:bg-zinc-900 checked:bg-amber-500 dark:checked:bg-amber-600 cursor-pointer ml-1"
+            className="appearance-none h-4 w-4 border-2 border-white dark:border-zinc-900 outline outline-gray-300 dark:outline-gray-500 rounded-sm bg-white dark:bg-zinc-800 dark:md:bg-zinc-900 checked:bg-amber-500 dark:checked:bg-amber-600 cursor-pointer ml-1"
           />
           <span className="text-sm cursor-pointer opacity-80 dark:text-white">Show active users</span>
         </label>

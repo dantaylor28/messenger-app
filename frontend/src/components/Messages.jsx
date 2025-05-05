@@ -19,7 +19,7 @@ const Messages = () => {
       {!sendingData && messages.length === 0 && (
         <div className="flex flex-col items-center w-full mt-36">
           <div className="size-20 rounded-xl flex items-center justify-center bg-amber-400/30 mb-4 group hover:bg-amber-400/35 dark:bg-white/10 animate-bounce">
-            <Send className="size-10 text-amber-800 group-hover:text-amber-900 dark:text-amber-600/50 dark:group-hover:text-amber-600/60" />
+            <Send className="size-10 text-amber-800 group-hover:text-amber-900 dark:text-amber-500 dark:group-hover:text-amber-600" />
           </div>
           <p className="text-center mt-3 capitalize font-medium text-2xl tracking-wide dark:text-white">
             no chat history!
