@@ -50,11 +50,11 @@ const Profile = () => {
           <h1 className="font-medium text-center tracking-wider dark:text-white">Profile Information</h1>
           {/* Update Profile Image Section */}
           <div className="flex">
-            <p className="text-sm mb-1 mt-5 ml-4 opacity-75 dark:text-white">
-              Member Since:{" "}
-              <span>{authenticatedUser.createdAt?.split("T")[0]}</span>
+            <p className="text-sm mb-1 mt-5 ml-4 dark:text-white">
+              <span className="opacity-75">Member Since:{" "}</span>
+              <span className="text-amber-600 dark:text-amber-500">{authenticatedUser.createdAt?.split("T")[0]}</span>
             </p>
-            <p className="text-sm mb-1 mt-5 opacity-75 m-auto mr-4 dark:text-white">Account Status: <span className="text-green-600 dark:text-green-500">Active</span></p>
+            <p className="text-sm mb-1 mt-5 m-auto mr-4 dark:text-white"><span className="opacity-75">Account Status: </span><span className="text-green-600 dark:text-green-500">Active</span></p>
           </div>
           <div className="border-b border-black/20 py-2 dark:border-white/15"></div>
           <div className="flex flex-col items-center mt-5">
