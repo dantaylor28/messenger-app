@@ -13,10 +13,10 @@ const NavBar = () => {
       {authenticatedUser && <MobileSidebar />}
       {/* Logo */}
       <Link
-        className="hidden md:flex size-12 rounded-xl items-center justify-center bg-white/70 dark:bg-white/70 ml-8"
+        className="hidden md:flex size-12 rounded-xl items-center justify-center bg-white/70 dark:bg-white/10 ml-8"
         to="/"
       >
-        <MessagesSquare className="size-6 text-amber-800 dark:text-amber-700" />
+        <MessagesSquare className="size-6 text-amber-800 dark:text-amber-500" />
       </Link>
       <div className="flex ml-auto">
         {authenticatedUser && (
