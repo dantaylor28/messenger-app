@@ -1,5 +1,7 @@
 # Messenger Chat App
 
+- IAmResponsive Image
+
 ## Features
 
 ### Current Features
@@ -12,4 +14,8 @@
 
 ### Automatic Tests
 
-### Manual Tests 
+- Lighthouse Images
+
+### Manual Tests
+
+## Credits
