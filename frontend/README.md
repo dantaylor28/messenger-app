@@ -8,6 +8,14 @@ A full-stack messenger application that allows users to send and receive text an
 
 ### Current Features
 
+- User Authentication
+- Real time messages
+- Fully responsive
+- User online/offline status 
+- Profile customisation 
+- Light/Dark mode
+- Ability to send/receive image messages
+
 ### Future features to implement
 
 ## Languages/Libraries
