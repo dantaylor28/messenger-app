@@ -18,6 +18,10 @@ A full-stack messenger application that allows users to send and receive text an
 
 ### Future features to implement
 
+- Sign in/Sign up with socials
+- Ability to explore other users profiles 
+- More profile customisation (Profile status, Bio, Location, Update passwords)
+
 ## Languages/Libraries
 
 ## Testing 
