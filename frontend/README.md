@@ -32,4 +32,12 @@ A full-stack messenger application that allows users to send and receive text an
 
 ### Manual Tests
 
+### Unfixed Bugs
+
+## Deployment 
+
+### Local Deployment
+
+### Live Deployment
+
 ## Credits
