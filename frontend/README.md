@@ -32,6 +32,9 @@ A full-stack messenger application that allows users to send and receive text an
 
 ### Manual Tests
 
+- Tested the site on multiple browsers (Chrome, Safari, Firefox)
+- Tested on different devices and screen sizes
+
 ### Unfixed Bugs
 
 ## Deployment 
