@@ -24,6 +24,12 @@ A full-stack messenger application that allows users to send and receive text an
 
 ## Languages/Libraries
 
+- Node.js
+- React.js
+- MongoDB
+- TailwindCSS
+- Socket.io
+
 ## Testing 
 
 ### Automatic Tests
