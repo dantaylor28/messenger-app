@@ -43,6 +43,9 @@ A full-stack messenger application that allows users to send and receive text an
 
 ### Unfixed Bugs
 
+- Loading skeletons pulse animations not working due to custom pulse css in a seperate css file.
+- Header not sticking to top of page on page load/refresh.
+
 ## Deployment 
 
 ### Local Deployment
