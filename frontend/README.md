@@ -35,6 +35,7 @@ A full-stack messenger application that allows users to send and receive text an
 ### Automatic Tests
 
 - Lighthouse Images
+- Tested the backend API using Postman
 
 ### Manual Tests
 
@@ -51,5 +52,7 @@ A full-stack messenger application that allows users to send and receive text an
 ### Local Deployment
 
 ### Live Deployment
+
+- Currently deployed live on Netflify 
 
 ## Credits
