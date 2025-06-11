@@ -15,12 +15,15 @@ A full-stack messenger application that allows users to send and receive text an
 - Profile customisation 
 - Light/Dark mode
 - Ability to send/receive image messages
+- Auto assign gender specific default profile image upon account creation
 
 ### Future features to implement
 
 - Sign in/Sign up with socials
 - Ability to explore other users profiles 
 - More profile customisation (Profile status, Bio, Location, Update passwords)
+- Take & upload images directly from your phone camera within the app 
+- Send and receive videos (Need to find a cloud storage provider which can handle larger file sizes)
 
 ## Languages/Libraries
 
