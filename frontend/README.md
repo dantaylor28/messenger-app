@@ -59,3 +59,5 @@ A full-stack messenger application that allows users to send and receive text an
 - Currently deployed live on Netflify 
 
 ## Credits
+
+- various youtube and google searches to help me to correctly implement features and gain general knowledge of building a messenger application.
