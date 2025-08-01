@@ -9,14 +9,16 @@ import { SocketContextProvider } from "./context/SocketContext.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <AuthContextProvider>
-        <ChatContextProvider>
-          <SocketContextProvider>
-            <App />
-          </SocketContextProvider>
-        </ChatContextProvider>
-      </AuthContextProvider>
-    </BrowserRouter>
+    <GoogleOAuthProvider clientId="699535308576-2a34nftmj4uekj318pub55f4fgvtf097.apps.googleusercontent.com">
+      <BrowserRouter>
+        <AuthContextProvider>
+          <ChatContextProvider>
+            <SocketContextProvider>
+              <App />
+            </SocketContextProvider>
+          </ChatContextProvider>
+        </AuthContextProvider>
+      </BrowserRouter>
+    </GoogleOAuthProvider>
   </React.StrictMode>
 );
