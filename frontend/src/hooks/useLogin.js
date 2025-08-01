@@ -32,6 +32,15 @@ const useLogin = () => {
     }
   };
 
+  const loginWithGoogle = async (idToken) => {
+    setSendingData(true);
+    try {
+      
+    } catch (error) {
+      
+    }
+  };
+
   return { sendingData, loginUser };
 };
 
