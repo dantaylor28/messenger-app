@@ -4,6 +4,7 @@ import useLogin from "../hooks/useLogin";
 import AuthPattern from "../components/AuthPattern";
 import { Lock, MessagesSquare, User } from "lucide-react";
 import { DisplayPasswordBtn } from "../components/PasswordBtn";
+import { GoogleLogin } from "@react-oauth/google";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -39,7 +40,9 @@ const Login = () => {
             {/* Username Input */}
             <div className="mb-3">
               <label htmlFor="username">
-                <span className="text-xs font-medium dark:text-white">Username</span>
+                <span className="text-xs font-medium dark:text-white">
+                  Username
+                </span>
               </label>
               <div className="flex items-center relative">
                 <input
@@ -57,7 +60,9 @@ const Login = () => {
             {/* Password input */}
             <div className="mb-3">
               <label htmlFor="password">
-                <span className="text-xs font-medium dark:text-white">Password</span>
+                <span className="text-xs font-medium dark:text-white">
+                  Password
+                </span>
               </label>
               <div className="flex items-center relative">
                 <input
@@ -100,6 +105,25 @@ const Login = () => {
               >
                 Sign up here
               </Link>
+            </div>
+
+            <div className="relative my-4 text-center text-sm text-black/40 dark:text-white/50">
+              <div className="absolute w-full border-t border-black/20 dark:border-white/20 top-1/2 left-0" />
+              <span className="bg-white dark:bg-black px-2 relative z-10">
+                or
+              </span>
+            </div>
+            {/* Google login */}
+            <div className="mt-4 flex justify-center">
+              <GoogleLogin
+                onSuccess={(credentialResponse) => {
+                  if (credentialResponse.credential) {
+                    loginWithGoogle(credentialResponse.credential);
+                  }
+                }}
+                onError={() => toast.error("Google sign-in failed")}
+                useOneTap // optional for auto-prompt
+              />
             </div>
           </form>
         </div>
