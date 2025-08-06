@@ -35,13 +35,27 @@ const useLogin = () => {
   const loginWithGoogle = async (idToken) => {
     setSendingData(true);
     try {
-      
+      const res = await fetch("api/auth/google", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ idToken }),
+      });
+
+      const data = await res.json();
+      if (data.error) {
+        throw new Error(data.error);
+      }
+      localStorage.setItem("authenticatedUser", JSON.stringify(data));
+      setAuthenticatedUser(data);
+      toast.success("Signed in with Google");
     } catch (error) {
-      
+      toast.error(error.message);
+    } finally {
+      setSendingData(false);
     }
   };
 
-  return { sendingData, loginUser };
+  return { sendingData, loginUser, loginWithGoogle };
 };
 
 export default useLogin;
