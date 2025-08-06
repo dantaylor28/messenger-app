@@ -6,6 +6,7 @@ import { BrowserRouter } from "react-router-dom";
 import { AuthContextProvider } from "./context/AuthContext.jsx";
 import { ChatContextProvider } from "./context/ChatContext.jsx";
 import { SocketContextProvider } from "./context/SocketContext.jsx";
+import { GoogleOAuthProvider } from '@react-oauth/google';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
