@@ -2,6 +2,7 @@ import User from "../models/user.model.js";
 import bcrypt from "bcryptjs";
 import generateToken from "../utils/generateToken.js";
 import cloudinary from "../utils/cloudinary.js";
+import { OAuth2Client } from "google-auth-library";
 
 export const signup = async (req, res) => {
   try {
@@ -152,6 +153,8 @@ export const updateProfile = async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 };
+
+const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
 // export const AuthUser = (req, res) => {
 //   try {
