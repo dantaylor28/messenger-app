@@ -156,6 +156,16 @@ export const updateProfile = async (req, res) => {
 
 const client = new OAuth2Client(process.env.GOOGLE_CLIENT_ID);
 
+export const googleAuth = async (req, res) => {
+  try {
+    const { idToken } = req.body;
+
+    if (!idToken) {
+      return res.status(400).json({ error: "Google Id token is required" });
+    }
+  } catch (error) {}
+};
+
 // export const AuthUser = (req, res) => {
 //   try {
 //     res.status(200).json(req.user);
