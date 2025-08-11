@@ -194,6 +194,18 @@ export const googleAuth = async (req, res) => {
       });
       await user.save();
     }
+
+    // Generate JWT and set as cookie (using generateToken util function)
+    generateToken(user._id, res);
+
+    res.status(200).json({
+      _id: user._id,
+      fullName: user.fullName,
+      username: user.username,
+      email: user.email,
+      profileImage: user.profileImage,
+      createdAt: user.createdAt,
+    });
   } catch (error) {}
 };
 
