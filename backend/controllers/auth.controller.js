@@ -178,6 +178,22 @@ export const googleAuth = async (req, res) => {
         .status(400)
         .json({ error: "Google account must have an email address" });
     }
+
+    // Check if user already exists
+    let user = await User.findOne({ email });
+
+    if (!user) {
+      // Create a new user if one does not exist
+      user = new User({
+        fullName: name,
+        email,
+        username: email.split("@")[0], // Create basic username from email
+        profileImage: picture,
+        googleId: sub,
+        authProvider: "google",
+      });
+      await user.save();
+    }
   } catch (error) {}
 };
 
