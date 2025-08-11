@@ -163,6 +163,21 @@ export const googleAuth = async (req, res) => {
     if (!idToken) {
       return res.status(400).json({ error: "Google Id token is required" });
     }
+
+    // Verify the Google ID token
+    const ticket = await client.verifyIdToken({
+      idToken,
+      audience: process.env.GOOGLE_CLIENT_ID,
+    });
+
+    const payload = ticket.getPayload();
+    const { email, name, picture, sub } = payload;
+
+    if (!email) {
+      return res
+        .status(400)
+        .json({ error: "Google account must have an email address" });
+    }
   } catch (error) {}
 };
 
