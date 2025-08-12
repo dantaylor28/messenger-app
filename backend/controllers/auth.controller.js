@@ -206,7 +206,10 @@ export const googleAuth = async (req, res) => {
       profileImage: user.profileImage,
       createdAt: user.createdAt,
     });
-  } catch (error) {}
+  } catch (error) {
+    console.log("Error in Google Auth controller", error.message);
+    res.status(500).json({ error: "Internal server error" });
+  }
 };
 
 // export const AuthUser = (req, res) => {
