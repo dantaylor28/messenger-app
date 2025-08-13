@@ -34,6 +34,13 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+    googleId: {
+      type: String,
+    },
+    authProvider: {
+      type: String,
+      default: "local"
+    }
   },
   { timestamps: true }
 );
