@@ -17,13 +17,16 @@ const Login = () => {
     e.preventDefault();
     await loginUser(username, password);
 
-  const loginWithGoogle = async (idToken) => {
-    try {
-      
-    } catch (error) {
-      
-    }
-  }
+    const loginWithGoogle = async (idToken) => {
+      try {
+        const res = await fetch("api/auth/google", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include", // allows cookies to be set
+          body: JSON.stringify({ idToken }),
+        });
+      } catch (error) {}
+    };
   };
   return (
     <div className="min-h-screen min-w-full grid lg:grid-cols-2">
