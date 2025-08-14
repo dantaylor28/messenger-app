@@ -38,12 +38,13 @@ const useLogin = () => {
       const res = await fetch("api/auth/google", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
+        credentials: "include",
         body: JSON.stringify({ idToken }),
       });
 
       const data = await res.json();
-      if (data.error) {
-        throw new Error(data.error);
+      if (!res.ok) {
+        throw new Error(data.error || "Google login failed");
       }
       localStorage.setItem("authenticatedUser", JSON.stringify(data));
       setAuthenticatedUser(data);
