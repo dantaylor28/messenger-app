@@ -17,8 +17,9 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     await loginUser(username, password);
+  };
 
-    const loginWithGoogle = async (idToken) => {
+  const loginWithGoogle = async (idToken) => {
       try {
         const res = await fetch("api/auth/google", {
           method: "POST",
@@ -36,11 +37,14 @@ const Login = () => {
         console.log("Google logn success:", data);
 
         // Todo - store returned user in auth context
-        
+
         toast.success("Logged in with Google");
-      } catch (error) {}
+      } catch (error) {
+        console.log("Google login error:", error.message);
+        toast.error(error.message);
+      }
     };
-  };
+    
   return (
     <div className="min-h-screen min-w-full grid lg:grid-cols-2">
       {/*  Left side */}
