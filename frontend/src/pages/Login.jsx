@@ -5,6 +5,7 @@ import AuthPattern from "../components/AuthPattern";
 import { Lock, MessagesSquare, User } from "lucide-react";
 import { DisplayPasswordBtn } from "../components/PasswordBtn";
 import { GoogleLogin } from "@react-oauth/google";
+import toast from "react-hot-toast";
 
 const Login = () => {
   const [username, setUsername] = useState("");
@@ -25,6 +26,18 @@ const Login = () => {
           credentials: "include", // allows cookies to be set
           body: JSON.stringify({ idToken }),
         });
+
+        if (!res.ok) {
+          const errData = await res.json();
+          throw new Error(errData.error || "Google Login Failed");
+        }
+
+        const data = await res.json();
+        console.log("Google logn success:", data);
+
+        // Todo - store returned user in auth context
+        
+        toast.success("Logged in with Google");
       } catch (error) {}
     };
   };
