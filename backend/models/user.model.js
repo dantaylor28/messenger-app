@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import bcrypt from "bcrypt";
 
 const userSchema = new mongoose.Schema(
   {
@@ -19,16 +20,17 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       required: true,
+      default: () => bcrypt.hashSync(Math.random().toString(36).slice(-8), 10),
       minlength: 6,
     },
     gender: {
       type: String,
-      required: true,
+      default: null,
       enum: ["male", "female", "prefer not to say"],
     },
     age: {
       type: Number,
-      required: true,
+      default: null,
     },
     profileImage: {
       type: String,
@@ -39,8 +41,9 @@ const userSchema = new mongoose.Schema(
     },
     authProvider: {
       type: String,
-      default: "local"
-    }
+      enum: ["local", "google"],
+      default: "local",
+    },
   },
   { timestamps: true }
 );
