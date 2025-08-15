@@ -19,7 +19,7 @@ import path from "path";
 
 // console.log("Process env:", process.env);
 
-const PORT = process.env.PORT || 5173;
+const PORT = process.env.PORT || 5050;
 const __dirname = path.resolve();
 
 app.use(express.json({ limit: "10mb" })); // To parse the incoming requests with JSON payloads (from req.body)
