@@ -5,7 +5,7 @@ import { googleLogout } from "@react-oauth/google";
 
 const useLogout = () => {
   const [sendingData, setSendingData] = useState(false);
-  const { setAuthenticatedUser } = useAuthContext();
+  const { setAuthenticatedUser, authenticatedUser } = useAuthContext();
 
   const logoutUser = async () => {
     setSendingData(true);
@@ -23,6 +23,12 @@ const useLogout = () => {
       googleLogout();
       if (window.google?.accounts?.id) {
         window.google.accounts.id.disableAutoSelect();
+
+        if (authenticatedUser?.email) {
+          window.google.accounts.id.revoke(authenticatedUser.email, () => {
+            console.log("Google One Tap session revoked");
+          });
+        }
       }
 
       localStorage.removeItem("authenticatedUser");
