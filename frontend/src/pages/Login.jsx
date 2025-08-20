@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import useLogin from "../hooks/useLogin";
+import { useAuthContext } from "../context/AuthContext";
 import AuthPattern from "../components/AuthPattern";
 import { Lock, MessagesSquare, User } from "lucide-react";
 import { DisplayPasswordBtn } from "../components/PasswordBtn";
@@ -13,6 +14,7 @@ const Login = () => {
   const [displayPassword, setDisplayPassword] = useState(false);
 
   const { sendingData, loginUser, loginWithGoogle } = useLogin();
+  const { authenticatedUser } = useAuthContext();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,7 +46,7 @@ const Login = () => {
   //       toast.error(error.message);
   //     }
   //   };
-    
+
   return (
     <div className="min-h-screen min-w-full grid lg:grid-cols-2">
       {/*  Left side */}
@@ -142,17 +144,19 @@ const Login = () => {
               </span>
             </div>
             {/* Google login */}
-            <div className="mt-4 flex justify-center">
-              <GoogleLogin
-                onSuccess={(credentialResponse) => {
-                  if (credentialResponse.credential) {
-                    loginWithGoogle(credentialResponse.credential);
-                  }
-                }}
-                onError={() => toast.error("Google sign-in failed")}
-                useOneTap // optional for auto-prompt
-              />
-            </div>
+            {!authenticatedUser && (
+              <div className="mt-4 flex justify-center">
+                <GoogleLogin
+                  onSuccess={(credentialResponse) => {
+                    if (credentialResponse.credential) {
+                      loginWithGoogle(credentialResponse.credential);
+                    }
+                  }}
+                  onError={() => toast.error("Google sign-in failed")}
+                  useOneTap // optional for auto-prompt
+                />
+              </div>
+            )}
           </form>
         </div>
       </div>
