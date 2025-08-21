@@ -23,6 +23,7 @@ const useLogout = () => {
       googleLogout();
       if (window.google?.accounts?.id) {
         window.google.accounts.id.disableAutoSelect();
+        window.google.accounts.id.cancel();
 
         if (authenticatedUser?.email) {
           window.google.accounts.id.revoke(authenticatedUser.email, () => {
