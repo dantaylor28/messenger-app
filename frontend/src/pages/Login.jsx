@@ -16,6 +16,9 @@ const Login = () => {
   const { sendingData, loginUser, loginWithGoogle } = useLogin();
   const { authenticatedUser } = useAuthContext();
 
+  // Read logout flag from local storage
+  const hasLoggedOut = localStorage.getItem("hasLoggedOut") === "true";
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     await loginUser(username, password);
@@ -153,7 +156,7 @@ const Login = () => {
                     }
                   }}
                   onError={() => toast.error("Google sign-in failed")}
-                  useOneTap // optional for auto-prompt
+                  useOneTap={!hasLoggedOut} // Will only auto prompt if user has not previously logged out
                 />
               </div>
             )}
