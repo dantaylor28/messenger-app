@@ -24,32 +24,6 @@ const Login = () => {
     await loginUser(username, password);
   };
 
-  // const loginWithGoogle = async (idToken) => {
-  //     try {
-  //       const res = await fetch("api/auth/google", {
-  //         method: "POST",
-  //         headers: { "Content-Type": "application/json" },
-  //         credentials: "include", // allows cookies to be set
-  //         body: JSON.stringify({ idToken }),
-  //       });
-
-  //       if (!res.ok) {
-  //         const errData = await res.json();
-  //         throw new Error(errData.error || "Google Login Failed");
-  //       }
-
-  //       const data = await res.json();
-  //       console.log("Google login success:", data);
-
-  //       // Todo - store returned user in auth context
-
-  //       toast.success("Logged in with Google");
-  //     } catch (error) {
-  //       console.log("Google login error:", error.message);
-  //       toast.error(error.message);
-  //     }
-  //   };
-
   return (
     <div className="min-h-screen min-w-full grid lg:grid-cols-2">
       {/*  Left side */}

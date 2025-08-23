@@ -24,16 +24,10 @@ const useLogout = () => {
       if (window.google?.accounts?.id) {
         window.google.accounts.id.disableAutoSelect();
         window.google.accounts.id.cancel();
-
-        // if (authenticatedUser?.email) {
-        //   window.google.accounts.id.revoke(authenticatedUser.email, () => {
-        //     console.log("Google One Tap session revoked");
-        //   });
-        // }
       }
 
       localStorage.setItem("hasLoggedOut", "true");
-      
+
       localStorage.removeItem("authenticatedUser");
       setAuthenticatedUser(null);
       toast.success("Signed out successfully");
