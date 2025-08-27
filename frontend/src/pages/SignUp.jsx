@@ -16,8 +16,11 @@ import {
 } from "../components/PasswordBtn";
 import { Link } from "react-router-dom";
 import AuthPattern from "../components/AuthPattern";
+import { GoogleLogin } from "@react-oauth/google";
+import useLogin from "../hooks/useLogin";
 
 const SignUp = () => {
+  const { loginWithGoogle } = useLogin();
   const [userInputs, setUserInputs] = useState({
     fullName: "",
     email: "",
@@ -43,11 +46,12 @@ const SignUp = () => {
 
   return (
     <div className="min-h-screen min-w-full grid lg:grid-cols-2">
-        {/* Left side - pattern animation */}
-        <AuthPattern 
+      {/* Left side - pattern animation */}
+      <AuthPattern
         heading="Join Our Community"
-        text="Create your free account to connect, keep in touch and share life updates with your friends and family"/>
-        
+        text="Create your free account to connect, keep in touch and share life updates with your friends and family"
+      />
+
       {/* Right side */}
       <div className="flex flex-col justify-center items-center">
         <div className="flex flex-col w-full text-center items-center justify-center mb-5">
@@ -69,7 +73,9 @@ const SignUp = () => {
             {/* Full name input */}
             <div className="mb-3">
               <label htmlFor="full-name">
-                <span className="text-xs font-medium dark:text-white">Full Name</span>
+                <span className="text-xs font-medium dark:text-white">
+                  Full Name
+                </span>
               </label>
               <div className="flex items-center relative">
                 <input
@@ -89,7 +95,9 @@ const SignUp = () => {
             {/* Username Input */}
             <div className="mb-3">
               <label htmlFor="username">
-                <span className="text-xs font-medium dark:text-white">Username</span>
+                <span className="text-xs font-medium dark:text-white">
+                  Username
+                </span>
               </label>
               <div className="flex items-center relative">
                 <input
@@ -109,7 +117,9 @@ const SignUp = () => {
             {/* Email input */}
             <div className="mb-3">
               <label htmlFor="email">
-                <span className="text-xs font-medium dark:text-white">Email Address</span>
+                <span className="text-xs font-medium dark:text-white">
+                  Email Address
+                </span>
               </label>
               <div className="flex items-center relative">
                 <input
@@ -129,7 +139,9 @@ const SignUp = () => {
             {/* Password input */}
             <div className="mb-3">
               <label htmlFor="password">
-                <span className="text-xs font-medium dark:text-white">Password</span>
+                <span className="text-xs font-medium dark:text-white">
+                  Password
+                </span>
               </label>
               <div className="flex items-center relative">
                 <input
@@ -153,7 +165,9 @@ const SignUp = () => {
             {/* Confirm password input */}
             <div className="mb-3">
               <label htmlFor="confirm-password">
-                <span className="text-xs font-medium dark:text-white">Confirm Password</span>
+                <span className="text-xs font-medium dark:text-white">
+                  Confirm Password
+                </span>
               </label>
               <div className="flex items-center relative">
                 <input
@@ -223,9 +237,30 @@ const SignUp = () => {
               <p className="font-light text-black/70 dark:text-white/70">
                 Already have an account?
               </p>
-              <Link to={"/login"} className="cursor-pointer text-amber-600/80 dark:text-amber-500/80 hover:text-amber-600 dark:hover:text-amber-500 hover:underline transition">Sign in here</Link>
+              <Link
+                to={"/login"}
+                className="cursor-pointer text-amber-600/80 dark:text-amber-500/80 hover:text-amber-600 dark:hover:text-amber-500 hover:underline transition"
+              >
+                Sign in here
+              </Link>
             </div>
           </form>
+
+          {/* Divider */}
+          <div className="flex items-center justify-center my-4 w-full">
+            <span className="border-t border-gray-300 w-1/4"></span>
+            <span className="mx-2 text-sm text-gray-500">OR</span>
+            <span className="border-t border-gray-300 w-1/4"></span>
+          </div>
+
+          {/* Google Signup */}
+          <GoogleLogin
+            onSuccess={(credentialResponse) => {
+              loginWithGoogle(credentialResponse.credential);
+            }}
+            onError={() => toast.error("Google signup unsuccessful")}
+            useOneTap={false}
+          />
         </div>
       </div>
     </div>
