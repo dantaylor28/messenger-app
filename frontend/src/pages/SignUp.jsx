@@ -254,13 +254,15 @@ const SignUp = () => {
           </div>
 
           {/* Google Signup */}
-          <GoogleLogin
-            onSuccess={(credentialResponse) => {
-              loginWithGoogle(credentialResponse.credential);
-            }}
-            onError={() => toast.error("Google signup unsuccessful")}
-            useOneTap={false}
-          />
+          <div className="mt-4 flex justify-center">
+            <GoogleLogin
+              onSuccess={(credentialResponse) => {
+                loginWithGoogle(credentialResponse.credential);
+              }}
+              onError={() => toast.error("Google signup unsuccessful")}
+              useOneTap={false}
+            />
+          </div>
         </div>
       </div>
     </div>
