@@ -116,13 +116,13 @@ const Login = () => {
 
             <div className="relative my-4 text-center text-sm text-black/40 dark:text-white/50">
               <div className="absolute w-full border-t border-black/20 dark:border-white/20 top-1/2 left-0" />
-              <span className="bg-white dark:bg-black px-2 relative z-10">
+              {/* <span className="bg-white dark:bg-black px-2 relative z-10">
                 or
-              </span>
+              </span> */}
             </div>
             {/* Google login */}
             {!authenticatedUser && (
-              <div className="mt-4 flex justify-center">
+              <div className="mt-10 flex justify-center">
                 <GoogleLogin
                   onSuccess={(credentialResponse) => {
                     if (credentialResponse.credential) {

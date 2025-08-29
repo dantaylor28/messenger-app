@@ -247,14 +247,12 @@ const SignUp = () => {
           </form>
 
           {/* Divider */}
-          <div className="flex items-center justify-center my-4 w-full">
-            <span className="border-t border-gray-300 w-1/4"></span>
-            <span className="mx-2 text-sm text-gray-500">OR</span>
-            <span className="border-t border-gray-300 w-1/4"></span>
+          <div className="relative my-4 text-center text-sm text-black/40 dark:text-white/50">
+            <div className="absolute w-full border-t border-black/20 dark:border-white/20 top-1/2 left-0" />
           </div>
 
           {/* Google Signup */}
-          <div className="mt-4 flex justify-center">
+          <div className="mt-10 flex justify-center">
             <GoogleLogin
               onSuccess={(credentialResponse) => {
                 loginWithGoogle(credentialResponse.credential);
