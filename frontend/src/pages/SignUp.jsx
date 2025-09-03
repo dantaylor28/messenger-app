@@ -69,48 +69,50 @@ const SignUp = () => {
 
         {/* Sign up form */}
         <div>
-          <form onSubmit={handleSubmit} className="min-w-[400px]">
+          <form onSubmit={handleSubmit} className="min-w-[475px]">
             {/* Full name input */}
-            <div className="mb-3">
-              <label htmlFor="full-name">
-                <span className="text-xs font-medium dark:text-white">
-                  Full Name
-                </span>
-              </label>
-              <div className="flex items-center relative">
-                <input
-                  type="text"
-                  id="full-name"
-                  placeholder="John Doe"
-                  className="w-full bg-slate-50 dark:bg-white/10 dark:text-white border border-black/25 dark:border-white/20 rounded-[4px] h-10 pl-10 placeholder:text-black/40 dark:placeholder:text-white/50 peer focus:outline-none focus:border-black/40 dark:focus:border-white/40"
-                  value={userInputs.fullName}
-                  onChange={(e) =>
-                    setUserInputs({ ...userInputs, fullName: e.target.value })
-                  }
-                />
-                <User className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 dark:text-white/50 peer-focus:text-black/70 dark:peer-focus:text-white/70" />
+            <div className="flex gap-8">
+              <div className="mb-3 w-full">
+                <label htmlFor="full-name">
+                  <span className="text-xs font-medium dark:text-white">
+                    Full Name
+                  </span>
+                </label>
+                <div className="flex items-center relative">
+                  <input
+                    type="text"
+                    id="full-name"
+                    placeholder="John Doe"
+                    className="w-full bg-slate-50 dark:bg-white/10 dark:text-white border border-black/25 dark:border-white/20 rounded-[4px] h-10 pl-10 placeholder:text-black/40 dark:placeholder:text-white/50 peer focus:outline-none focus:border-black/40 dark:focus:border-white/40"
+                    value={userInputs.fullName}
+                    onChange={(e) =>
+                      setUserInputs({ ...userInputs, fullName: e.target.value })
+                    }
+                  />
+                  <User className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 dark:text-white/50 peer-focus:text-black/70 dark:peer-focus:text-white/70" />
+                </div>
               </div>
-            </div>
 
-            {/* Username Input */}
-            <div className="mb-3">
-              <label htmlFor="username">
-                <span className="text-xs font-medium dark:text-white">
-                  Username
-                </span>
-              </label>
-              <div className="flex items-center relative">
-                <input
-                  type="text"
-                  id="username"
-                  placeholder="JohnDoe123"
-                  className="w-full bg-slate-50 dark:bg-white/10 dark:text-white border border-black/25 dark:border-white/20 rounded-[4px] h-10 pl-10 placeholder:text-black/40 dark:placeholder:text-white/50 peer focus:outline-none focus:border-black/40 dark:focus:border-white/40"
-                  value={userInputs.username}
-                  onChange={(e) =>
-                    setUserInputs({ ...userInputs, username: e.target.value })
-                  }
-                />
-                <UserCheck className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 dark:text-white/50 peer-focus:text-black/70 dark:peer-focus:text-white/70" />
+              {/* Username Input */}
+              <div className="mb-3 w-full">
+                <label htmlFor="username">
+                  <span className="text-xs font-medium dark:text-white">
+                    Username
+                  </span>
+                </label>
+                <div className="flex items-center relative">
+                  <input
+                    type="text"
+                    id="username"
+                    placeholder="JohnDoe123"
+                    className="w-full bg-slate-50 dark:bg-white/10 dark:text-white border border-black/25 dark:border-white/20 rounded-[4px] h-10 pl-10 placeholder:text-black/40 dark:placeholder:text-white/50 peer focus:outline-none focus:border-black/40 dark:focus:border-white/40"
+                    value={userInputs.username}
+                    onChange={(e) =>
+                      setUserInputs({ ...userInputs, username: e.target.value })
+                    }
+                  />
+                  <UserCheck className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 dark:text-white/50 peer-focus:text-black/70 dark:peer-focus:text-white/70" />
+                </div>
               </div>
             </div>
 
@@ -137,57 +139,59 @@ const SignUp = () => {
             </div>
 
             {/* Password input */}
-            <div className="mb-3">
-              <label htmlFor="password">
-                <span className="text-xs font-medium dark:text-white">
-                  Password
-                </span>
-              </label>
-              <div className="flex items-center relative">
-                <input
-                  type={displayPassword ? "text" : "password"}
-                  id="password"
-                  placeholder="••••••••••••"
-                  className="w-full bg-slate-50 dark:bg-white/10 dark:text-white border border-black/25 dark:border-white/20 rounded-[4px] h-10 pl-10 placeholder:text-black/40 dark:placeholder:text-white/50 peer focus:outline-none focus:border-black/40 dark:focus:border-white/40"
-                  value={userInputs.password}
-                  onChange={(e) =>
-                    setUserInputs({ ...userInputs, password: e.target.value })
-                  }
-                />
-                <Lock className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 dark:text-white/50 peer-focus:text-black/70 dark:peer-focus:text-white/70" />
-                <DisplayPasswordBtn
-                  displayPassword={displayPassword}
-                  setDisplayPassword={setDisplayPassword}
-                />
+            <div className="flex gap-8">
+              <div className="mb-3 w-full">
+                <label htmlFor="password">
+                  <span className="text-xs font-medium dark:text-white">
+                    Password
+                  </span>
+                </label>
+                <div className="flex items-center relative">
+                  <input
+                    type={displayPassword ? "text" : "password"}
+                    id="password"
+                    placeholder="••••••••••••"
+                    className="w-full bg-slate-50 dark:bg-white/10 dark:text-white border border-black/25 dark:border-white/20 rounded-[4px] h-10 pl-10 placeholder:text-black/40 dark:placeholder:text-white/50 peer focus:outline-none focus:border-black/40 dark:focus:border-white/40"
+                    value={userInputs.password}
+                    onChange={(e) =>
+                      setUserInputs({ ...userInputs, password: e.target.value })
+                    }
+                  />
+                  <Lock className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 dark:text-white/50 peer-focus:text-black/70 dark:peer-focus:text-white/70" />
+                  <DisplayPasswordBtn
+                    displayPassword={displayPassword}
+                    setDisplayPassword={setDisplayPassword}
+                  />
+                </div>
               </div>
-            </div>
 
-            {/* Confirm password input */}
-            <div className="mb-3">
-              <label htmlFor="confirm-password">
-                <span className="text-xs font-medium dark:text-white">
-                  Confirm Password
-                </span>
-              </label>
-              <div className="flex items-center relative">
-                <input
-                  type={displayConfirmPassword ? "text" : "password"}
-                  id="confirm-password"
-                  placeholder="••••••••••••"
-                  className="w-full bg-slate-50 dark:bg-white/10 dark:text-white border border-black/25 dark:border-white/20 rounded-[4px] h-10 pl-10 placeholder:text-black/40 dark:placeholder:text-white/50 peer focus:outline-none focus:border-black/40 dark:focus:border-white/40"
-                  value={userInputs.confirmPassword}
-                  onChange={(e) =>
-                    setUserInputs({
-                      ...userInputs,
-                      confirmPassword: e.target.value,
-                    })
-                  }
-                />
-                <ShieldCheck className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 dark:text-white/50 peer-focus:text-black/70 dark:peer-focus:text-white/70" />
-                <DisplayConfirmPasswordBtn
-                  displayConfirmPassword={displayConfirmPassword}
-                  setDisplayConfirmPassword={setDisplayConfirmPassword}
-                />
+              {/* Confirm password input */}
+              <div className="mb-3 w-full">
+                <label htmlFor="confirm-password">
+                  <span className="text-xs font-medium dark:text-white">
+                    Confirm Password
+                  </span>
+                </label>
+                <div className="flex items-center relative">
+                  <input
+                    type={displayConfirmPassword ? "text" : "password"}
+                    id="confirm-password"
+                    placeholder="••••••••••••"
+                    className="w-full bg-slate-50 dark:bg-white/10 dark:text-white border border-black/25 dark:border-white/20 rounded-[4px] h-10 pl-10 placeholder:text-black/40 dark:placeholder:text-white/50 peer focus:outline-none focus:border-black/40 dark:focus:border-white/40"
+                    value={userInputs.confirmPassword}
+                    onChange={(e) =>
+                      setUserInputs({
+                        ...userInputs,
+                        confirmPassword: e.target.value,
+                      })
+                    }
+                  />
+                  <ShieldCheck className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 dark:text-white/50 peer-focus:text-black/70 dark:peer-focus:text-white/70" />
+                  <DisplayConfirmPasswordBtn
+                    displayConfirmPassword={displayConfirmPassword}
+                    setDisplayConfirmPassword={setDisplayConfirmPassword}
+                  />
+                </div>
               </div>
             </div>
 
