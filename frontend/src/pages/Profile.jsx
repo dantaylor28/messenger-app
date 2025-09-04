@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useUpdateProfile from "../hooks/useUpdateProfile";
 import { useAuthContext } from "../context/AuthContext";
-import { Camera, Mail, SquarePen, User, UserCheck } from "lucide-react";
+import { Camera, Mail, SquarePen, User, UserCheck, ArrowUpDown } from "lucide-react";
 
 const Profile = () => {
   const { sendingData, updateProfile } = useUpdateProfile();
@@ -185,7 +185,7 @@ const Profile = () => {
           {/* Age input */}
           <div className="mt-3">
             <div className="flex items-center gap-0.5 dark:text-white">
-              <Mail className="size-4" />
+              <ArrowUpDown className="size-4" />
               <label htmlFor="age">
                 <span className="text-xs font-medium">Age</span>
               </label>
