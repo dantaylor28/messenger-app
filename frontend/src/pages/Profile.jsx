@@ -201,7 +201,6 @@ const Profile = () => {
         </div>
 
         {/* Gender input */}
-        {/* Gender input */}
         <div className="mt-3">
           <div className="flex items-center gap-0.5 dark:text-white">
             <User className="size-4" />

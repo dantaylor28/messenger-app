@@ -132,7 +132,7 @@ export const logout = (req, res) => {
 
 export const updateProfile = async (req, res) => {
   try {
-    const { fullName, username, email, profileImage, age } = req.body;
+    const { fullName, username, email, profileImage, gender, age } = req.body;
     const userId = req.user._id;
 
     if (
