@@ -72,6 +72,7 @@ export const signup = async (req, res) => {
         fullName: newUser.fullName,
         username: newUser.username,
         profileImage: newUser.profileImage,
+        gender: newUser.gender,
         age: newUser.age,
         createdAt: newUser.createdAt,
       });
@@ -108,6 +109,7 @@ export const login = async (req, res) => {
       username: user.username,
       email: user.email,
       profileImage: user.profileImage,
+      gender: user.gender,
       age: user.age,
       createdAt: user.createdAt,
     });
@@ -138,6 +140,7 @@ export const updateProfile = async (req, res) => {
       !username &&
       !email &&
       !profileImage &&
+      gender === undefined &&
       age === undefined
     ) {
       return res.status(400).json({ message: "No profile updates provided" });
@@ -147,6 +150,7 @@ export const updateProfile = async (req, res) => {
     if (fullName) updateFields.fullName = fullName;
     if (username) updateFields.username = username;
     if (email) updateFields.email = email;
+    if (gender !== undefined) updateFields.gender = gender;
     if (age !== undefined) updateFields.age = age;
 
     if (profileImage) {
@@ -217,6 +221,7 @@ export const googleAuth = async (req, res) => {
       username: user.username,
       email: user.email,
       profileImage: user.profileImage,
+      gender: user.gender,
       age: user.age,
       createdAt: user.createdAt,
     });
