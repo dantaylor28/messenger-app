@@ -72,6 +72,7 @@ export const signup = async (req, res) => {
         fullName: newUser.fullName,
         username: newUser.username,
         profileImage: newUser.profileImage,
+        age: newUser.age,
         createdAt: newUser.createdAt,
       });
     } else {
@@ -107,6 +108,7 @@ export const login = async (req, res) => {
       username: user.username,
       email: user.email,
       profileImage: user.profileImage,
+      age: user.age,
       createdAt: user.createdAt,
     });
   } catch (error) {
@@ -128,10 +130,16 @@ export const logout = (req, res) => {
 
 export const updateProfile = async (req, res) => {
   try {
-    const { fullName, username, email, profileImage } = req.body;
+    const { fullName, username, email, profileImage, age } = req.body;
     const userId = req.user._id;
 
-    if (!fullName && !username && !email && !profileImage) {
+    if (
+      !fullName &&
+      !username &&
+      !email &&
+      !profileImage &&
+      age === undefined
+    ) {
       return res.status(400).json({ message: "No profile updates provided" });
     }
 
@@ -139,6 +147,7 @@ export const updateProfile = async (req, res) => {
     if (fullName) updateFields.fullName = fullName;
     if (username) updateFields.username = username;
     if (email) updateFields.email = email;
+    if (age !== undefined) updateFields.age = age;
 
     if (profileImage) {
       const uploadResponse = await cloudinary.uploader.upload(profileImage);
@@ -208,6 +217,7 @@ export const googleAuth = async (req, res) => {
       username: user.username,
       email: user.email,
       profileImage: user.profileImage,
+      age: user.age,
       createdAt: user.createdAt,
     });
   } catch (error) {

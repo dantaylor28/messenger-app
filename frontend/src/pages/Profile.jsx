@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import useUpdateProfile from "../hooks/useUpdateProfile";
 import { useAuthContext } from "../context/AuthContext";
-import { Camera, Mail, SquarePen, Pen, User, UserCheck } from "lucide-react";
+import { Camera, Mail, SquarePen, User, UserCheck } from "lucide-react";
 
 const Profile = () => {
   const { sendingData, updateProfile } = useUpdateProfile();
@@ -14,6 +14,8 @@ const Profile = () => {
   const [username, setUsername] = useState(authenticatedUser.username);
   const [isEmailDisabled, setEmailIsDisabled] = useState(true);
   const [email, setEmail] = useState(authenticatedUser.email);
+  const [isAgeDisabled, setAgeIsDisabled] = useState(true);
+  const [age, setAge] = useState(authenticatedUser.age ?? "");
 
   const [hasUpdates, setHasUpdates] = useState(false);
 
@@ -35,6 +37,7 @@ const Profile = () => {
       fullName,
       username,
       email,
+      age,
       profileImage: selectedImage,
     });
 
@@ -173,6 +176,38 @@ const Profile = () => {
               <button
                 className="cursor-pointer transition text-amber-600 dark:text-amber-500 hover:text-amber-700 dark:hover:text-amber-600"
                 onClick={() => setEmailIsDisabled(false)}
+              >
+                <SquarePen className="size-5" />
+              </button>
+            </div>
+          </div>
+
+          {/* Age input */}
+          <div className="mt-3">
+            <div className="flex items-center gap-0.5 dark:text-white">
+              <Mail className="size-4" />
+              <label htmlFor="age">
+                <span className="text-xs font-medium">Age</span>
+              </label>
+            </div>
+            <div className="flex items-center gap-2">
+              <input
+                type="number"
+                value={age}
+                onChange={(e) => {
+                  setAge(e.target.value);
+                  setHasUpdates(true);
+                }}
+                disabled={isAgeDisabled}
+                className={`w-full pl-3 rounded-[4px] h-10 focus:outline-none border border-black/40 dark:border-white/10 ${
+                  isAgeDisabled
+                    ? "bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-white/40 cursor-not-allowed"
+                    : "bg-slate-40 dark:bg-white/15 text-black dark:text-white/80 focus:border-black/80 dark:focus:border-white/30"
+                }`}
+              />
+              <button
+                className="cursor-pointer transition text-amber-600 dark:text-amber-500 hover:text-amber-700 dark:hover:text-amber-600"
+                onClick={() => setAgeIsDisabled(false)}
               >
                 <SquarePen className="size-5" />
               </button>
