@@ -214,6 +214,7 @@ const Profile = () => {
             }`}
           >
             <GenderCheckbox
+              variant="profile"
               selectedGender={gender}
               onCheckboxChange={(value) => {
                 setGender(value);

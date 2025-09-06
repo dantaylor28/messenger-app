@@ -1,12 +1,18 @@
 import React from "react";
 import { PersonStanding } from "lucide-react";
 
-const GenderCheckbox = ({ onCheckboxChange, selectedGender }) => {
+const GenderCheckbox = ({
+  onCheckboxChange,
+  selectedGender,
+  variant = "signup",
+}) => {
   return (
-    <div className="mb-3">
-      <label htmlFor="gender">
-        <span className="text-xs font-medium dark:text-white">Gender</span>
-      </label>
+    <div className={variant === "signup" ? "mb-3" : ""}>
+      {variant === "signup" && (
+        <label htmlFor="gender">
+          <span className="text-xs font-medium dark:text-white">Gender</span>
+        </label>
+      )}
       <div className="relative flex items-center gap-6 dark:bg-white/10 dark:text-white border border-black/25 dark:border-white/20 w-full rounded-[4px] h-10 pl-10">
         <div className="form-control peer">
           <label
@@ -54,7 +60,9 @@ const GenderCheckbox = ({ onCheckboxChange, selectedGender }) => {
             />
           </label>
         </div>
-        <PersonStanding className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 dark:text-white/50 peer-focus-within:text-black/70 dark:peer-focus-within:text-white/70" />
+        {variant === "signup" && (
+          <PersonStanding className="absolute pointer-events-none left-0 ml-2 size-5 text-black/45 dark:text-white/50 peer-focus-within:text-black/70 dark:peer-focus-within:text-white/70" />
+        )}
       </div>
     </div>
   );
