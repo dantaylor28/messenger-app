@@ -125,7 +125,7 @@ const Profile = () => {
               className={`w-full pl-3 rounded-[4px] h-10 focus:outline-none border border-black/40 dark:border-white/10 ${
                 isFullNameDisabled
                   ? "bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-white/40 cursor-not-allowed"
-                  : "bg-slate-40 dark:bg-white/15 text-black dark:text-white/80 focus:border-black/80 dark:focus:border-white/30"
+                  : "dark:bg-white/15 text-black dark:text-white/80 focus:border-black/80 dark:focus:border-white/30"
               }`}
             />
             <button
@@ -156,7 +156,7 @@ const Profile = () => {
               className={`w-full pl-3 rounded-[4px] h-10 focus:outline-none border border-black/40 dark:border-white/10 ${
                 isUsernameDisabled
                   ? "bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-white/40 cursor-not-allowed"
-                  : "bg-slate-40 dark:bg-white/15 text-black dark:text-white/80 focus:border-black/80 dark:focus:border-white/30"
+                  : "dark:bg-white/15 text-black dark:text-white/80 focus:border-black/80 dark:focus:border-white/30"
               }`}
             />
             <button
@@ -188,7 +188,7 @@ const Profile = () => {
               className={`w-full pl-3 rounded-[4px] h-10 focus:outline-none border border-black/40 dark:border-white/10 ${
                 isEmailDisabled
                   ? "bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-white/40 cursor-not-allowed"
-                  : "bg-slate-40 dark:bg-white/15 text-black dark:text-white/80 focus:border-black/80 dark:focus:border-white/30"
+                  : "dark:bg-white/15 text-black dark:text-white/80 focus:border-black/80 dark:focus:border-white/30"
               }`}
             />
             <button
@@ -210,7 +210,9 @@ const Profile = () => {
           </div>
           <div
             className={`${
-              isGenderDisabled ? "opacity-50 pointer-events-none" : ""
+              isGenderDisabled
+                ? "bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-white/40 cursor-not-allowed"
+                : "bg-white dark:bg-white/15 text-black dark:text-white/80 focus:border-black/80 dark:focus:border-white/30"
             }`}
           >
             <GenderCheckbox
@@ -252,7 +254,7 @@ const Profile = () => {
               className={`w-full pl-3 rounded-[4px] h-10 focus:outline-none border border-black/40 dark:border-white/10 ${
                 isAgeDisabled
                   ? "bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-white/40 cursor-not-allowed"
-                  : "bg-slate-40 dark:bg-white/15 text-black dark:text-white/80 focus:border-black/80 dark:focus:border-white/30"
+                  : "dark:bg-white/15 text-black dark:text-white/80 focus:border-black/80 dark:focus:border-white/30"
               }`}
             />
             <button

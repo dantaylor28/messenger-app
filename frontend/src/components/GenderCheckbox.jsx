@@ -13,7 +13,11 @@ const GenderCheckbox = ({
           <span className="text-xs font-medium dark:text-white">Gender</span>
         </label>
       )}
-      <div className="relative flex items-center gap-6 dark:bg-white/10 dark:text-white border border-black/25 dark:border-white/20 w-full rounded-[4px] h-10 pl-10">
+      <div
+        className={`relative flex items-center gap-6 dark:text-white border w-full rounded-[4px] h-10 ${
+          variant === "signup" ? "pl-10 dark:bg-white/10 dark:border-white/20 border-black/25" : "pl-3 dark:border-white/10 border-black/40"
+        }`}
+      >
         <div className="form-control peer">
           <label
             className={`flex gap-1.5 items-center justify-center ${
