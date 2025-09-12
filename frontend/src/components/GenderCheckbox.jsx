@@ -5,7 +5,7 @@ const GenderCheckbox = ({
   onCheckboxChange,
   selectedGender,
   variant = "signup",
-  disabled = false, // 🔑 new prop
+  disabled = false,
 }) => {
   return (
     <div className={variant === "signup" ? "mb-3" : ""}>
@@ -35,7 +35,7 @@ const GenderCheckbox = ({
             <input
               id="gender"
               type="checkbox"
-              disabled={disabled} // 🔑 lock it down
+              disabled={disabled}
               checked={selectedGender === "male"}
               onChange={() => !disabled && onCheckboxChange("male")}
               className="appearance-none h-3 w-3 border-2 border-white dark:border-zinc-900 outline outline-gray-300 dark:outline-gray-500 rounded-full bg-white dark:bg-zinc-900 checked:bg-amber-500 dark:checked:bg-amber-600 hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
@@ -51,7 +51,7 @@ const GenderCheckbox = ({
             <span className="text-sm">Female</span>
             <input
               type="checkbox"
-              disabled={disabled} // 🔑
+              disabled={disabled}
               checked={selectedGender === "female"}
               onChange={() => !disabled && onCheckboxChange("female")}
               className="appearance-none h-3 w-3 border-2 border-white dark:border-zinc-900 outline outline-gray-300 dark:outline-gray-500 rounded-full bg-white dark:bg-zinc-900 checked:bg-amber-500 dark:checked:bg-amber-600 hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
@@ -67,7 +67,7 @@ const GenderCheckbox = ({
             <span className="text-sm">Prefer not to say</span>
             <input
               type="checkbox"
-              disabled={disabled} // 🔑
+              disabled={disabled}
               checked={selectedGender === "prefer not to say"}
               onChange={() =>
                 !disabled && onCheckboxChange("prefer not to say")
