@@ -208,29 +208,31 @@ const Profile = () => {
               <span className="text-xs font-medium">Gender</span>
             </label>
           </div>
-          <div
-            className={`${
-              isGenderDisabled
-                ? "bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-white/40 cursor-not-allowed"
-                : "bg-white dark:bg-white/15 text-black dark:text-white/80 focus:border-black/80 dark:focus:border-white/30"
-            }`}
-          >
-            <GenderCheckbox
-              variant="profile"
-              selectedGender={gender}
-              onCheckboxChange={(value) => {
-                setGender(value);
-                setHasUpdates(true);
-              }}
-            />
-          </div>
-          <div className="flex justify-end">
-            <button
-              className="cursor-pointer transition text-amber-600 dark:text-amber-500 hover:text-amber-700 dark:hover:text-amber-600"
-              onClick={() => setGenderIsDisabled(false)}
+          <div className="flex gap-2">
+            <div
+              className={`w-full ${
+                isGenderDisabled
+                  ? "bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-white/40 cursor-not-allowed"
+                  : "bg-white dark:bg-white/15 text-black dark:text-white/80 focus:border-black/80 dark:focus:border-white/30"
+              }`}
             >
-              <SquarePen className="size-5" />
-            </button>
+              <GenderCheckbox
+                variant="profile"
+                selectedGender={gender}
+                onCheckboxChange={(value) => {
+                  setGender(value);
+                  setHasUpdates(true);
+                }}
+              />
+            </div>
+            <div className="flex justify-end">
+              <button
+                className="cursor-pointer transition text-amber-600 dark:text-amber-500 hover:text-amber-700 dark:hover:text-amber-600"
+                onClick={() => setGenderIsDisabled(false)}
+              >
+                <SquarePen className="size-5" />
+              </button>
+            </div>
           </div>
         </div>
 
