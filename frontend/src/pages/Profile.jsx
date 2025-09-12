@@ -212,12 +212,13 @@ const Profile = () => {
             <div
               className={`w-full ${
                 isGenderDisabled
-                  ? "bg-gray-100 dark:bg-white/10 text-gray-600 dark:text-white/40 cursor-not-allowed"
-                  : "bg-white dark:bg-white/15 text-black dark:text-white/80 focus:border-black/80 dark:focus:border-white/30"
+                  ? "bg-gray-100 dark:bg-white/10 text-gray-600 cursor-not-allowed"
+                  : "bg-white dark:bg-white/15 focus:border-black/80 dark:focus:border-white/30"
               }`}
             >
               <GenderCheckbox
                 variant="profile"
+                disabled={isGenderDisabled}
                 selectedGender={gender}
                 onCheckboxChange={(value) => {
                   setGender(value);

@@ -5,6 +5,7 @@ const GenderCheckbox = ({
   onCheckboxChange,
   selectedGender,
   variant = "signup",
+  disabled = false, // 🔑 new prop
 }) => {
   return (
     <div className={variant === "signup" ? "mb-3" : ""}>
@@ -15,7 +16,13 @@ const GenderCheckbox = ({
       )}
       <div
         className={`relative flex items-center gap-6 dark:text-white border w-full rounded-[4px] h-10 ${
-          variant === "signup" ? "pl-10 dark:bg-white/10 dark:border-white/20 border-black/25" : "pl-3 dark:border-white/10 border-black/40"
+          variant === "signup"
+            ? "pl-10 dark:bg-white/10 dark:border-white/20 border-black/25"
+            : "pl-3 dark:border-white/10 border-black/40"
+        } ${
+          disabled
+            ? "bg-gray-100 dark:bg-white/5 text-gray-600 dark:text-white/40 cursor-not-allowed"
+            : "text-black dark:text-white/80"
         }`}
       >
         <div className="form-control peer">
@@ -28,9 +35,10 @@ const GenderCheckbox = ({
             <input
               id="gender"
               type="checkbox"
+              disabled={disabled} // 🔑 lock it down
               checked={selectedGender === "male"}
-              onChange={() => onCheckboxChange("male")}
-              className="appearance-none h-3 w-3 border-2 border-white dark:border-zinc-900 outline outline-gray-300 dark:outline-gray-500 rounded-full bg-white dark:bg-zinc-900 checked:bg-amber-500 dark:checked:bg-amber-600 hover:cursor-pointer"
+              onChange={() => !disabled && onCheckboxChange("male")}
+              className="appearance-none h-3 w-3 border-2 border-white dark:border-zinc-900 outline outline-gray-300 dark:outline-gray-500 rounded-full bg-white dark:bg-zinc-900 checked:bg-amber-500 dark:checked:bg-amber-600 hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
             />
           </label>
         </div>
@@ -43,9 +51,10 @@ const GenderCheckbox = ({
             <span className="text-sm">Female</span>
             <input
               type="checkbox"
+              disabled={disabled} // 🔑
               checked={selectedGender === "female"}
-              onChange={() => onCheckboxChange("female")}
-              className="appearance-none h-3 w-3 border-2 border-white dark:border-zinc-900 outline outline-gray-300 dark:outline-gray-500 rounded-full bg-white dark:bg-zinc-900 checked:bg-amber-500 dark:checked:bg-amber-600 hover:cursor-pointer"
+              onChange={() => !disabled && onCheckboxChange("female")}
+              className="appearance-none h-3 w-3 border-2 border-white dark:border-zinc-900 outline outline-gray-300 dark:outline-gray-500 rounded-full bg-white dark:bg-zinc-900 checked:bg-amber-500 dark:checked:bg-amber-600 hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
             />
           </label>
         </div>
@@ -58,9 +67,12 @@ const GenderCheckbox = ({
             <span className="text-sm">Prefer not to say</span>
             <input
               type="checkbox"
+              disabled={disabled} // 🔑
               checked={selectedGender === "prefer not to say"}
-              onChange={() => onCheckboxChange("prefer not to say")}
-              className="appearance-none h-3 w-3 border-2 border-white dark:border-zinc-900 outline outline-gray-300 dark:outline-gray-500 rounded-full bg-white dark:bg-zinc-900 checked:bg-amber-500 dark:checked:bg-amber-600 hover:cursor-pointer"
+              onChange={() =>
+                !disabled && onCheckboxChange("prefer not to say")
+              }
+              className="appearance-none h-3 w-3 border-2 border-white dark:border-zinc-900 outline outline-gray-300 dark:outline-gray-500 rounded-full bg-white dark:bg-zinc-900 checked:bg-amber-500 dark:checked:bg-amber-600 hover:cursor-pointer disabled:cursor-not-allowed disabled:opacity-50"
             />
           </label>
         </div>
