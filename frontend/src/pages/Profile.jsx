@@ -9,6 +9,7 @@ import {
   User,
   UserCheck,
   ArrowUpDown,
+  PersonStanding,
 } from "lucide-react";
 
 const Profile = () => {
@@ -203,7 +204,7 @@ const Profile = () => {
         {/* Gender input */}
         <div className="mt-3">
           <div className="flex items-center gap-0.5 dark:text-white">
-            <User className="size-4" />
+            <PersonStanding className="size-4" />
             <label htmlFor="gender">
               <span className="text-xs font-medium">Gender</span>
             </label>
