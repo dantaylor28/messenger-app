@@ -31,7 +31,7 @@ const GenderCheckbox = ({
               selectedGender === "male" ? "selected" : ""
             }`}
           >
-            <span className="text-sm">Male</span>
+            <span className={`text-sm ${disabled ? "cursor-not-allowed" : ""}`}>Male</span>
             <input
               id="gender"
               type="checkbox"
@@ -48,7 +48,7 @@ const GenderCheckbox = ({
               selectedGender === "female" ? "selected" : ""
             }`}
           >
-            <span className="text-sm">Female</span>
+            <span className={`text-sm ${disabled ? "cursor-not-allowed" : ""}`}>Female</span>
             <input
               type="checkbox"
               disabled={disabled}
@@ -64,7 +64,7 @@ const GenderCheckbox = ({
               selectedGender === "prefer not to say" ? "selected" : ""
             }`}
           >
-            <span className="text-sm">Prefer not to say</span>
+            <span className={`text-sm ${disabled ? "cursor-not-allowed" : ""}`}>Prefer not to say</span>
             <input
               type="checkbox"
               disabled={disabled}

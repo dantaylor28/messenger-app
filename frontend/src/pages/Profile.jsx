@@ -213,7 +213,7 @@ const Profile = () => {
             <div
               className={`w-full ${
                 isGenderDisabled
-                  ? "bg-gray-100 dark:bg-white/5 text-gray-600 cursor-not-allowed"
+                  ? "bg-gray-100 dark:bg-white/5 text-gray-600"
                   : "bg-white dark:bg-white/15 focus:border-black/80 dark:focus:border-white/30"
               }`}
             >
